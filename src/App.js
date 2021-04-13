@@ -1,9 +1,9 @@
-import SplashScreen from "./pages/splashscreen";
-
+import SignupPage from "./pages/signuppage/index.jsx";
+import SigninPage from "./pages/loginpage/index.jsx";
 const App = () => {
   return (
     <div>
-      <SplashScreen />
+      <SigninPage />
     </div>
   );
 }

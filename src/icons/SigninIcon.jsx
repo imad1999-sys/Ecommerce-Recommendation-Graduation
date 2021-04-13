@@ -1,7 +1,7 @@
 import React from "react";
 import "../assets/css/styles.css";
 
-const signinIcon = () => {
+const SigninIcon = () => {
     return <i class="fas fa-sign-in-alt icon"></i>;
 }
-export default signinIcon;
+export default SigninIcon;
