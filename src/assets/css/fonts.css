@@ -4,3 +4,16 @@
     font-weight: 400;
     font-style: normal;
 }
+@font-face{
+    font-family: 'Baloo Chettan 2';
+    src: url("../fonts/BalooChettan2-Bold.ttf");
+}
+
+.baloo-chettan-30{
+    font-family: 'Baloo Chettan 2';
+    font-size: 30px;
+}
+.baloo-20{
+    font-family: 'Baloo 2';
+    font-size: 20px;
+}
