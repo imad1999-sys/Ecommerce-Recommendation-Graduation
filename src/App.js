@@ -1,9 +1,9 @@
 import SplashScreen from "./pages/splashscreen";
-
+import StoresPage from "./pages/storespage/index.jsx";
 const App = () => {
   return (
     <div>
-      <SplashScreen />
+      <StoresPage />
     </div>
   );
 }
