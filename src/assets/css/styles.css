@@ -123,3 +123,143 @@
 }
 
 /*end splash screen styles */
+
+
+/* start main page styles */ 
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.container .carousel-title {
+  font-size: 60px;
+  color: #ffffff;
+  margin: 0 0 10px;
+  opacity: 0;
+}
+
+.container .carousel-text {
+  font-size: 20px;
+  color: #eeeeee;
+  margin: 0;
+  opacity: 0;
+}
+.container .carousel-link{
+  opacity: 0;
+}
+.carousel-item.active .container .carousel-title {
+  opacity: 0;
+  animation: fadeInLeft 2s ease forwards;
+}
+.carousel-item.active .container .carousel-text,
+.carousel-item.active .container .carousel-link {
+  opacity: 0;
+  animation: fadeInRight 2s ease forwards;
+}
+
+.fas {
+  font-size: x-large;
+  color: black;
+}
+
+.btn {
+  border-radius: 20px;
+}
+
+.avatar-root {
+  display: flex;
+}
+.container-for-companies {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.name {
+  font-family: "Baloo 2";
+  font-size: 10px;
+}
+.carousels-section {
+    background-color: #dfe6e9;
+    padding: 10px;
+}
+.application{
+    background-color: #b2bec7;
+}
+.stores-home-page{
+    text-align: center;
+}
+.stores-home-page .see-all-link{
+    text-decoration: none;
+}
+.fa-tags{
+    font-size: 15px;
+}
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+.search-bar{
+    margin: 10px;
+    font-family: "Baloo 2";
+    text-align: end;
+}
+.application{
+    background-color: #dfe6e9;
+}
+.page-title .stores{
+    font-family: "Baloo 2";
+    font-size: 30px;
+    font-weight: 700;
+}
+.grid-of-stores-container{
+    padding: 20px;
+    justify-content: center;
+}
+.grid-of-stores-container .row{
+    margin-top: 50px;
+}
+.options-section{
+    text-align: left;
+}
+.options-section .title{
+    text-decoration: none;
+    font-family: "Baloo 2";
+    font-size: 20px;
+    text-align: center;
+    display: inline-block;
+    color: #2d3436;
+}
+.options-section .title::after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #2d3436;
+    transition: width .3s;
+}
+.options-section .title:hover::after{
+    width: 100%;
+    transition: width .3s;
+}
+/* end main page styles */ 
