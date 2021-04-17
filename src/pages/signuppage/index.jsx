@@ -33,7 +33,7 @@ export default class SignupPage extends Component {
             <BaseInput label="Confirm Password: " type="password" />
           </div>
           <div className="row">
-            <BaseButton icon={<SignupIcon />} text="Register" />
+            <BaseButton icon={<SignupIcon />} text="Register" link="/home" />
           </div>
         </Paper>
       </div>
