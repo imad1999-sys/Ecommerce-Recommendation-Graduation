@@ -19,7 +19,7 @@ const CarouselOfMainPage = () => {
         <div class="carousel-item active">
           <img src={note8pro} class="d-block w-100 image" alt="..." />
           <div className="container">
-            <h5 className="carousel-title baloo-chettan-25">
+            <h5 className="carousel-title baloo-chettan-30">
               Redmi note 8 pro
             </h5>
             <p className="carousel-text baloo-20">
@@ -36,7 +36,7 @@ const CarouselOfMainPage = () => {
         <div class="carousel-item">
           <img src={note20ultra} class="d-block w-100 image" alt="..." />
           <div className="container">
-            <h5 className="carousel-title baloo-chettan-25">
+            <h5 className="carousel-title baloo-chettan-30">
               Samsung Note 20 Ultra
             </h5>
             <p className="carousel-text baloo-20">
@@ -53,7 +53,7 @@ const CarouselOfMainPage = () => {
         <div class="carousel-item">
           <img src={samsunga50} class="d-block w-100 image" alt="..." />
           <div className="container">
-            <h5 className="carousel-title baloo-chettan-25">Samsung A50</h5>
+            <h5 className="carousel-title baloo-chettan-30">Samsung A50</h5>
             <p className="carousel-text baloo-20">
               Perfect design and supports finger print
             </p>

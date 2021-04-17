@@ -36,8 +36,6 @@ const CarouselOfCompanies = () => {
                   <AvatarImage alt="Virgin Megastore" image={virgin} />
                   <p className="name">Virgin Megastore</p>
                 </div>
-              </div>
-              <div className="row ">
                 <div className="col">
                   <AvatarImage alt="Huawei" image={huawei} />
                   <p className="name">Huawei</p>
@@ -58,20 +56,6 @@ const CarouselOfCompanies = () => {
             <div className="container-for-companies">
               <div className="row">
                 <div className="col">
-                  <AvatarImage alt="Huawei" image={huawei} />
-                  <p className="name">Huawei</p>
-                </div>
-                <div className="col">
-                  <AvatarImage alt="IKEA" image={ikea} />
-                  <p className="name">IKEA</p>
-                </div>
-                <div className="col">
-                  <AvatarImage alt="Xcite" image={xcite} />
-                  <p className="name">Xcite</p>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col">
                   <AvatarImage alt="Amazon" image={amazon} />
                   <p className="name">Amazon</p>
                 </div>
@@ -82,6 +66,18 @@ const CarouselOfCompanies = () => {
                 <div className="col">
                   <AvatarImage alt="Virgin Megastore" image={virgin} />
                   <p className="name">Virgin Megastore</p>
+                </div>
+                <div className="col">
+                  <AvatarImage alt="Huawei" image={huawei} />
+                  <p className="name">Huawei</p>
+                </div>
+                <div className="col">
+                  <AvatarImage alt="IKEA" image={ikea} />
+                  <p className="name">IKEA</p>
+                </div>
+                <div className="col">
+                  <AvatarImage alt="Xcite" image={xcite} />
+                  <p className="name">Xcite</p>
                 </div>
               </div>
             </div>
@@ -102,8 +98,6 @@ const CarouselOfCompanies = () => {
                   <AvatarImage alt="Virgin Megastore" image={virgin} />
                   <p className="name">Virgin Megastore</p>
                 </div>
-              </div>
-              <div className="row">
                 <div className="col">
                   <AvatarImage alt="Huawei" image={huawei} />
                   <p className="name">Huawei</p>
