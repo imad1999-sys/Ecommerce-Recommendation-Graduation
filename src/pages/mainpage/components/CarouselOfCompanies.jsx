@@ -11,6 +11,7 @@ import FloatingActionButton from "./FloatingActionButton.jsx";
 import ArrowCircleLeft from "../../../icons/ArrowCircleLeft.jsx";
 import ArrowCircleRight from "../../../icons/ArrowCircleRight.jsx";
 import "../../../assets/css/styles.css";
+import "../../../assets/css/fonts.css";
 const CarouselOfCompanies = () => {
   return (
     <div>
@@ -21,94 +22,79 @@ const CarouselOfCompanies = () => {
       >
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src={white} class="d-block w-100" alt="..." />
             <div className="container-for-companies">
-              <div className="row">
-                <div className="col">
-                  <AvatarImage alt="Amazon" image={amazon} />
-                  <p className="name">Amazon</p>
+              <div className="row gx-5">
+                <div className="col-sm">
+                  <AvatarImage image={amazon} alt="Amazon" />
+                  <p className="name baloo-20">Amazon</p>
                 </div>
-                <div className="col">
-                  <AvatarImage alt="Ebay" image={ebay} />
-                  <p className="name">Ebay</p>
+                <div className="col-sm">
+                  <AvatarImage image={ebay} alt="Ebay" />
+                  <p className="name baloo-20">Ebay</p>
                 </div>
-                <div className="col">
-                  <AvatarImage alt="Virgin Megastore" image={virgin} />
-                  <p className="name">Virgin Megastore</p>
+                <div className="col-sm">
+                  <AvatarImage image={virgin} alt="Virgin Megastore" />
+                  <p className="name baloo-20">Virgin Megastore</p>
                 </div>
-                <div className="col">
-                  <AvatarImage alt="Huawei" image={huawei} />
-                  <p className="name">Huawei</p>
+                <div className="col-sm">
+                  <AvatarImage image={virgin} alt="Virgin Megastore" />
+                  <p className="name baloo-20">Virgin Megastore</p>
                 </div>
-                <div className="col">
-                  <AvatarImage alt="IKEA" image={ikea} />
-                  <p className="name">IKEA</p>
-                </div>
-                <div className="col">
-                  <AvatarImage alt="Xcite" image={xcite} />
-                  <p className="name">Xcite</p>
+                <div className="col-sm">
+                  <AvatarImage image={virgin} alt="Virgin Megastore" />
+                  <p className="name baloo-20">Virgin Megastore</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="carousel-item">
-            <img src={white} class="d-block w-100" alt="..." />
             <div className="container-for-companies">
-              <div className="row">
-                <div className="col">
-                  <AvatarImage alt="Amazon" image={amazon} />
-                  <p className="name">Amazon</p>
+              <div className="row gx-5">
+                <div className="col-sm">
+                  <AvatarImage image={ikea} alt="ikea" />
+                  <p className="name baloo-20">IKEA</p>
                 </div>
-                <div className="col">
-                  <AvatarImage alt="Ebay" image={ebay} />
-                  <p className="name">Ebay</p>
+                <div className="col-sm">
+                  <AvatarImage image={xcite} alt="Xcite" />
+                  <p className="name baloo-20">Xcite</p>
                 </div>
-                <div className="col">
-                  <AvatarImage alt="Virgin Megastore" image={virgin} />
-                  <p className="name">Virgin Megastore</p>
+                <div className="col-sm">
+                  <AvatarImage image={ebay} alt="Ebay" />
+                  <p className="name baloo-20">Ebay</p>
                 </div>
-                <div className="col">
-                  <AvatarImage alt="Huawei" image={huawei} />
-                  <p className="name">Huawei</p>
+                <div className="col-sm">
+                  <AvatarImage image={ebay} alt="Ebay" />
+                  <p className="name baloo-20">Ebay</p>
                 </div>
-                <div className="col">
-                  <AvatarImage alt="IKEA" image={ikea} />
-                  <p className="name">IKEA</p>
-                </div>
-                <div className="col">
-                  <AvatarImage alt="Xcite" image={xcite} />
-                  <p className="name">Xcite</p>
+                <div className="col-sm">
+                  <AvatarImage image={ebay} alt="Ebay" />
+                  <p className="name baloo-20">Ebay</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="carousel-item">
-            <img src={white} class="d-block w-100" alt="..." />
             <div className="container-for-companies">
-              <div className="row">
-                <div className="col">
-                  <AvatarImage alt="Amazon" image={amazon} />
-                  <p className="name">Amazon</p>
+              <div className="row gx-5">
+                <div className="col-sm">
+                  <AvatarImage image={ikea} alt="ikea" />
+                  <p className="name baloo-20">IKEA</p>
                 </div>
-                <div className="col">
-                  <AvatarImage alt="Ebay" image={ebay} />
-                  <p className="name">Ebay</p>
+                <div className="col-sm">
+                  <AvatarImage image={xcite} alt="Xcite" />
+                  <p className="name baloo-20">Xcite</p>
                 </div>
-                <div className="col">
-                  <AvatarImage alt="Virgin Megastore" image={virgin} />
-                  <p className="name">Virgin Megastore</p>
+                <div className="col-sm">
+                  <AvatarImage image={ebay} alt="Ebay" />
+                  <p className="name baloo-20">Ebay</p>
                 </div>
-                <div className="col">
-                  <AvatarImage alt="Huawei" image={huawei} />
-                  <p className="name">Huawei</p>
+                <div className="col-sm">
+                  <AvatarImage image={ebay} alt="Ebay" />
+                  <p className="name baloo-20">Ebay</p>
                 </div>
-                <div className="col">
-                  <AvatarImage alt="IKEA" image={ikea} />
-                  <p className="name">IKEA</p>
-                </div>
-                <div className="col">
-                  <AvatarImage alt="Xcite" image={xcite} />
-                  <p className="name">Xcite</p>
+                <div className="col-sm">
+                  <AvatarImage image={ebay} alt="Ebay" />
+                  <p className="name baloo-20">Ebay</p>
                 </div>
               </div>
             </div>

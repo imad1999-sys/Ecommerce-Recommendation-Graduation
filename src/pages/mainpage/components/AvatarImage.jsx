@@ -4,9 +4,9 @@ import Avatar from "@material-ui/core/Avatar";
 import "../../../assets/css/styles.css";
 const useStyles = makeStyles((theme) => ({
   large: {
-    width: theme.spacing(7),
-    height: theme.spacing(7),
-    margin: 1,
+    width: theme.spacing(20),
+    height: theme.spacing(20),
+    border: "1px solid #ccc",
   },
 }));
 
