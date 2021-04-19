@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import Paper from "@material-ui/core/Paper";
 import "../../assets/css/styles.css";
 import BaseNavbar from "../../base/BaseNavbar.jsx";
+import CarouselOfCards from "./components/CarouselOfCards.jsx";
+import DividerAndTitleSection from "./components/DividerAndTitleSection.jsx";
 export default class MainPage extends Component {
   render() {
     return (
@@ -30,6 +32,14 @@ export default class MainPage extends Component {
             <div className="carousel-of-main-page-section">
               <Paper elevation={10}>
                 <CarouselOfMainPage />
+              </Paper>
+            </div>
+          </div>
+          <DividerAndTitleSection section="Most Rated" />
+          <div className="row">
+            <div className="carousel-of-cards">
+              <Paper elevation={10}>
+                <CarouselOfCards />
               </Paper>
             </div>
           </div>

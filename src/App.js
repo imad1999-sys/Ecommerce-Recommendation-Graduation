@@ -3,6 +3,7 @@ import StoresPage from "./pages/storespage/index.jsx";
 import SignupPage from "./pages/signuppage/index.jsx";
 import SigninPage from "./pages/loginpage/index.jsx";
 import MainPage from "./pages/mainpage/index.jsx";
+import BaseCard from "./base/BaseCard.jsx";
 import { Route , BrowserRouter as Router } from "react-router-dom"
 const App = () => {
   return (
