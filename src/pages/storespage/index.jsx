@@ -4,6 +4,7 @@ import PageTitle from "./components/PageTitle.jsx";
 import GridOfStores from "./components/GridOfStores.jsx";
 import Paper from "@material-ui/core/Paper";
 import BaseNavbar from "../../base/BaseNavbar.jsx";
+import BaseFooter from "../../base/BaseFooter.jsx";
 export default class StoresPage extends Component {
   render() {
     return (
@@ -24,6 +25,9 @@ export default class StoresPage extends Component {
             </div>
             <div className="row">
               <GridOfStores />
+            </div>
+            <div className="row">
+              <BaseFooter />
             </div>
           </Paper>
         </div>

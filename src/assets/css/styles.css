@@ -668,3 +668,19 @@
   }
 }
 /* end divider styles */
+
+/*start footer styles*/
+.link , .copyright-link{
+    text-decoration: none;
+}
+.icon{
+    font-size: 20px;
+}
+.copyright .copyright-link{
+    margin-left: 5px;
+}
+.text-capitalize{
+   color: #2c3e50;
+}
+/*end footer styles*/
+

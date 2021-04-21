@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Paper from "@material-ui/core/Paper";
 import "../../assets/css/styles.css";
 import BaseNavbar from "../../base/BaseNavbar.jsx";
+import BaseFooter from "../../base/BaseFooter.jsx";
 import CarouselOfCards from "./components/CarouselOfCards.jsx";
 import DividerAndTitleSection from "./components/DividerAndTitleSection.jsx";
 export default class MainPage extends Component {
@@ -42,6 +43,9 @@ export default class MainPage extends Component {
                 <CarouselOfCards />
               </Paper>
             </div>
+          </div>
+          <div className="row">
+            <BaseFooter />
           </div>
         </div>
       </div>
