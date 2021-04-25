@@ -3,14 +3,15 @@ import "../assets/css/styles.css";
 import "../assets/css/fonts.css";
 const BaseInput = (props) => {
   return (
-    <div className="input-section">
+    <div className="auto-input-section">
       <input
-        className="form-input baloo-20"
-        list="datalistOptions"
-        id="exampleDataList"
         type={props.type}
+        id="search"
+        autoComplete="off"
+        className="auto-input baloo-15"
+        placeholder=" "
       />
-      <label className="form-label baloo-20">{props.label}</label>
+      <label className="auto-label baloo-15">{props.label}</label>
     </div>
   );
 };

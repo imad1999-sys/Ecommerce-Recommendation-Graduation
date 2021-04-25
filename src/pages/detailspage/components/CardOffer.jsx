@@ -11,17 +11,17 @@ const cardOffer = (props) => {
       </div>
       <div className="offers-details">
         <dl className="row">
-          <dt class="col-sm-3 baloo-20">Price</dt>
+          <dt class="col-sm-3 baloo-15">Price</dt>
           <dd class="col-sm-9 baloo-15">
             {props.price}
           </dd>
-          <dt class="col-sm-3 baloo-20">Delivery: </dt>
+          <dt class="col-sm-3 baloo-15">Delivery: </dt>
           <dd class="col-sm-9 baloo-15">
             free delivery
           </dd>
         </dl>
         <div className="row">
-          <a href="#" className="stretched-link">
+          <a href="#" className="stretched-link baloo-20">
             Go to store
           </a>
         </div>
