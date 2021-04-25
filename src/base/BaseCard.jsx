@@ -7,6 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Checkbox from "@material-ui/core/Checkbox";
 import Favorite from "@material-ui/icons/Favorite";
 import FavoriteBoder from "@material-ui/icons/FavoriteBorder";
+import {Link} from "react-router-dom";
 import "../assets/css/styles.css";
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -66,7 +67,7 @@ const Card = (props) => {
           aria-label="vertical contained primary button group"
           variant="text"
         >
-          <Button className={classes.button}>
+          <Link to={props.link} className={classes.button}>
             {" "}
             <img
               src={img}
@@ -75,7 +76,7 @@ const Card = (props) => {
               className={classes.img}
             />
             Book now
-          </Button>
+          </Link>
         </ButtonGroup>
       </div>
     </div>

@@ -19,16 +19,36 @@ const CarouselOfCompanies = () => {
             <div className="container-for-companies">
               <div className="row gx-5">
                 <div className="col-sm">
-                  <BaseCard image={labtop} name="laptop" price="1500000" />
+                  <BaseCard
+                    image={labtop}
+                    name="laptop"
+                    price="1500000"
+                    link="/details"
+                  />
                 </div>
                 <div className="col-sm">
-                  <BaseCard image={labtop} name="laptop" price="1500000" />
+                  <BaseCard
+                    image={labtop}
+                    name="laptop"
+                    price="1500000"
+                    link="/details"
+                  />
                 </div>
                 <div className="col-sm">
-                  <BaseCard image={labtop} name="laptop" price="1500000" />
+                  <BaseCard
+                    image={labtop}
+                    name="laptop"
+                    price="1500000"
+                    link="/details"
+                  />
                 </div>
                 <div className="col-sm">
-                  <BaseCard image={labtop} name="laptop" price="1500000" />
+                  <BaseCard
+                    image={labtop}
+                    name="laptop"
+                    price="1500000"
+                    link="/details"
+                  />
                 </div>
               </div>
             </div>
@@ -37,16 +57,36 @@ const CarouselOfCompanies = () => {
             <div className="container-for-companies">
               <div className="row gx-5">
                 <div className="col-sm">
-                  <BaseCard image={labtop} name="laptop" price="1500000" />
+                  <BaseCard
+                    image={labtop}
+                    name="laptop"
+                    price="1500000"
+                    link="/details"
+                  />
                 </div>
                 <div className="col-sm">
-                  <BaseCard image={labtop} name="laptop" price="1500000" />
+                  <BaseCard
+                    image={labtop}
+                    name="laptop"
+                    price="1500000"
+                    link="/details"
+                  />
                 </div>
                 <div className="col-sm">
-                  <BaseCard image={labtop} name="laptop" price="1500000" />
+                  <BaseCard
+                    image={labtop}
+                    name="laptop"
+                    price="1500000"
+                    link="/details"
+                  />
                 </div>
                 <div className="col-sm">
-                  <BaseCard image={labtop} name="laptop" price="1500000" />
+                  <BaseCard
+                    image={labtop}
+                    name="laptop"
+                    price="1500000"
+                    link="/details"
+                  />
                 </div>
               </div>
             </div>
@@ -55,16 +95,36 @@ const CarouselOfCompanies = () => {
             <div className="container-for-companies">
               <div className="row gx-5">
                 <div className="col-sm">
-                  <BaseCard image={labtop} name="laptop" />
+                  <BaseCard
+                    image={labtop}
+                    name="laptop"
+                    price="1500000"
+                    link="/details"
+                  />
                 </div>
                 <div className="col-sm">
-                  <BaseCard image={labtop} name="laptop" />
+                  <BaseCard
+                    image={labtop}
+                    name="laptop"
+                    price="1500000"
+                    link="/details"
+                  />
                 </div>
                 <div className="col-sm">
-                  <BaseCard image={labtop} name="laptop" />
+                  <BaseCard
+                    image={labtop}
+                    name="laptop"
+                    price="1500000"
+                    link="/details"
+                  />
                 </div>
                 <div className="col-sm">
-                  <BaseCard image={labtop} name="laptop" />
+                  <BaseCard
+                    image={labtop}
+                    name="laptop"
+                    price="1500000"
+                    link="/details"
+                  />
                 </div>
               </div>
             </div>

@@ -5,6 +5,7 @@ import SigninPage from "./pages/loginpage/index.jsx";
 import MainPage from "./pages/mainpage/index.jsx";
 import BaseCard from "./base/BaseCard.jsx";
 import { Route , BrowserRouter as Router } from "react-router-dom"
+import ProductDetails from "./pages/detailspage/index.jsx";
 const App = () => {
   return (
     <div>
@@ -14,6 +15,7 @@ const App = () => {
         <Route exact path="/signup" component={SignupPage} />
         <Route exact path="/home" component={MainPage} />
         <Route exact path="/stores" component={StoresPage} />
+        <Route exact path="/details" component={ProductDetails} />
       </Router>
     </div>
   );

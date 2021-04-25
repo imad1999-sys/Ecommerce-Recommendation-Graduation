@@ -40,7 +40,7 @@ const BaseNavbar = () => {
                 <a
                   type="button"
                   class="nav-link"
-                  tabindex="-1"
+                  tabIndex="-1"
                   aria-disabled="true"
                 >
                   <AccountIcon />

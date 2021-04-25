@@ -387,9 +387,6 @@
   color: black;
 }
 
-.btn {
-  border-radius: 20px;
-}
 
 .avatar-root,
 .card {
@@ -684,3 +681,18 @@
 }
 /*end footer styles*/
 
+/* start details page styles */ 
+.filter-section{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.offers-details{
+  padding-top: 10px;
+  padding-left: 10px;
+}
+.offers{
+  padding-top: 10px;
+}
+
+/* end details page styles */ 

@@ -19,7 +19,7 @@ const BaseAutocompleteForm = () => {
           id="exampleDataList"
           onChange={(e) => search(e.target.value)}
         />
-        <label for="" className="form-label">
+        <label className="form-label">
           Search
         </label>
         <datalist className=" list-auto" id="datalistOptions">
