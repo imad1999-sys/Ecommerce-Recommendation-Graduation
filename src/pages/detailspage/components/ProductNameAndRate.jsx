@@ -15,7 +15,7 @@ const ProductNameAndRate = (props) => {
         <p className="name baloo-chettan-30">{props.title}</p>
       </div>
       <div className="row">
-        <p className="baloo-20">Rating: </p>
+        <p className="baloo-20">التصنيف: </p>
         <Rating
           className={classes.rating}
           name="half-rating-read"

@@ -4,7 +4,7 @@ import "../../../assets/css/fonts.css";
 const pageTitle = () => {
   return (
     <div className="page-title">
-      <p className="stores baloo-chettan-30">Stores in Electronic Home</p>
+      <p className="stores baloo-chettan-30">المتاجر في البيت الالكتروني</p>
     </div>
   );
 };

@@ -57,7 +57,7 @@ const Card = (props) => {
         <img src={props.image} class="card-img-top" alt="..." />
         <div class="card-body">
           <p class="first-card-text">
-            <small className="small-text">{props.name}</small>
+            <small className="small-text baloo-20">{props.name}</small>
           </p>
           <h5 class="card-title">SAR {props.price}</h5>
         </div>

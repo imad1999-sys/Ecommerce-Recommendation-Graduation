@@ -7,7 +7,7 @@ const PriceChart = () => {
     <div>
       <Line
         data={{
-          labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+          labels: ["احمر", "ازرق", "اصفر", "اخضر", "ارجواني", "برتقالي"],
           datasets: [
             {
               label: "# of Votes",

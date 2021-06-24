@@ -10,7 +10,7 @@ const ButtonModal = () => {
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
       >
-        <AlarmIcon /> Alarm decreasing price
+        <AlarmIcon /> تنبيه انخفاض الاسعار
       </button>
 
       <div

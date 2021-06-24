@@ -16,16 +16,16 @@ export default class LoginPage extends Component {
             <AvatarImage icon={<SigninIcon />} />
           </div>
           <div className="row">
-            <PageTitle title="Sign in" />
+            <PageTitle title="تسجيل الدخول" />
           </div>
           <div className="row">
-            <BaseInput label="Username: " type="text" />
+            <BaseInput label="اسم المستخدم : " type="text" />
           </div>
           <div className="row">
-            <BaseInput label="Password: " type="password" />
+            <BaseInput label="كلمة المرور :" type="password" />
           </div>
           <div className="row">
-            <BaseButton icon={<SigninIcon />} text="Sign in" link="/home" />
+            <BaseButton icon={<SigninIcon />} text="تسجيل الدخول" link="/home" />
           </div>
           <div className="row">
             <RegisterLink link="/signup" />

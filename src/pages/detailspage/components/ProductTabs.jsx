@@ -6,7 +6,7 @@ import ProductOnlineStores from "./ProductOnlineStores.jsx";
 const ProductTabs = () => {
     return (
       <div className="tabs-section">
-          <p className="baloo-chettan-25">Price Laptop in Syria</p>
+          <p className="baloo-chettan-25">الاسعار في سوريا</p>
         <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
           <li className="nav-item" role="presentation">
             <button
@@ -19,7 +19,7 @@ const ProductTabs = () => {
               aria-controls="pills-home"
               aria-selected="true"
             >
-              Online Stores
+              متاجر اونلاين
             </button>
           </li>
           <li className="nav-item" role="presentation">
@@ -33,7 +33,7 @@ const ProductTabs = () => {
               aria-controls="pills-contact"
               aria-selected="false"
             >
-              New Or Not
+              جديد أم مستعمل
             </button>
           </li>
         </ul>

@@ -27,7 +27,7 @@ const BaseNavbar = () => {
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
               <li class="nav-item">
                 <Link to="/home" type="button" class="nav-link" aria-current="page">
-                  <HomeIcon /> Home
+                  الصفحة الرئيسية <HomeIcon />
                 </Link>
               </li>
               <li class="nav-item">
@@ -37,12 +37,12 @@ const BaseNavbar = () => {
                   tabIndex="-1"
                   aria-disabled="true"
                 >
+                  اعدادات الحساب
                   <AccountIcon />
-                  Account
                 </a>
               </li>
             </ul>
-            <BaseAutocompleteForm type="text" label="search"/>
+            <BaseAutocompleteForm type="text" label="ابحث ..."/>
           </div>
         </div>
       </nav>

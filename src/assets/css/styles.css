@@ -30,9 +30,12 @@
   text-align: center;
   padding: 0 40px;
   box-sizing: border-box;
+  direction: rtl;
 }
 .page-content .title-landing {
   color: #a4b0be;
+  padding: 10px;
+  direction: rtl;
   animation-name: second-anim;
   animation-duration: 800ms;
   animation-timing-function: ease-in-out;
@@ -42,6 +45,7 @@
 }
 .page-content .text-landing {
   color: #dfe6e9;
+  direction: rtl;
   margin-bottom: 20px;
   animation-name: second-anim;
   animation-duration: 800ms;
@@ -104,7 +108,7 @@
   }
 }
 .icon {
-  margin-right: 10px;
+  margin-left: 10px;
 }
 @keyframes second-anim {
   0% {
@@ -169,6 +173,7 @@
 .copyright {
   font-family: "Baloo 2";
   font-size: 20px;
+  direction: rtl;
 }
 .text-capitalize {
   font-family: "Baloo 2";
@@ -180,9 +185,16 @@
 }
 .navbar-nav-scroll {
   --bs-scroll-height: 200px;
+  direction: rtl;
+}
+.navbar-collapse {
+  direction: rtl;
 }
 .name {
   text-align: center;
+}
+.navbar {
+  direction: rtl;
 }
 .navbar,
 .dropdown-menu {
@@ -204,7 +216,7 @@
 }
 .search-bar {
   margin: 10px;
-  text-align: end;
+  text-align: start;
 }
 
 .btn-outline-success {
@@ -249,12 +261,14 @@
 }
 .auto-complete-form .auto-form-label {
   position: relative;
-  left: 1rem;
+  direction: rtl;
+  float: right;
+  right: 1rem;
   top: 0.9rem;
   padding: 0 0.5rem;
   color: white;
   cursor: text;
-  transition: top 200ms ease-in ,  left 200ms ease-in ,  font-size 200ms ease-in;
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
   background-color: #2c3a47;
 }
 .auto-form-input:focus ~ .auto-form-label,
@@ -262,7 +276,7 @@
   ~ .auto-form-label {
   top: -0.5rem;
   font-size: 0.8rem;
-  left: 0.8rem;
+  right: 0.8rem;
 }
 /* start baseinput style */
 .auto-input-section {
@@ -301,12 +315,11 @@
   font-family: "Baloo 2";
   color: black;
   cursor: text;
-  transition: top 200ms ease-in ,  left 200ms ease-in ,  font-size 200ms ease-in;
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
   background-color: #ffffff;
 }
 .auto-input:focus ~ .auto-label,
-.auto-input:not(:placeholder-shown).auto-input:not(:focus)
-  ~ .auto-label {
+.auto-input:not(:placeholder-shown).auto-input:not(:focus) ~ .auto-label {
   top: -0.5rem;
   font-size: 0.8rem;
   left: 0.8rem;
@@ -330,6 +343,7 @@
 .container .carousel-text {
   font-size: 20px;
   color: #eeeeee;
+  padding: 10px;
   margin: 0;
   opacity: 0;
 }
@@ -350,7 +364,6 @@
   font-size: x-large;
   color: black;
 }
-
 
 .avatar-root,
 .card {
@@ -420,12 +433,13 @@
 .grid-of-stores-container {
   padding: 20px;
   justify-content: center;
+  direction: rtl;
 }
 .grid-of-stores-container .row {
   margin-top: 50px;
 }
 .options-section {
-  text-align: left;
+  text-align: right;
 }
 .options-section .title {
   text-decoration: none;
@@ -448,42 +462,10 @@
   transition: width 0.3s;
 }
 /* end main page styles */
-
-.application {
-  background-color: #dfe6e9;
-}
-.grid-of-stores-container {
-  padding-left: 140px;
-  justify-content: center;
-}
-.grid-of-stores-container .row {
-  padding: 10px;
-}
-.options-section {
-  text-align: left;
-}
-.options-section .title {
-  text-decoration: none;
-  text-align: center;
-  display: inline-block;
-  color: #2d3436;
-}
-.options-section .title::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px;
-  background: #2d3436;
-  transition: width 0.3s;
-}
-.options-section .title:hover::after {
-  width: 100%;
-  transition: width 0.3s;
-}
 @media (max-width: 576px) {
   .grid-of-stores-container {
-    padding-left: 50px;
-    padding-right: 10px;
+    padding-left: 10px;
+    padding-right: 50px;
     padding-top: 10px;
     padding-bottom: 10px;
     justify-content: center;
@@ -494,8 +476,8 @@
 }
 @media (min-width: 576px) {
   .grid-of-stores-container {
-    padding-left: 70px;
-    padding-right: 10px;
+    padding-left: 10px;
+    padding-right: 70px;
     padding-top: 10px;
     padding-bottom: 10px;
     justify-content: center;
@@ -506,8 +488,8 @@
 }
 @media (min-width: 768px) {
   .grid-of-stores-container {
-    padding-left: 60px;
-    padding-right: 10px;
+    padding-left: 10px;
+    padding-right: 60px;
     padding-top: 10px;
     padding-bottom: 10px;
     justify-content: center;
@@ -518,8 +500,8 @@
 }
 @media (min-width: 992px) {
   .grid-of-stores-container {
-    padding-left: 110px;
-    padding-right: 10px;
+    padding-left: 10px;
+    padding-right: 110px;
     padding-top: 10px;
     padding-bottom: 10px;
     justify-content: center;
@@ -530,8 +512,8 @@
 }
 @media (min-width: 1200px) {
   .grid-of-stores-container {
-    padding-left: 140px;
-    padding-right: 10px;
+    padding-left: 10px;
+    padding-right: 140px;
     padding-top: 10px;
     padding-bottom: 10px;
     justify-content: center;
@@ -631,32 +613,48 @@
 /* end divider styles */
 
 /*start footer styles*/
-.link , .copyright-link{
-    text-decoration: none;
+.link,
+.copyright-link {
+  text-decoration: none;
 }
-.icon{
-    font-size: 20px;
+.icon {
+  font-size: 20px;
 }
-.copyright .copyright-link{
-    margin-left: 5px;
+.copyright .copyright-link {
+  margin-left: 5px;
 }
-.text-capitalize{
-   color: #2c3e50;
+.text-capitalize {
+  color: #2c3e50;
+}
+.footer-container {
+  direction: rtl;
 }
 /*end footer styles*/
 
-/* start details page styles */ 
-.filter-section{
+/* start details page styles */
+.filter-section {
   display: flex;
   justify-content: center;
   text-align: center;
+  direction: rtl;
 }
-.offers-details{
+.offers-details {
   padding-top: 10px;
   padding-left: 10px;
 }
-.offers{
+.offers {
   padding-top: 10px;
 }
-
-/* end details page styles */ 
+.name-and-rating,
+.price-container,
+.description-section,
+.videos-section,
+.chart-section,
+.card-price-section,
+.tabs-section,
+.rated-container,
+.product-type-section,
+.card-offer-section {
+  direction: rtl;
+}
+/* end details page styles */

@@ -8,13 +8,13 @@ const splashScreen = () => {
     <div className="landing-page">
       <div className="page-content">
         <h1 className="title-landing baloo-chettan-30">
-          Welcome to Electronic Home store
+          أهلا بكم في البيت الالكتروني
         </h1>
         <p className="text-landing baloo-20">
-          To browse the store{" "}
+          لتصفح المتجر{" "}
           <Link to="/login" className="link-landing baloo-20">
+            قم بتسجيل الدخول
             <SigninIcon />
-            Login Here
           </Link>
         </p>
       </div>

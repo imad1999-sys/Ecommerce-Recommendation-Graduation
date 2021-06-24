@@ -14,7 +14,7 @@ const productFilter = () =>{
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Color
+                اللون
               </button>
               <ul
                 class="dropdown-menu baloo-15"
@@ -22,17 +22,17 @@ const productFilter = () =>{
               >
                 <li>
                   <a class="dropdown-item" href="#">
-                    black
+                    أسود
                   </a>
                 </li>
                 <li>
                   <a class="dropdown-item" href="#">
-                    silver
+                    فضي
                   </a>
                 </li>
                 <li>
                   <a class="dropdown-item" href="#">
-                    red
+                    أحمر
                   </a>
                 </li>
               </ul>
@@ -47,7 +47,7 @@ const productFilter = () =>{
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                RAM
+                ذاكرة الرام
               </button>
               <ul
                 class="dropdown-menu baloo-15"
@@ -55,17 +55,17 @@ const productFilter = () =>{
               >
                 <li>
                   <a class="dropdown-item" href="#">
-                    6 GB
+                    6 غيغا
                   </a>
                 </li>
                 <li>
                   <a class="dropdown-item" href="#">
-                    8 GB
+                    8 غيغا
                   </a>
                 </li>
                 <li>
                   <a class="dropdown-item" href="#">
-                    16 GB
+                    16 غيغا
                   </a>
                 </li>
               </ul>
@@ -80,7 +80,7 @@ const productFilter = () =>{
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                CPU
+                المعالج
               </button>
               <ul
                 class="dropdown-menu baloo-15"
@@ -88,17 +88,17 @@ const productFilter = () =>{
               >
                 <li>
                   <a class="dropdown-item" href="#">
-                    core i5 11th gen
+                    core i5 الجيل الحادي عشر
                   </a>
                 </li>
                 <li>
                   <a class="dropdown-item" href="#">
-                    core i7 10th gen
+                    core i7 الجيل العاشر
                   </a>
                 </li>
                 <li>
                   <a class="dropdown-item" href="#">
-                    core i5 8th gen
+                    core i5 الجيل الثامن
                   </a>
                 </li>
               </ul>

@@ -3,24 +3,20 @@ import "../../../assets/css/styles.css";
 import "../../../assets/css/fonts.css";
 
 const productDescription = () => {
-    return (
+  return (
+    <div className="description-section">
       <p class="lh-lg">
         <dl className="row">
-          <div className="des-title baloo-chettan-25">Description</div>
-          <dt class="col-sm-3">Description lists</dt>
-          <dd class="col-sm-9">
-            A description list is perfect for defining terms.
-          </dd>
-          <dt class="col-sm-3">Description lists</dt>
-          <dd class="col-sm-9">
-            A description list is perfect for defining terms.
-          </dd>
-          <dt class="col-sm-3">Description lists</dt>
-          <dd class="col-sm-9">
-            A description list is perfect for defining terms.
-          </dd>
+          <div className="des-title baloo-chettan-25">توصيف المنتج</div>
+          <dt class="col-sm-3 baloo-15">: التوصيف الأول</dt>
+          <dd class="col-sm-9 baloo-15">تايلسنايمسؤلاستيالاؤ</dd>
+          <dt class="col-sm-3 baloo-15"> : التوصيف الثاني</dt>
+          <dd class="col-sm-9 baloo-15">وتالينشسرناسشريراسش</dd>
+          <dt class="col-sm-3 baloo-15">: التوصيف الثالث</dt>
+          <dd class="col-sm-9 baloo-15">نتاشنيلشسرنيسشاريناشس</dd>
         </dl>
       </p>
-    );
-}
+    </div>
+  );
+};
 export default productDescription;

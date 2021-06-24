@@ -4,7 +4,7 @@ const ProductPricingAnalytics = () => {
     return(
         <div className="chart-section">
             <div className="row">
-                <p className="baloo-chettan-25">Chart</p>
+                <p className="baloo-chettan-25">المخطط البياني: </p>
             </div>
             <div className="row">
                 <PriceChart />

@@ -23,18 +23,7 @@ export default class ProductDetails extends Component {
         </div>
         <Paper elevation={10}>
           <div class="row g-0 bg-light position-relative">
-            <div class="col-md-6 mb-md-0 p-md-4">
-              <div className="row">
-                <ProductImage image={Laptop} />
-                <hr className="me-4" />
-                <MostRatedProducts />
-              </div>
-              <hr className="me-4" />
-              <div className="row">
-                  <ProductOffers />
-              </div>
-            </div>
-            <div class="col-md-6 p-4 ps-md-0">
+            <div class="col-md-6 p-4 ps-md-0 second-details-section">
               <div className="row">
                 <ProductNameAndRate title="ASUS Laptop" />
               </div>
@@ -61,6 +50,17 @@ export default class ProductDetails extends Component {
               <hr className="me-4" />
               <div className="row">
                 <ProductTabs />
+              </div>
+            </div>
+            <div class="col-md-6 mb-md-0 p-md-4 first-details-section">
+              <div className="row">
+                <ProductImage image={Laptop} />
+                <hr className="me-4" />
+                <MostRatedProducts />
+              </div>
+              <hr className="me-4" />
+              <div className="row">
+                <ProductOffers />
               </div>
             </div>
           </div>

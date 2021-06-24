@@ -6,9 +6,9 @@ import ButtonModal from "./ButtonModal.jsx";
 const ProductPrice = (props) => {
   return (
     <div className="price-container">
-      <p className="baloo-chettan-25">Price & Alarms & Favorites</p>
+      <p className="baloo-chettan-25">السعر & تنبيهات الاسعار & المفضلة</p>
       <div className="row">
-        <p className="baloo-chettan-25">Price : {props.price} SP</p>
+        <p className="baloo-chettan-25">السعر : {props.price} ل.س</p>
       </div>
       <div className="row">
         <div className="col-6">
@@ -16,8 +16,8 @@ const ProductPrice = (props) => {
         </div>
         <div className="col-6">
           <button class="btn btn-outline-danger baloo-20">
+            إضافة الى المفضلة
             <HeartIcon />
-            Add to favorites
           </button>
         </div>
       </div>

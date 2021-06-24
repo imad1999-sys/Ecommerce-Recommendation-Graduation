@@ -15,25 +15,25 @@ export default class SignupPage extends Component {
             <AvatarImage icon={<SignupIcon />} />
           </div>
           <div className="row">
-            <PageTitle title="Sign up" />
+            <PageTitle title="إنشاء حساب" />
           </div>
           <div className="row">
-            <SubTitle subtitle="Please fill up the form to signup" />
+            <SubTitle subtitle="من أجل إنشاء حساب , قم بتعبئة الحقول" />
           </div>
           <div className="row">
-            <BaseInput label="First Name: " type="text" />
+            <BaseInput label="الإسم :" type="text" />
           </div>
           <div className="row">
-            <BaseInput label="Email: " type="email" />
+            <BaseInput label="البريد الإلكتروني : " type="email" />
           </div>
           <div className="row">
-            <BaseInput label="Password: " type="password" />
+            <BaseInput label="كلمة السر : " type="password" />
           </div>
           <div className="row">
-            <BaseInput label="Confirm Password: " type="password" />
+            <BaseInput label="تأكيد كلمة السر :" type="password" />
           </div>
           <div className="row">
-            <BaseButton icon={<SignupIcon />} text="Register" link="/home" />
+            <BaseButton icon={<SignupIcon />} text="تسجيل" link="/home" />
           </div>
         </Paper>
       </div>

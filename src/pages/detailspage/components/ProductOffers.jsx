@@ -5,7 +5,7 @@ import amazon from "../../../assets/images/amazon.png";
 const ProductOffers = () => {
   return (
     <div className="product-type-section">
-        <p className="baloo-chettan-25">ProductOffers</p>
+        <p className="baloo-chettan-25">عروض المنتج من متاجر أخرى</p>
       <div className="row">
         <CardOffer
           image={amazon}

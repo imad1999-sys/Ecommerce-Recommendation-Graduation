@@ -20,9 +20,9 @@ export default class MainPage extends Component {
             <div className="carousel-of-companies-section">
               <Paper elevation={10}>
                 <div className="stores-home-page">
-                  <p className="title baloo-20">Stores in electronic home</p>
+                  <p className="title baloo-20">المتاجر في البيت الإلكتروني</p>
                   <Link to="/stores" className="see-all-link baloo-20">
-                    See All
+                    شاهد كل المتاجر
                   </Link>
                 </div>
                 <CarouselOfCompanies />
@@ -36,7 +36,7 @@ export default class MainPage extends Component {
               </Paper>
             </div>
           </div>
-          <DividerAndTitleSection section="Most Rated" />
+          <DividerAndTitleSection section="الأكثر تصنيفا" />
           <div className="row">
             <div className="carousel-of-cards">
               <Paper elevation={10}>

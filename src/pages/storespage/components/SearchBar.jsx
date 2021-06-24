@@ -29,10 +29,16 @@ const SearchBar = (props) => {
           className={clsx(classes.margin, classes.textField)}
           variant="filled"
         >
-          <InputLabel htmlFor="filled-adornment-amount">
+          <InputLabel
+            className={classes.text}
+            htmlFor="filled-adornment-amount"
+          >
             {props.label}
           </InputLabel>
-          <FilledInput id="filled-adornment-amount" endAdornment={props.icon} />
+          <FilledInput
+            id="filled-adornment-amount"
+            endAdornment={props.icon}
+          />
         </FormControl>
       </ThemeProvider>
     </div>

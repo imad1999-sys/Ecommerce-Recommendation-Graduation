@@ -16,35 +16,35 @@ const gridOfStores = () => {
       <div class="row gy-4">
         <div class="col-6 col-md-4 p-3">
           <AvatarImage alt="Amazon" image={Amazon} />
-          <OptionsSection title="Amazon" value="4.5" />
+          <OptionsSection title="أمازون" value="4.5" />
         </div>
         <div class="col-6 col-md-4 p-3">
           <AvatarImage alt="Ebay" image={Ebay} />
-          <OptionsSection title="Ebay" value="4.7" />
+          <OptionsSection title="إيباي" value="4.7" />
         </div>
         <div class="col-6 col-md-4 p-3">
           <AvatarImage alt="Huawei" image={Huawei} />
-          <OptionsSection title="Huawei" value="5" />
+          <OptionsSection title="هواوي" value="5" />
         </div>
         <div class="col-6 col-md-4 p-3">
           <AvatarImage alt="IKEA" image={IKEA} />
-          <OptionsSection title="IKEA" value="4.1" />
+          <OptionsSection title="آي كيا" value="4.1" />
         </div>
         <div class="col-6 col-md-4 p-3">
           <AvatarImage alt="Lacoste" image={Lacoste} />
-          <OptionsSection title="Lacoste" value="4.5" />
+          <OptionsSection title="لا كوست" value="4.5" />
         </div>
         <div class="col-6 col-md-4 p-3">
           <AvatarImage alt="MAC" image={MAC} />
-          <OptionsSection title="MAC" value="3.7" />
+          <OptionsSection title="ماك" value="3.7" />
         </div>
         <div class="col-6 col-md-4 p-3">
           <AvatarImage alt="Virgin" image={Virgin} />
-          <OptionsSection title="Virgin Megastore" value="4.8" />
+          <OptionsSection title="فيرجين ميجاستور" value="4.8" />
         </div>
         <div class="col-6 col-md-4 p-3">
           <AvatarImage alt="Xcite" image={Xcite} />
-          <OptionsSection title="Xcite" value="4.3" />
+          <OptionsSection title="اكس سايت" value="4.3" />
         </div>
       </div>
     </div>

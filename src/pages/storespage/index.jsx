@@ -19,7 +19,7 @@ export default class StoresPage extends Component {
             </div>
             <div className="row">
               <SearchBar
-                label="Search ... "
+                label="... ابحث "
                 icon={<i class="fas fa-search" />}
               />
             </div>

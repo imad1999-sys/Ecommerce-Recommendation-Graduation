@@ -5,8 +5,8 @@ import SignupIcon from "../../../icons/SignupIcon.jsx";
 const RegisterLink = (props) => {
   return (
     <div className="link-section">
-      <p className="link-text">If you don't have an account</p>
-      <BaseButton text="Signup now" icon={<SignupIcon />} link={props.link} />
+      <p className="link-text">اذا لم يكن لديك حساب</p>
+      <BaseButton text="قم بإنشاء حساب" icon={<SignupIcon />} link={props.link} />
     </div>
   );
 };
