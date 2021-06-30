@@ -3,7 +3,7 @@ import StoresPage from "./pages/storespage/index.jsx";
 import SignupPage from "./pages/signuppage/index.jsx";
 import SigninPage from "./pages/loginpage/index.jsx";
 import MainPage from "./pages/mainpage/index.jsx";
-import BaseCard from "./base/BaseCard.jsx";
+import Dashboard from "./pages/dashboardpage/index.jsx";
 import { Route , BrowserRouter as Router } from "react-router-dom"
 import ProductDetails from "./pages/detailspage/index.jsx";
 const App = () => {
@@ -16,6 +16,7 @@ const App = () => {
         <Route exact path="/home" component={MainPage} />
         <Route exact path="/stores" component={StoresPage} />
         <Route exact path="/details" component={ProductDetails} />
+        <Route exact path="/dashboard" component={Dashboard} />
       </Router>
     </div>
   );
