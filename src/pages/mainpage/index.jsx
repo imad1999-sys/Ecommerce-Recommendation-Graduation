@@ -1,54 +1,26 @@
-import React, { Component } from "react";
-import CarouselOfMainPage from "./components/CarouselOfMainPage.jsx";
-import CarouselOfCompanies from "./components/CarouselOfCompanies.jsx";
-import { Link } from "react-router-dom";
-import Paper from "@material-ui/core/Paper";
-import "../../assets/css/styles.css";
-import BaseNavbar from "../../base/BaseNavbar.jsx";
-import BaseFooter from "../../base/BaseFooter.jsx";
-import CarouselOfCards from "./components/CarouselOfCards.jsx";
-import DividerAndTitleSection from "./components/DividerAndTitleSection.jsx";
-export default class MainPage extends Component {
-  render() {
-    return (
-      <div>
-        <div className="row">
-          <BaseNavbar />
-        </div>
-        <div className="carousels-section">
-          <div className="row">
-            <div className="carousel-of-companies-section">
-              <Paper elevation={10}>
-                <div className="stores-home-page">
-                  <p className="title baloo-20">المتاجر في البيت الإلكتروني</p>
-                  <Link to="/stores" className="see-all-link baloo-20">
-                    شاهد كل المتاجر
-                  </Link>
-                </div>
-                <CarouselOfCompanies />
-              </Paper>
-            </div>
-          </div>
-          <div className="row">
-            <div className="carousel-of-main-page-section">
-              <Paper elevation={10}>
-                <CarouselOfMainPage />
-              </Paper>
-            </div>
-          </div>
-          <DividerAndTitleSection section="الأكثر تصنيفا" />
-          <div className="row">
-            <div className="carousel-of-cards">
-              <Paper elevation={10}>
-                <CarouselOfCards />
-              </Paper>
-            </div>
-          </div>
-          <div className="row">
-            <BaseFooter />
-          </div>
-        </div>
-      </div>
-    );
-  }
-}
+import React, { useState, useEffect } from "react";
+import BaseSpinner from "../../base/BaseSpinner.jsx";
+import MainPage from "./components/MainPage.jsx";
+const MainPageCompleted = () => {
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+  }, []);
+  return (
+    <div>
+      {loading ? (
+        <BaseSpinner
+          color={"#2980b9"}
+          loading={loading}
+          size={100}
+        />
+      ) : (
+        <MainPage />
+      )}
+    </div>
+  );
+};
+export default MainPageCompleted;

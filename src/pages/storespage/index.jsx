@@ -1,37 +1,26 @@
-import React, { Component } from "react";
-import SearchBar from "./components/SearchBar.jsx";
-import PageTitle from "./components/PageTitle.jsx";
-import GridOfStores from "./components/GridOfStores.jsx";
-import Paper from "@material-ui/core/Paper";
-import BaseNavbar from "../../base/BaseNavbar.jsx";
-import BaseFooter from "../../base/BaseFooter.jsx";
-export default class StoresPage extends Component {
-  render() {
-    return (
-      <>
-        <div className="row">
-          <BaseNavbar />
-        </div>
-        <div className="stores-container">
-          <Paper elevation={5}>
-            <div className="row">
-              <PageTitle />
-            </div>
-            <div className="row">
-              <SearchBar
-                label="... ابحث "
-                icon={<i class="fas fa-search" />}
-              />
-            </div>
-            <div className="row">
-              <GridOfStores />
-            </div>
-            <div className="row">
-              <BaseFooter />
-            </div>
-          </Paper>
-        </div>
-      </>
-    );
-  }
-}
+import React, { useState, useEffect } from "react";
+import BaseSpinner from "../../base/BaseSpinner.jsx";
+import StoresPage from "./components/StoresPage.jsx";
+const StoresPageCompleted = () => {
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+  }, []);
+  return (
+    <div>
+      {loading ? (
+        <BaseSpinner
+          color={"#2980b9"}
+          loading={loading}
+          size={100}
+        />
+      ) : (
+        <StoresPage />
+      )}
+    </div>
+  );
+};
+export default StoresPageCompleted;
