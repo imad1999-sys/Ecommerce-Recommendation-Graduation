@@ -4,7 +4,7 @@ import "../../../assets/css/fonts.css";
 import note8pro from "../../../assets/images/note8pro.jpg";
 import note20ultra from "../../../assets/images/note20ultra.jpg";
 import samsunga50 from "../../../assets/images/samsunga50.jpg";
-import FloatingActionButton from "./FloatingActionButton.jsx";
+import FloatingActionButton from "../../../base/BaseFloatingActionButton.jsx";
 import ArrowCircleLeft from "../../../icons/ArrowCircleLeft.jsx";
 import ArrowCircleRight from "../../../icons/ArrowCircleRight.jsx";
 import ComparingPricingLink from "./ComparingPricingLink.jsx";

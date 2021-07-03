@@ -1,6 +1,6 @@
 import React from "react";
 import BaseCard from "../../../base/BaseCard.jsx";
-import FloatingActionButton from "./FloatingActionButton.jsx";
+import FloatingActionButton from "../../../base/BaseFloatingActionButton.jsx";
 import ArrowCircleLeft from "../../../icons/ArrowCircleLeft.jsx";
 import ArrowCircleRight from "../../../icons/ArrowCircleRight.jsx";
 import labtop from "../../../assets/images/laptop.jpg";

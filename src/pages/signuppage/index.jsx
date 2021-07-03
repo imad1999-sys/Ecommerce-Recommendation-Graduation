@@ -21,16 +21,16 @@ export default class SignupPage extends Component {
             <SubTitle subtitle="من أجل إنشاء حساب , قم بتعبئة الحقول" />
           </div>
           <div className="row">
-            <BaseInput label="الإسم :" type="text" />
+            <BaseInput label="الإسم " type="text" />
           </div>
           <div className="row">
-            <BaseInput label="البريد الإلكتروني : " type="email" />
+            <BaseInput label="البريد الإلكتروني  " type="email" />
           </div>
           <div className="row">
-            <BaseInput label="كلمة السر : " type="password" />
+            <BaseInput label="كلمة السر  " type="password" />
           </div>
           <div className="row">
-            <BaseInput label="تأكيد كلمة السر :" type="password" />
+            <BaseInput label="تأكيد كلمة السر " type="password" />
           </div>
           <div className="row">
             <BaseButton icon={<SignupIcon />} text="تسجيل" link="/home" />

@@ -1,13 +1,11 @@
 import React from "react";
-import white from "../../../assets/images/white.jpg";
 import AvatarImage from "./AvatarImage.jsx";
 import amazon from "../../../assets/images/amazon.png";
 import ebay from "../../../assets/images/ebay.png";
-import huawei from "../../../assets/images/huawei.png";
 import ikea from "../../../assets/images/ikea.png";
 import virgin from "../../../assets/images/virgin.png";
 import xcite from "../../../assets/images/xcite.png";
-import FloatingActionButton from "./FloatingActionButton.jsx";
+import FloatingActionButton from "../../../base/BaseFloatingActionButton.jsx";
 import ArrowCircleLeft from "../../../icons/ArrowCircleLeft.jsx";
 import ArrowCircleRight from "../../../icons/ArrowCircleRight.jsx";
 import "../../../assets/css/styles.css";

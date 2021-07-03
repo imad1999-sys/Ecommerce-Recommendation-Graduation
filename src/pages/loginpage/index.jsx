@@ -19,10 +19,10 @@ export default class LoginPage extends Component {
             <PageTitle title="تسجيل الدخول" />
           </div>
           <div className="row">
-            <BaseInput label="اسم المستخدم : " type="text" />
+            <BaseInput label="اسم المستخدم  " type="text" />
           </div>
           <div className="row">
-            <BaseInput label="كلمة المرور :" type="password" />
+            <BaseInput label="كلمة المرور " type="password" />
           </div>
           <div className="row">
             <BaseButton icon={<SigninIcon />} text="تسجيل الدخول" link="/home" />

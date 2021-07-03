@@ -138,7 +138,8 @@
   justify-content: center;
   margin-top: 10px;
 }
-.container {
+.container,
+.stores {
   margin-top: 60px;
   width: 450px;
   padding-bottom: 15px;
@@ -203,7 +204,10 @@
 .navbar-nav .nav-item .nav-link {
   color: #ffffff;
 }
-.form-control .list-auto {
+.navbar-nav .nav-item .nav-link:hover {
+  color: #ffffff;
+}
+v .form-control .list-auto {
   background-color: #2c3a47;
 }
 .form {
@@ -217,8 +221,11 @@
 .search-bar {
   margin: 10px;
   text-align: start;
+  direction: rtl;
 }
-
+.fa-search {
+  margin-right: 352px;
+}
 .btn-outline-success {
   margin-left: 18rem;
   height: 100%;
@@ -309,7 +316,7 @@
 }
 .auto-input-section .auto-label {
   position: relative;
-  left: 1rem;
+  left: 9rem;
   top: 0.9rem;
   padding: 0 0.5rem;
   font-family: "Baloo 2";
@@ -322,7 +329,7 @@
 .auto-input:not(:placeholder-shown).auto-input:not(:focus) ~ .auto-label {
   top: -0.5rem;
   font-size: 0.8rem;
-  left: 0.8rem;
+  left: 9rem;
 }
 /*end authentication styles*/
 
@@ -525,7 +532,13 @@
 .carousel-of-companies-section {
   padding: 20px;
 }
-.carousel-of-main-page-section {
+.carousel-of-main-page-section,
+.video-category-section,
+.tv-carousels-section,
+.mobile-carousels-section,
+.laptop-carousels-section,
+.camera-carousels-section,
+.audio-carousels-section {
   padding: 20px;
 }
 /* end stores page styles */
@@ -660,7 +673,7 @@
 /* end details page styles */
 
 /*start spinner styles*/
-.spinner-section{
+.spinner-section {
   display: flex;
   justify-content: center;
   text-align: center;
@@ -669,3 +682,257 @@
   height: 100vh;
 }
 /*end spinner styles*/
+
+/*start base cards horizontal style*/
+.horizontal-container {
+  height: 100%;
+  padding: 40px;
+  margin: 40px;
+}
+
+.horizontal-card {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  position: relative;
+}
+
+#shopping {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+#shopping i {
+  font-size: 20px;
+}
+
+#shopping sup {
+  margin-left: 4px;
+}
+
+.images h2 {
+  margin-bottom: 25px;
+}
+
+.infos h1 {
+  display: none;
+}
+.imgs {
+  cursor: pointer;
+}
+
+.infos .price {
+  display: flex;
+  justify-content: start;
+}
+.infos .price h3:last-child {
+  margin-left: 20px;
+}
+
+.infos #more-infos {
+  display: flex;
+  justify-content: space-between;
+  color: gray;
+}
+
+#more-infos h5 {
+  padding: 8px;
+}
+#more-infos h5:nth-child(1) {
+  color: black;
+  border-bottom: 2px solid black;
+  padding-bottom: 6px;
+}
+
+.infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 400px;
+  margin-top: 30px;
+  width: 90%;
+}
+
+.reviews {
+  color: gold;
+}
+
+h3:nth-child(2) {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.choose {
+  cursor: pointer;
+}
+
+.quantity {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.quantity input {
+  text-align: center;
+  width: 40px;
+}
+
+#info-content {
+  font-size: 12px;
+  height: 70px;
+}
+
+.buttons {
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.buttons button {
+  margin: 10px;
+  width: 180px;
+  padding: 5px;
+  font: inherit;
+  border: 2px solid #70b943;
+  border-radius: 25px;
+  background-color: #70b943;
+  outline: none;
+  cursor: pointer;
+}
+
+.buttons button:nth-child(1) i {
+  margin-right: 10px;
+}
+
+.buttons button:hover {
+  color: white;
+}
+
+.slider {
+  height: 80%;
+  display: flex;
+  align-items: center;
+}
+
+.slider img {
+  width: 90%;
+  margin: auto;
+}
+
+.img-slider {
+  width: 70%;
+  display: flex;
+  height: 40px;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.img-slider div {
+  width: 20%;
+  height: 100%;
+}
+
+.img-slider img {
+  height: 100%;
+}
+
+@media (min-width: 1025px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .horizontal-container {
+    background-color: rgb(50 58 66);
+    width: 75%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+  }
+
+  .horizontal-card {
+    flex-direction: row;
+    height: 85%;
+    width: 80%;
+    border-radius: 15px;
+  }
+
+  .images {
+    width: 50%;
+    height: 100%;
+  }
+
+  .images h2 {
+    display: none;
+  }
+
+  .infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 0px;
+    height: 80%;
+    width: 50%;
+    font-size: 20px;
+    padding-right: 70px;
+  }
+
+  .infos h1 {
+    display: block;
+  }
+
+  .buttons {
+    flex-direction: row;
+    font-size: 15px;
+  }
+  .buttons button {
+    padding: 8px;
+  }
+
+  .img-slider {
+    width: 50%;
+  }
+
+  #shopping {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  #shopping i {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 670px) {
+  .horizontal-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .buttons {
+    flex-direction: row;
+    font-size: 15px;
+  }
+
+  .horizontal-card {
+    width: 75%;
+    height: 100%;
+  }
+
+  #shopping i {
+    font-size: 30px;
+  }
+}
+/*end base cards horizontal style*/
