@@ -6,6 +6,8 @@ import MainPageCompleted from "../pages/mainpage/index.jsx";
 import DashboardPageCompleted from "../pages/dashboardpage/index.jsx";
 import { Route , BrowserRouter as Router } from "react-router-dom"
 import DetailsPageCompleted from "../pages/detailspage/index.jsx";
+import AccountPageCompleted from "../pages/accountpage/index.jsx";
+import UpdateAccountInfoCompleted from "../pages/accountpage/components/UpdateAccountInfoCompleted.jsx";
 const Routes = () => {
   return (
     <div>
@@ -17,6 +19,8 @@ const Routes = () => {
         <Route exact path="/stores" component={StoresPageCompleted} />
         <Route exact path="/details" component={DetailsPageCompleted} />
         <Route exact path="/dashboard" component={DashboardPageCompleted} />
+        <Route exact path="/account" component={AccountPageCompleted} />
+        <Route exact path="/update-account" component={UpdateAccountInfoCompleted} />
       </Router>
     </div>
   );

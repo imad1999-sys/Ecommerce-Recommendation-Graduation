@@ -31,15 +31,16 @@ const BaseNavbar = () => {
                 </Link>
               </li>
               <li class="nav-item">
-                <a
+                <Link
                   type="button"
                   class="nav-link"
                   tabIndex="-1"
                   aria-disabled="true"
+                  to='/account'
                 >
                   اعدادات الحساب
                   <AccountIcon />
-                </a>
+                </Link>
               </li>
             </ul>
             <BaseAutocompleteForm type="text" label="ابحث ..."/>

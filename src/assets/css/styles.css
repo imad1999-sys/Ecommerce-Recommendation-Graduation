@@ -309,7 +309,7 @@
 }
 .auto-input-section .auto-label {
   position: relative;
-  left: 1rem;
+  left: 9rem;
   top: 0.9rem;
   padding: 0 0.5rem;
   font-family: "Baloo 2";
@@ -322,7 +322,7 @@
 .auto-input:not(:placeholder-shown).auto-input:not(:focus) ~ .auto-label {
   top: -0.5rem;
   font-size: 0.8rem;
-  left: 0.8rem;
+  left: 9rem;
 }
 /*end authentication styles*/
 
@@ -470,7 +470,13 @@
     padding-bottom: 10px;
     justify-content: center;
   }
-  .stores-container {
+  .stores-container,
+  .account-page-container,
+  .profile-container,
+  .reviews-container,
+  .favorites-container,
+  .prev-products-container,
+  .alarm-container {
     padding: 10px;
   }
 }
@@ -482,7 +488,13 @@
     padding-bottom: 10px;
     justify-content: center;
   }
-  .stores-container {
+  .stores-container,
+  .account-page-container,
+  .profile-container,
+  .reviews-container,
+  .favorites-container,
+  .prev-products-container,
+  .alarm-container {
     padding: 15px;
   }
 }
@@ -494,7 +506,13 @@
     padding-bottom: 10px;
     justify-content: center;
   }
-  .stores-container {
+  .stores-container,
+  .account-page-container,
+  .profile-container,
+  .reviews-container,
+  .favorites-container,
+  .prev-products-container,
+  .alarm-container {
     padding: 18px;
   }
 }
@@ -506,7 +524,13 @@
     padding-bottom: 10px;
     justify-content: center;
   }
-  .stores-container {
+  .stores-container,
+  .account-page-container,
+  .profile-container,
+  .reviews-container,
+  .favorites-container,
+  .prev-products-container,
+  .alarm-container {
     padding: 22px;
   }
 }
@@ -518,7 +542,13 @@
     padding-bottom: 10px;
     justify-content: center;
   }
-  .stores-container {
+  .stores-container,
+  .account-page-container,
+  .profile-container,
+  .reviews-container,
+  .favorites-container,
+  .prev-products-container,
+  .alarm-container {
     padding: 25px;
   }
 }
@@ -654,13 +684,14 @@
 .tabs-section,
 .rated-container,
 .product-type-section,
-.card-offer-section {
+.card-offer-section,
+.account-page-container {
   direction: rtl;
 }
 /* end details page styles */
 
 /*start spinner styles*/
-.spinner-section{
+.spinner-section {
   display: flex;
   justify-content: center;
   text-align: center;
@@ -669,3 +700,12 @@
   height: 100vh;
 }
 /*end spinner styles*/
+
+/*start profile nav style*/
+.profile-container {
+  left: 50%;
+  top: 50%;
+  transform: translate(0, 0);
+  text-align: center;
+}
+/*end profile nav style*/
