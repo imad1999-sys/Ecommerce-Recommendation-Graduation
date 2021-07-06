@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
-import TableHead from '@material-ui/core/TableHead';
+import TableHead from "@material-ui/core/TableHead";
 import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
 import TableFooter from "@material-ui/core/TableFooter";
@@ -15,6 +15,8 @@ import FirstPageIcon from "@material-ui/icons/FirstPage";
 import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
 import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import LastPageIcon from "@material-ui/icons/LastPage";
+import Fab from "@material-ui/core/Fab";
+import EditIcon from "../../../icons/EditIcon";
 
 const useStyles1 = makeStyles((theme) => ({
   root: {
@@ -97,7 +99,9 @@ function createData(name, calories, fat) {
   return { name, calories, fat };
 }
 
-
+function printRow(name) {
+  console.log(name);
+}
 const rows = [
   createData("Cupcake", 305, 3.7),
   createData("Donut", 452, 25.0),
@@ -115,14 +119,26 @@ const rows = [
 ].sort((a, b) => (a.calories < b.calories ? -1 : 1));
 
 const columns = [
-  { id: 'dessert', label: 'Dessert (100g serving)', minWidth: 170 , align: 'left' },
-  { id: 'calories', label: 'Calories', minWidth: 100 , align: 'left' },
   {
-    id: 'fat',
-    label: 'Fat',
+    id: "dessert",
+    label: "التحلاية",
     minWidth: 170,
-    align: 'left',
-    format: (value) => value.toLocaleString('en-US'),
+    align: "left",
+  },
+  { id: "calories", label: "السعرات الحرارية", minWidth: 100, align: "left" },
+  {
+    id: "fat",
+    label: "نسبة الدهون",
+    minWidth: 170,
+    align: "left",
+    format: (value) => value.toLocaleString("en-US"),
+  },
+  {
+    id: "actions",
+    label: "الخيارات",
+    minWidth: 170,
+    align: "left",
+    format: (value) => value.toLocaleString("en-US"),
   },
 ];
 
@@ -159,7 +175,11 @@ export default function CustomPaginationActionsTable() {
               <TableCell
                 key={column.id}
                 align={column.align}
-                style={{ minWidth: column.minWidth , backgroundColor: 'black' , color : 'white' }}
+                style={{
+                  minWidth: column.minWidth,
+                  backgroundColor: "black",
+                  color: "white",
+                }}
               >
                 {column.label}
               </TableCell>
@@ -180,6 +200,22 @@ export default function CustomPaginationActionsTable() {
               </TableCell>
               <TableCell style={{ width: 160 }} align="left">
                 {row.fat}
+              </TableCell>
+              <TableCell style={{ width: 160 }} align="left">
+                <Fab
+                  onClick={(e) => printRow(row.name)}
+                  color="secondary"
+                  aria-label="edit"
+                >
+                  <EditIcon />
+                </Fab>
+                <Fab
+                  onClick={(e) => printRow(row.name)}
+                  color="secondary"
+                  aria-label="edit"
+                >
+                  <EditIcon />
+                </Fab>
               </TableCell>
             </TableRow>
           ))}

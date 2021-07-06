@@ -477,7 +477,13 @@ v .form-control .list-auto {
     padding-bottom: 10px;
     justify-content: center;
   }
-  .stores-container {
+  .stores-container,
+  .account-page-container,
+  .profile-container,
+  .reviews-container,
+  .favorites-container,
+  .prev-products-container,
+  .alarm-container {
     padding: 10px;
   }
 }
@@ -489,7 +495,13 @@ v .form-control .list-auto {
     padding-bottom: 10px;
     justify-content: center;
   }
-  .stores-container {
+  .stores-container,
+  .account-page-container,
+  .profile-container,
+  .reviews-container,
+  .favorites-container,
+  .prev-products-container,
+  .alarm-container {
     padding: 15px;
   }
 }
@@ -501,7 +513,13 @@ v .form-control .list-auto {
     padding-bottom: 10px;
     justify-content: center;
   }
-  .stores-container {
+  .stores-container,
+  .account-page-container,
+  .profile-container,
+  .reviews-container,
+  .favorites-container,
+  .prev-products-container,
+  .alarm-container {
     padding: 18px;
   }
 }
@@ -513,7 +531,13 @@ v .form-control .list-auto {
     padding-bottom: 10px;
     justify-content: center;
   }
-  .stores-container {
+  .stores-container,
+  .account-page-container,
+  .profile-container,
+  .reviews-container,
+  .favorites-container,
+  .prev-products-container,
+  .alarm-container {
     padding: 22px;
   }
 }
@@ -525,7 +549,13 @@ v .form-control .list-auto {
     padding-bottom: 10px;
     justify-content: center;
   }
-  .stores-container {
+  .stores-container,
+  .account-page-container,
+  .profile-container,
+  .reviews-container,
+  .favorites-container,
+  .prev-products-container,
+  .alarm-container {
     padding: 25px;
   }
 }
@@ -667,7 +697,8 @@ v .form-control .list-auto {
 .tabs-section,
 .rated-container,
 .product-type-section,
-.card-offer-section {
+.card-offer-section,
+.account-page-container {
   direction: rtl;
 }
 /* end details page styles */
@@ -936,3 +967,13 @@ h3:nth-child(2) {
   }
 }
 /*end base cards horizontal style*/
+
+/*start profile nav style*/
+.profile-container {
+  left: 50%;
+  top: 50%;
+  transform: translate(0, 0);
+  text-align: center;
+}
+/*end profile nav style*/
+

@@ -13,6 +13,9 @@ import LaptopCategoryPage from "../pages/categorycarouselpages/laptopcategorypag
 import MobileCategoryPage from "../pages/categorycarouselpages/mobilecategorypage/index.jsx";
 import TVCategoryPage from "../pages/categorycarouselpages/tvcategorypage/index.jsx";
 import VideoCategoryPage from "../pages/categorycarouselpages/videocategorypage/index.jsx";
+import AccountPageCompleted from "../pages/accountpage/index.jsx";
+import UpdateAccountPage from "../pages/updateaccountpage/index.jsx";
+import AddStoresPageDashboardCompleted from "../pages/addstorespagedashboard/index.jsx";
 const Routes = () => {
   return (
     <div>
@@ -31,6 +34,9 @@ const Routes = () => {
         <Route exact path="/mobile" component={MobileCategoryPage} />
         <Route exact path="/tv" component={TVCategoryPage} />
         <Route exact path="/video" component={VideoCategoryPage} />
+        <Route exact path="/account" component={AccountPageCompleted} />
+        <Route exact path="/update-account" component={UpdateAccountPage} />
+        <Route exact path="/add-store" component={AddStoresPageDashboardCompleted} />
       </Router>
     </div>
   );
