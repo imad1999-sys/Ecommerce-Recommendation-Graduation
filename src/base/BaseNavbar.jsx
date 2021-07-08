@@ -49,7 +49,7 @@ const BaseNavbar = () => {
               </Link>
             </li>
             <li class="nav-item">
-              <BaseSidebar />
+              <BaseSidebar mobiles="جوالات" accessoire="إكسسوارات"/>
             </li>
           </ul>
           <BaseAutocompleteForm type="text" label="ابحث ..." />

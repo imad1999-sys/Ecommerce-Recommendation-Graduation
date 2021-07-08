@@ -36,7 +36,15 @@ export default class MainPage extends Component {
               </Paper>
             </div>
           </div>
-          <DividerAndTitleSection section="الأكثر تصنيفا" />
+          <DividerAndTitleSection section="الأكثر مشاهدة" />
+          <div className="row">
+            <div className="carousel-of-cards">
+              <Paper elevation={10}>
+                <CarouselOfCards />
+              </Paper>
+            </div>
+          </div>
+          <DividerAndTitleSection section="المضافة حديثا" />
           <div className="row">
             <div className="carousel-of-cards">
               <Paper elevation={10}>

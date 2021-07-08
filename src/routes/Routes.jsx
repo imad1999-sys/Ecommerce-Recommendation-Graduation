@@ -25,9 +25,9 @@ const Routes = () => {
         <Route exact path="/signup" component={SignupPage} />
         <Route exact path="/home" component={MainPageCompleted} />
         <Route exact path="/stores" component={StoresPageCompleted} />
-        <Route exact path="/details" component={DetailsPageCompleted} />
+        <Route exact path="/details/:id" component={DetailsPageCompleted} />
         <Route exact path="/dashboard" component={DashboardPageCompleted} />
-        <Route exact path="/category" component={CategoryPage} />
+        <Route exact path="/category/:name" component={CategoryPage} />
         <Route exact path="/audio" component={AudioCategoryPage} />
         <Route exact path="/camera" component={CameraCategoryPage} />
         <Route exact path="/laptop" component={LaptopCategoryPage} />

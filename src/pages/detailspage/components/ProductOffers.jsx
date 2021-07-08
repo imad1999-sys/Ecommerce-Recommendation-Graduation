@@ -2,20 +2,16 @@ import React from "react";
 import "../../../assets/css/styles.css";
 import CardOffer from "./CardOffer.jsx";
 import amazon from "../../../assets/images/amazon.png";
-const ProductOffers = () => {
+const ProductOffers = (props) => {
   return (
     <div className="product-type-section">
-        <p className="baloo-chettan-25">عروض المنتج من متاجر أخرى</p>
+        <p className="baloo-chettan-25">روابط المتجر و المنتج : </p>
       <div className="row">
         <CardOffer
           image={amazon}
-          price="1000000"
-        />
-      </div>
-      <div className="row">
-        <CardOffer
-          image={amazon}
-          price="1000000"
+          siteName={props.siteName}
+          title={props.title}
+          productUrl={props.productUrl}
         />
       </div>
     </div>

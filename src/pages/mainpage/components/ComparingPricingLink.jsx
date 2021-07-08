@@ -1,12 +1,13 @@
 import React from "react";
 import PricingTag from "../../../icons/PriceTagIcon.jsx";
 import "../../../assets/css/styles.css";
-const comparingPricingLink = () => {
+import { Link } from "react-router-dom";
+const ComparingPricingLink = (props) => {
   return (
-    <a className="btn btn-success carousel-link baloo-15" href="#">
-      قارن الاسعار
+    <Link className="btn btn-success carousel-link baloo-15" to={props.link}>
+      {props.linkText}
       <PricingTag />
-    </a>
+    </Link>
   );
 };
-export default comparingPricingLink;
+export default ComparingPricingLink;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import BaseCard from "../../../base/BaseCard.jsx";
 import FloatingActionButton from "../../../base/BaseFloatingActionButton.jsx";
 import ArrowCircleLeft from "../../../icons/ArrowCircleLeft.jsx";
@@ -6,146 +6,41 @@ import ArrowCircleRight from "../../../icons/ArrowCircleRight.jsx";
 import labtop from "../../../assets/images/laptop.jpg";
 import "../../../assets/css/styles.css";
 import "../../../assets/css/fonts.css";
+import { fetchAllProducts } from "../../../API/urls/ApiUrls.jsx";
 const CarouselOfCompanies = () => {
+  let result = localStorage.getItem("user-info");
+  let resultJson = JSON.parse(result);
+  console.log(resultJson.response.token);
+  const [data, setData] = useState([]);
+  useEffect(async () => {
+    let token = "Bearer " + resultJson.response.token;
+    let result = await fetch(fetchAllProducts, {
+      headers: {
+        Authorization: token,
+      },
+    });
+    result = await result.json();
+    setData(result.response.products.content);
+    console.log(result.response.products.content);
+  }, []);
   return (
     <div>
-      <div
-        id="carouselExampleControls"
-        class="carousel slide"
-        data-bs-ride="carousel"
-      >
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div className="container-for-companies">
-              <div className="row gx-5">
-                <div className="col-sm">
-                  <BaseCard
-                    image={labtop}
-                    name="laptop"
-                    price="1500000"
-                    link="/details"
-                  />
-                </div>
-                <div className="col-sm">
-                  <BaseCard
-                    image={labtop}
-                    name="laptop"
-                    price="1500000"
-                    link="/details"
-                  />
-                </div>
-                <div className="col-sm">
-                  <BaseCard
-                    image={labtop}
-                    name="laptop"
-                    price="1500000"
-                    link="/details"
-                  />
-                </div>
-                <div className="col-sm">
-                  <BaseCard
-                    image={labtop}
-                    name="laptop"
-                    price="1500000"
-                    link="/details"
-                  />
-                </div>
-              </div>
+      <div className="container-for-companies">
+        <div className="row">
+          {data.map((item) => (
+            <div className="col p-4">
+              <BaseCard
+                image={item.image}
+                title={item.title}
+                price={item.price}
+                salePrice={item.salePrice}
+                views={item.views}
+                link={"/details/" + item.id}
+                linkText="عرض التفاصيل"
+              />
             </div>
-          </div>
-          <div class="carousel-item">
-            <div className="container-for-companies">
-              <div className="row gx-5">
-                <div className="col-sm">
-                  <BaseCard
-                    image={labtop}
-                    name="laptop"
-                    price="1500000"
-                    link="/details"
-                  />
-                </div>
-                <div className="col-sm">
-                  <BaseCard
-                    image={labtop}
-                    name="laptop"
-                    price="1500000"
-                    link="/details"
-                  />
-                </div>
-                <div className="col-sm">
-                  <BaseCard
-                    image={labtop}
-                    name="laptop"
-                    price="1500000"
-                    link="/details"
-                  />
-                </div>
-                <div className="col-sm">
-                  <BaseCard
-                    image={labtop}
-                    name="laptop"
-                    price="1500000"
-                    link="/details"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div className="container-for-companies">
-              <div className="row gx-5">
-                <div className="col-sm">
-                  <BaseCard
-                    image={labtop}
-                    name="laptop"
-                    price="1500000"
-                    link="/details"
-                  />
-                </div>
-                <div className="col-sm">
-                  <BaseCard
-                    image={labtop}
-                    name="laptop"
-                    price="1500000"
-                    link="/details"
-                  />
-                </div>
-                <div className="col-sm">
-                  <BaseCard
-                    image={labtop}
-                    name="laptop"
-                    price="1500000"
-                    link="/details"
-                  />
-                </div>
-                <div className="col-sm">
-                  <BaseCard
-                    image={labtop}
-                    name="laptop"
-                    price="1500000"
-                    link="/details"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleControls"
-          data-bs-slide="prev"
-        >
-          <FloatingActionButton icon={<ArrowCircleLeft />} />
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleControls"
-          data-bs-slide="next"
-        >
-          <FloatingActionButton icon={<ArrowCircleRight />} />
-        </button>
       </div>
     </div>
   );

@@ -8,8 +8,11 @@ import CameraIcon from "../icons/CameraIcon.jsx";
 import TVIcon from "../icons/TVIcon.jsx";
 import VideoGameIcon from "../icons/VideoGameIcon.jsx";
 import AudioIcon from "../icons/AudioIcon.jsx";
-import { Link } from "react-router-dom";
-const BaseSidebar = () => {
+import { Link, useParams } from "react-router-dom";
+const BaseSidebar = (props) => {
+  const { mobiles } = useParams();
+  const { accessoire } = useParams();
+  console.log(mobiles + accessoire);
   return (
     <div>
       <a
@@ -36,39 +39,21 @@ const BaseSidebar = () => {
         <div class="offcanvas-body">
           <ul class="list-group category-group">
             <li class="list-group-item options-section">
-              <Link to="/mobile" className="title">
+              <Link to={"/category/" + props.mobiles} className="title">
                 <MobileIcon />
-                موبايلات و تابلت و ساعات ذكية
+                {props.mobiles}
               </Link>
             </li>
             <li class="list-group-item options-section">
-              <Link to="/laptop" className="title">
+              <Link to={"/category/" + props.accessoire} className="title">
                 <LaptopIcon />
-                لابتوب
+                {props.accessoire}
               </Link>
             </li>
             <li class="list-group-item options-section">
-              <Link to="/camera" className="title">
+              <Link to="/category/" className="title">
                 <CameraIcon />
                 كاميرات
-              </Link>
-            </li>
-            <li class="list-group-item options-section">
-              <Link to="/tv" className="title">
-                <TVIcon />
-                تلفزيون و فيديو
-              </Link>
-            </li>
-            <li class="list-group-item options-section">
-              <Link to="/video" className="title">
-                <VideoGameIcon />
-                ألعاب و أجهزة فيديو
-              </Link>
-            </li>
-            <li class="list-group-item options-section">
-              <Link to="/audio" className="title">
-                <AudioIcon />
-                الصوتيات
               </Link>
             </li>
           </ul>

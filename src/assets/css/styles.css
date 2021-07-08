@@ -483,7 +483,8 @@ v .form-control .list-auto {
   .reviews-container,
   .favorites-container,
   .prev-products-container,
-  .alarm-container {
+  .alarm-container,
+  .list-section {
     padding: 10px;
   }
 }
@@ -501,7 +502,8 @@ v .form-control .list-auto {
   .reviews-container,
   .favorites-container,
   .prev-products-container,
-  .alarm-container {
+  .alarm-container,
+  .list-section {
     padding: 15px;
   }
 }
@@ -519,7 +521,8 @@ v .form-control .list-auto {
   .reviews-container,
   .favorites-container,
   .prev-products-container,
-  .alarm-container {
+  .alarm-container,
+  .list-section {
     padding: 18px;
   }
 }
@@ -537,7 +540,8 @@ v .form-control .list-auto {
   .reviews-container,
   .favorites-container,
   .prev-products-container,
-  .alarm-container {
+  .alarm-container,
+  .list-section {
     padding: 22px;
   }
 }
@@ -555,7 +559,8 @@ v .form-control .list-auto {
   .reviews-container,
   .favorites-container,
   .prev-products-container,
-  .alarm-container {
+  .alarm-container,
+  .list-section {
     padding: 25px;
   }
 }
@@ -711,6 +716,9 @@ v .form-control .list-auto {
   align-items: center;
   width: 100%;
   height: 100vh;
+}
+.sale-price{
+  text-decoration: line-through;
 }
 /*end spinner styles*/
 
@@ -884,7 +892,7 @@ h3:nth-child(2) {
   }
 
   .horizontal-container {
-    background-color: rgb(50 58 66);
+    background-color: #ecf0f1;
     width: 75%;
     height: 80%;
     display: flex;

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { getUserInfo } from "../../../API/urls/ApiUrls";
 import AccountIcon from "../../../icons/AccountIcon";
 import BellIcon from "../../../icons/BellIcon";
 import HistoryIcon from "../../../icons/HistoryIcon";
@@ -23,6 +24,7 @@ const AccountPageNavs = () => {
             role="tab"
             aria-controls="home"
             aria-selected="true"
+            // onClick={getUserData}
           >
             <AccountIcon />
             الملف الشخصي
@@ -56,21 +58,6 @@ const AccountPageNavs = () => {
           >
             <StarIcon />
             قائمتي المفضلة
-          </button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button
-            class="nav-link"
-            id="fav-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#fav"
-            type="button"
-            role="tab"
-            aria-controls="fav"
-            aria-selected="false"
-          >
-            <HistoryIcon />
-            منتجات سابقة
           </button>
         </li>
         <li class="nav-item" role="presentation">
@@ -113,14 +100,6 @@ const AccountPageNavs = () => {
           aria-labelledby="contact-tab"
         >
           <FavoritesNav />
-        </div>
-        <div
-          class="tab-pane fade"
-          id="fav"
-          role="tabpanel"
-          aria-labelledby="fav-tab"
-        >
-          <PrevProductsNav />
         </div>
         <div
           class="tab-pane fade"

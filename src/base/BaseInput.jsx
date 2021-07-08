@@ -9,7 +9,8 @@ const BaseInput = (props) => {
         id="search"
         autoComplete="off"
         className="auto-input baloo-15"
-        placeholder=" "
+        onChange={props.onChange}
+        value={props.value}
       />
       <label className="auto-label baloo-15">{props.label}</label>
     </div>

@@ -1,14 +1,15 @@
 import React from "react";
 import img from "../assets/images/amazon.png";
-import Button from "@material-ui/core/Button";
+import DeleteIcon from "../icons/DeleteIcon.jsx";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import { makeStyles } from "@material-ui/core/styles";
 
 import Checkbox from "@material-ui/core/Checkbox";
 import Favorite from "@material-ui/icons/Favorite";
 import FavoriteBoder from "@material-ui/icons/FavoriteBorder";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../assets/css/styles.css";
+import ComparingPricingLink from "../pages/mainpage/components/ComparingPricingLink";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -57,27 +58,30 @@ const Card = (props) => {
         <img src={props.image} class="card-img-top" alt="..." />
         <div class="card-body">
           <p class="first-card-text">
-            <small className="small-text baloo-20">{props.name}</small>
+            <small className="small-text baloo-20">{props.title}</small>
           </p>
+          <h5 class="card-title sale-price">SAR {props.salePrice}</h5>
           <h5 class="card-title">SAR {props.price}</h5>
+          <p>{props.views}</p>
         </div>
-        <ButtonGroup
-          orientation="vertical"
-          color="#444"
-          aria-label="vertical contained primary button group"
-          variant="text"
-        >
-          <Link to={props.link} className={classes.button}>
-            {" "}
-            <img
-              src={img}
-              class="card-img-top"
-              alt="..."
-              className={classes.img}
-            />
-            Book now
+        {props.isFav ? (
+          <Link
+            className="btn btn-danger carousel-link baloo-15"
+            onClick={props.onClick}
+          >
+            {props.linkText}
+            <DeleteIcon />
           </Link>
-        </ButtonGroup>
+        ) : (
+          <ButtonGroup
+            orientation="vertical"
+            color="#444"
+            aria-label="vertical contained primary button group"
+            variant="text"
+          >
+            <ComparingPricingLink link={props.link} linkText={props.linkText} />
+          </ButtonGroup>
+        )}
       </div>
     </div>
   );
