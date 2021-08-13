@@ -4,7 +4,7 @@ import "../../../assets/css/styles.css";
 const Subtitle = (props) => {
   return (
     <div className="subtitle-section">
-      <div className="subtitle baloo-20">
+      <div className="subtitle tajawal-25">
         <p>{props.subtitle}</p>
       </div>
     </div>

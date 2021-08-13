@@ -1,60 +1,65 @@
 import React, { useState, useEffect } from "react";
+import {
+  deletePricingAlertForUserById,
+  fetchAllPricingAlertForUserAction,
+} from "../../../API/actions/alertactions/AlertActions.jsx";
+import { headers } from "../../../API/tokens/tokens";
 import "../../../assets/css/styles.css";
 import BaseCard from "../../../base/BaseCard";
-import Amazon from "../../../assets/images/amazon.png";
-import { useHistory } from "react-router-dom";
-import { deletePriceAlertById, getPriceAlertForUser } from "../../../API/urls/ApiUrls";
+import DeleteIcon from "../../../icons/DeleteIcon.jsx";
+import InfoIcon from "../../../icons/InfoIcon.jsx";
+import PriceTagIcon from "../../../icons/PriceTagIcon.jsx";
 const AlertNav = () => {
-  let result = localStorage.getItem("user-info");
-  let resultJson = JSON.parse(result);
-  console.log(resultJson.response.token);
-  const [data, setData] = useState([]);
-  const { history } = useHistory();
-  async function getData() {
-    let token = "Bearer " + resultJson.response.token;
-    let result = await fetch(getPriceAlertForUser, {
-      headers: {
-        Authorization: token,
-      },
+  const [pricingAlerts, setPricingAlerts] = useState([]);
+  const getPricingAlerts = () => {
+    fetchAllPricingAlertForUserAction("", headers).then((response) => {
+      console.log(response);
+      if (response.status < 300) {
+        if (response.data.response.PriceAlerts != null) {
+          alert("تم جلب تنبيهات المستخدم بنجاح");
+        }
+        setPricingAlerts(response.data.response.PriceAlerts);
+      } else {
+        alert("حدث خطأ أثناء عملية الجلب");
+      }
     });
-    result = await result.json();
-    setData(result.response.PriceAlerts);
-    console.log(result.response.PriceAlerts);
-  }
-  async function deleteFavorite(id) {
-    let token = localStorage.getItem("user-info");
-    let tokenJson = JSON.parse(token);
-    let t = "Bearer " + tokenJson.response.token;
-    console.log(tokenJson.response.token);
-    let result = await fetch(deletePriceAlertById + id, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: t,
-      },
+  };
+  const goToDetailsPage = (id) => {
+    window.location.href = "/details/" + id;
+  };
+  const deletePricingAlertById = (id) => {
+    deletePricingAlertForUserById(id, headers).then((response) => {
+      console.log(response);
+      if (response.status < 300) {
+        alert('تم عملية حذف التنبيه بنجاح');
+        getPricingAlerts();
+      } else {
+        alert("حدث خطأ أثناء عملية الحذق");
+      }
     });
-    getData();
-  }
-
-  useEffect(async () => {
-    getData();
+  };
+  useEffect(() => {
+    getPricingAlerts();
   }, []);
-
   return (
     <div className="alarm-container">
-      <div className="row">
-        {data.map((item) => (
-          <div className="col p-4">
+      <div className="row row-cols-1 row-cols-md-2 g-4 gx-5">
+        {pricingAlerts.map((pricingAlert) => (
+          <div className="col-sm">
             <BaseCard
-              image={item.image}
-              title={item.title}
-              price={item.price}
-              salePrice={item.salePrice}
-              views={item.views}
-              isFav={true}
-              linkText="حذف"
-              onClick={() => deleteFavorite(item.id)}
+              image={pricingAlert.image}
+              title={pricingAlert.title}
+              price={pricingAlert.price}
+              priceTag={<PriceTagIcon />}
+              salePrice={pricingAlert.alertPrice}
+              onClick={() => goToDetailsPage(pricingAlert.productId)}
+              btnText="عرض التفاصيل"
+              isFav={false}
+              isAlert={true}
+              icon={<InfoIcon />}
+              alertIcon={<DeleteIcon />}
+              alertBtnText="حذف من التنبيهات"
+              onClickAlert={() => deletePricingAlertById(pricingAlert.id)}
             />
           </div>
         ))}

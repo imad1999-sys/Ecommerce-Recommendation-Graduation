@@ -7,12 +7,12 @@ const splashScreen = () => {
   return (
     <div className="landing-page">
       <div className="page-content">
-        <h1 className="title-landing baloo-chettan-30">
+        <h1 className="title-landing tajawal-25">
           أهلا بكم في البيت الالكتروني
         </h1>
-        <p className="text-landing baloo-20">
+        <p className="text-landing tajawal-15">
           لتصفح المتجر{" "}
-          <Link to="/login" className="link-landing baloo-20">
+          <Link to="/login" className="link-landing .tajawal-15">
             قم بتسجيل الدخول
             <SigninIcon />
           </Link>

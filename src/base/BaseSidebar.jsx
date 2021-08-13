@@ -5,9 +5,6 @@ import CategoryIcon from "../icons/CategoryIcon.jsx";
 import LaptopIcon from "../icons/LaptopIcon.jsx";
 import MobileIcon from "../icons/MobileIcon.jsx";
 import CameraIcon from "../icons/CameraIcon.jsx";
-import TVIcon from "../icons/TVIcon.jsx";
-import VideoGameIcon from "../icons/VideoGameIcon.jsx";
-import AudioIcon from "../icons/AudioIcon.jsx";
 import { Link, useParams } from "react-router-dom";
 const BaseSidebar = (props) => {
   const { mobiles } = useParams();
@@ -26,7 +23,7 @@ const BaseSidebar = (props) => {
       </a>
 
       <div
-        class="offcanvas offcanvas-start"
+        class="offcanvas offcanvas-start tajawal-15"
         tabindex="-1"
         id="offcanvasExample"
         aria-labelledby="offcanvasExampleLabel"

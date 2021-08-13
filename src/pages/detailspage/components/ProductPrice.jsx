@@ -2,7 +2,12 @@ import React, { useEffect } from "react";
 import "../../../assets/css/styles.css";
 import "../../../assets/css/fonts.css";
 import HeartIcon from "../../../icons/HeartIcon.jsx";
-import { addFavoriteApiUrl, addPriceAlert, logApiUrl } from "../../../API/urls/ApiUrls";
+import {
+  addFavoriteApiUrl,
+  addPriceAlert,
+  logApiUrl,
+} from "../../../API/urls/ApiUrls";
+import BellIcon from "../../../icons/BellIcon";
 const ProductPrice = (props) => {
   async function SetPriceAlert() {
     setLogForPricingAlert();
@@ -96,14 +101,14 @@ const ProductPrice = (props) => {
   }
   return (
     <div className="price-container">
-      <p className="baloo-chettan-25">السعر & تنبيهات الاسعار & المفضلة</p>
+      <p className="tajawal-25">السعر & تنبيهات الاسعار & المفضلة</p>
       <div className="row">
-        <p className="baloo-chettan-25 sale-price">
+        <p className="tajawal-15 sale-price">
           السعر : {props.price} {props.currency}
         </p>
       </div>
       <div className="row">
-        <p className="baloo-chettan-25">
+        <p className="tajawal-15">
           سعر المبيع : {props.salePrice} {props.currency}
         </p>
       </div>
@@ -113,20 +118,20 @@ const ProductPrice = (props) => {
         </div> */}
         <div className="col-6">
           <button
-            class="btn btn-outline-danger baloo-20"
+            class="btn btn-outline-danger tajawal-25"
             onClick={SetPriceAlert}
           >
+            <BellIcon />
             تنبيه الاسعار
-            <HeartIcon />
           </button>
         </div>
         <div className="col-6">
           <button
-            class="btn btn-outline-primary baloo-20"
+            class="btn btn-outline-primary tajawal-25"
             onClick={setFavorites}
           >
-            إضافة الى المفضلة
             <HeartIcon />
+            إضافة الى المفضلة
           </button>
         </div>
       </div>

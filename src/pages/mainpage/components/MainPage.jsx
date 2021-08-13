@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import CarouselOfMainPage from "./CarouselOfMainPage.jsx";
 import CarouselOfCompanies from "./CarouselOfCompanies.jsx";
 import { Link } from "react-router-dom";
 import Paper from "@material-ui/core/Paper";
@@ -20,19 +19,12 @@ export default class MainPage extends Component {
             <div className="carousel-of-companies-section">
               <Paper elevation={10}>
                 <div className="stores-home-page">
-                  <p className="title baloo-20">المتاجر في البيت الإلكتروني</p>
-                  <Link to="/stores" className="see-all-link baloo-20">
+                  <p className="title tajawal-15">المتاجر في البيت الإلكتروني</p>
+                  <Link to="/stores" className="see-all-link tajawal-15">
                     شاهد كل المتاجر
                   </Link>
                 </div>
                 <CarouselOfCompanies />
-              </Paper>
-            </div>
-          </div>
-          <div className="row">
-            <div className="carousel-of-main-page-section">
-              <Paper elevation={10}>
-                <CarouselOfMainPage />
               </Paper>
             </div>
           </div>

@@ -1,42 +1,47 @@
 import React, { useState, useEffect } from "react";
 import BaseCard from "../../../base/BaseCard.jsx";
-import FloatingActionButton from "../../../base/BaseFloatingActionButton.jsx";
-import ArrowCircleLeft from "../../../icons/ArrowCircleLeft.jsx";
-import ArrowCircleRight from "../../../icons/ArrowCircleRight.jsx";
-import labtop from "../../../assets/images/laptop.jpg";
 import "../../../assets/css/styles.css";
 import "../../../assets/css/fonts.css";
-import { fetchAllProducts } from "../../../API/urls/ApiUrls.jsx";
+import { fetchAllProductsAction } from "../../../API/actions/productactions/ProductActions.jsx";
+import InfoIcon from "../../../icons/InfoIcon.jsx";
+import PriceTagIcon from "../../../icons/PriceTagIcon.jsx";
+import EyeIcon from "../../../icons/EyeIcon.jsx";
+import { headers } from "../../../API/tokens/tokens.jsx";
 const CarouselOfCompanies = () => {
-  let result = localStorage.getItem("user-info");
-  let resultJson = JSON.parse(result);
-  console.log(resultJson.response.token);
-  const [data, setData] = useState([]);
-  useEffect(async () => {
-    let token = "Bearer " + resultJson.response.token;
-    let result = await fetch(fetchAllProducts, {
-      headers: {
-        Authorization: token,
-      },
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    fetchAllProductsAction("", headers).then((response) => {
+      console.log(response.data.response.products.content);
+      if (response.status < 300) {
+        alert("تم جلب كافة المنتجات بنجاح");
+        setProducts(response.data.response.products.content);
+      } else {
+        alert("حدث خطأ أثناء عملية الجلب");
+      }
     });
-    result = await result.json();
-    setData(result.response.products.content);
-    console.log(result.response.products.content);
   }, []);
+  const goToDetailsPage = (id) => {
+    window.location.href = "/details/" + id;
+  };
   return (
     <div>
-      <div className="container-for-companies">
-        <div className="row">
-          {data.map((item) => (
-            <div className="col p-4">
+      <div className="container-for-cards">
+        <div className="row row-cols-1 row-cols-md-2 g-4 gx-5">
+          {products.map((product) => (
+            <div className="col-sm">
               <BaseCard
-                image={item.image}
-                title={item.title}
-                price={item.price}
-                salePrice={item.salePrice}
-                views={item.views}
-                link={"/details/" + item.id}
-                linkText="عرض التفاصيل"
+                image={product.image}
+                title={product.title}
+                price={product.price}
+                priceTag={<PriceTagIcon />}
+                salePrice={product.salePrice}
+                views={product.views}
+                viewTag={<EyeIcon />}
+                onClick={() => goToDetailsPage(product.id)}
+                btnText="عرض التفاصيل"
+                isFav = {false}
+                isAlert = {false}
+                icon={<InfoIcon />}
               />
             </div>
           ))}

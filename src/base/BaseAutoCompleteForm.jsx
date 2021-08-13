@@ -54,7 +54,7 @@ const BaseAutocompleteForm = (props) => {
           id="search"
           list="datalistOptions"
           autoComplete="off"
-          className="auto-form-input baloo-15"
+          className="auto-form-input tajawal-15"
           placeholder=" "
           value={valueOfSearch}
           onChange={(e) => autoComplete(e.target.value)}
@@ -65,7 +65,7 @@ const BaseAutocompleteForm = (props) => {
           ))}
         </datalist>
         ; ;
-        <label className="auto-form-label baloo-15" for="search">
+        <label className="auto-form-label tajawal-15" for="search">
           {props.label}
         </label>
       </div>

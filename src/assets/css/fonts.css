@@ -1,27 +1,41 @@
-@font-face{
-    font-family: 'Baloo 2';
-    src: url("../fonts/Baloo2-Regular.ttf");
-    font-weight: 400;
-    font-style: normal;
+@font-face {
+  font-family: "Baloo 2";
+  src: url("../fonts/Baloo2-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
 }
-@font-face{
-    font-family: 'Baloo Chettan 2';
-    src: url("../fonts/BalooChettan2-Bold.ttf");
+@font-face {
+  font-family: "Baloo Chettan 2";
+  src: url("../fonts/BalooChettan2-Bold.ttf");
 }
-
-.baloo-chettan-30{
-    font-family: 'Baloo Chettan 2';
-    font-size: 30px;
+@font-face {
+  font-family: "Tajawal";
+  src: url("../fonts/Tajawal-Light.ttf");
+  font-weight: 300;
+  font-style: normal;
 }
-.baloo-chettan-25{
-    font-family: 'Baloo Chettan 2';
-    font-size: 25px;
+.baloo-chettan-30 {
+  font-family: "Baloo Chettan 2";
+  font-size: 30px;
 }
-.baloo-20{
-    font-family: 'Baloo 2';
-    font-size: 20px;
+.baloo-chettan-25 {
+  font-family: "Baloo Chettan 2";
+  font-size: 25px;
 }
-.baloo-15{
-    font-family: 'Baloo 2';
-    font-size: 15px;
+.baloo-20 {
+  font-family: "Baloo 2";
+  font-size: 20px;
+}
+.baloo-15 {
+  font-family: "Baloo 2";
+  font-size: 15px;
+}
+.tajawal-15 {
+  font-family: "Tajawal", sans-serif;
+  font-size: 15px;
+}
+.tajawal-25 {
+  font-family: "Tajawal", sans-serif;
+  font-size: 25px;
+  font-weight: 700;
 }

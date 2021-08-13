@@ -8,7 +8,7 @@ const baseButton = (props) => {
       <div className="d-grid gap-2 col-6 mx-auto">
         <Link
           onClick={props.onClick}
-          className="btn btn-outline-primary btn-link baloo-20"
+          className="btn btn-outline-primary btn-link tajawal-15"
           type="button"
         >
           {props.text} {props.icon}

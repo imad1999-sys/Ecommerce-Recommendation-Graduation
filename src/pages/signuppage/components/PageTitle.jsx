@@ -5,7 +5,7 @@ import "../../../assets/css/fonts.css";
 const PageTitle = (props) => {
     return (
       <div className="title-section">
-        <p className="title baloo-chettan-30">{props.title}</p>
+        <p className="title tajawal-25">{props.title}</p>
       </div>
     );
 }

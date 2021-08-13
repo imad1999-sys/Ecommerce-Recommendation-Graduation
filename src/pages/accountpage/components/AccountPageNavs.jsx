@@ -10,10 +10,11 @@ import FavoritesNav from "./FavoritesNav";
 import PrevProductsNav from "./PrevProductsNav";
 import ProfileNav from "./ProfileNav";
 import ReviewsNav from "./ReviewsNav";
+import "../../../assets/css/fonts.css";
 const AccountPageNavs = () => {
   return (
     <div>
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <ul class="nav nav-tabs tajawal-25" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
           <button
             class="nav-link active"

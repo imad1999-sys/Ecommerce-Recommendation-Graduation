@@ -151,12 +151,9 @@
   padding: 20px;
 }
 .link-section .link-text {
-  font-family: "Baloo 2";
   font-size: 24px;
 }
 .button-section .btn-link {
-  font-family: "Baloo 2";
-  font-size: 18px;
   text-decoration: none;
   margin-bottom: 25px;
   margin-top: 10px;
@@ -168,16 +165,13 @@
 .link,
 .copyright-link {
   text-decoration: none;
-  font-family: "Baloo 2";
 }
 .about-us-text,
 .copyright {
-  font-family: "Baloo 2";
   font-size: 20px;
   direction: rtl;
 }
 .text-capitalize {
-  font-family: "Baloo 2";
   font-size: 28px;
   color: #2c3e50;
 }
@@ -253,7 +247,6 @@ v .form-control .list-auto {
   height: 100%;
   border: 2px soild #000000;
   border-radius: 0.4rem;
-  font-family: "Baloo 2";
   font-size: 15px;
   color: white;
   outline: none;
@@ -301,7 +294,6 @@ v .form-control .list-auto {
   height: 100%;
   border: 2px soild #000000;
   border-radius: 0.4rem;
-  font-family: "Baloo 2";
   font-size: 15px;
   color: black;
   outline: none;
@@ -319,7 +311,6 @@ v .form-control .list-auto {
   left: 9rem;
   top: 0.9rem;
   padding: 0 0.5rem;
-  font-family: "Baloo 2";
   color: black;
   cursor: text;
   transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
@@ -377,6 +368,12 @@ v .form-control .list-auto {
   display: flex;
   justify-content: center;
 }
+.base-card .c-title{
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
 .container-for-companies,
 .container-for-cards {
   padding: 120px;
@@ -426,14 +423,12 @@ v .form-control .list-auto {
 }
 .search-bar {
   margin: 10px;
-  font-family: "Baloo 2";
   text-align: end;
 }
 .application {
   background-color: #dfe6e9;
 }
 .page-title .stores {
-  font-family: "Baloo 2";
   font-size: 30px;
   font-weight: 700;
 }
@@ -450,7 +445,6 @@ v .form-control .list-auto {
 }
 .options-section .title {
   text-decoration: none;
-  font-family: "Baloo 2";
   font-size: 20px;
   text-align: center;
   display: inline-block;
@@ -477,6 +471,9 @@ v .form-control .list-auto {
     padding-bottom: 10px;
     justify-content: center;
   }
+  .container-for-cards {
+    padding-left: 85px;
+  }
   .stores-container,
   .account-page-container,
   .profile-container,
@@ -484,18 +481,23 @@ v .form-control .list-auto {
   .favorites-container,
   .prev-products-container,
   .alarm-container,
-  .list-section {
+  .list-section,
+  .table-section,
+  .grid-of-card-dashboard{
     padding: 10px;
   }
 }
 @media (min-width: 576px) {
-  .grid-of-stores-container {
+  .grid-of-stores-container{
     padding-left: 10px;
     padding-right: 70px;
     padding-top: 10px;
     padding-bottom: 10px;
     justify-content: center;
   }
+  .container-for-cards {
+    padding-left: 130px;
+  }
   .stores-container,
   .account-page-container,
   .profile-container,
@@ -503,7 +505,9 @@ v .form-control .list-auto {
   .favorites-container,
   .prev-products-container,
   .alarm-container,
-  .list-section {
+  .list-section,
+  .table-section,
+  .grid-of-card-dashboard{
     padding: 15px;
   }
 }
@@ -515,6 +519,9 @@ v .form-control .list-auto {
     padding-bottom: 10px;
     justify-content: center;
   }
+  .container-for-cards {
+    padding-left: 90px;
+  }
   .stores-container,
   .account-page-container,
   .profile-container,
@@ -522,18 +529,23 @@ v .form-control .list-auto {
   .favorites-container,
   .prev-products-container,
   .alarm-container,
-  .list-section {
+  .list-section,
+  .table-section,
+  .grid-of-card-dashboard{
     padding: 18px;
   }
 }
 @media (min-width: 992px) {
-  .grid-of-stores-container {
+  .grid-of-stores-container{
     padding-left: 10px;
     padding-right: 110px;
     padding-top: 10px;
     padding-bottom: 10px;
     justify-content: center;
   }
+  .container-for-cards {
+    padding-left: 200px;
+  }
   .stores-container,
   .account-page-container,
   .profile-container,
@@ -541,18 +553,23 @@ v .form-control .list-auto {
   .favorites-container,
   .prev-products-container,
   .alarm-container,
-  .list-section {
+  .list-section,
+  .table-section,
+  .grid-of-card-dashboard{
     padding: 22px;
   }
 }
 @media (min-width: 1200px) {
-  .grid-of-stores-container {
+  .grid-of-stores-container{
     padding-left: 10px;
     padding-right: 140px;
     padding-top: 10px;
     padding-bottom: 10px;
     justify-content: center;
   }
+  .container-for-cards {
+    padding-left: 260px;
+  }
   .stores-container,
   .account-page-container,
   .profile-container,
@@ -560,11 +577,13 @@ v .form-control .list-auto {
   .favorites-container,
   .prev-products-container,
   .alarm-container,
-  .list-section {
+  .list-section,
+  .table-section,
+  .grid-of-card-dashboard{
     padding: 25px;
   }
 }
-.carousel-of-companies-section {
+.carousel-of-companies-section{
   padding: 20px;
 }
 .carousel-of-main-page-section,
@@ -580,7 +599,7 @@ v .form-control .list-auto {
 
 /* start base card styles */
 .base-card {
-  width: 220px;
+  width: 18rem;
   display: "flex";
   text-align: "center";
   padding: 15;
@@ -717,7 +736,7 @@ v .form-control .list-auto {
   width: 100%;
   height: 100vh;
 }
-.sale-price{
+.sale-price {
   text-decoration: line-through;
 }
 /*end spinner styles*/
@@ -985,3 +1004,25 @@ h3:nth-child(2) {
 }
 /*end profile nav style*/
 
+/*start card dashboard style */
+.card-dashboard {
+  max-width: 18rem;
+  display: flex;
+  justify-content: center;
+}
+.btn-delete-dashboard{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+/*end card dashboard style */
+
+/*start list style*/
+.list-group-item .list-span{
+  color: #000000;
+}
+.btn-card{
+  display: flex;
+  justify-content: center;
+}
+
+/*end list style*/

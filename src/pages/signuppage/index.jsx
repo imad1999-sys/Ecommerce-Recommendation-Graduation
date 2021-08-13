@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState } from "react";
 import AvatarImage from "./components/AvatarImage.jsx";
 import SignupIcon from "../../icons/SignupIcon.jsx";
 import Paper from "@material-ui/core/Paper";
@@ -6,7 +6,7 @@ import PageTitle from "./components/PageTitle.jsx";
 import SubTitle from "./components/Subtitle.jsx";
 import BaseInput from "../../base/BaseInput.jsx";
 import BaseButton from "../../base/BaseButton.jsx";
-import { registerApiUrl } from "../../API/urls/ApiUrls.jsx";
+import { registerAction } from "../../API/actions/authenticationactions/AuthActions.jsx";
 const SignupPage = () => {
   const [username, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -14,66 +14,15 @@ const SignupPage = () => {
   const [phoneNumber , setPhoneNumber] = useState("");
   const [address , setAddress] = useState("");
   const [country , setCountry] = useState("");
-  const [errorName, setErrorName] = useState({});
-  const [errorPassword, setErrorPassword] = useState({});
-  const [errorEmail, setErrorEmail] = useState({});
-
-  const formValidation = () => {
-    const errorName = {};
-    const errorPassword = {};
-    const errorEmail = {};
-
-    let isValid = true;
-
-    if (!username) {
-      errorName.nameEmpty = "The name is empty";
-      isValid = false;
+  const signup = () => {
+    let dataJson = { username, email, password , country , phoneNumber , address };
+    let itemJson = JSON.stringify(dataJson);
+    let route = "/home";
+    let headers = {
+      "Content-Type": "application/json",
+      Accept: "application/json",
     }
-    if (username && username.trim().length <= 3) {
-      errorName.nameShort = "The name is too short";
-      isValid = false;
-    }
-
-    if (!password) {
-      errorPassword.passwordEmpty = "The password is empty";
-      isValid = false;
-    }
-    if (password && password.trim().length <= 3) {
-      errorPassword.passwordShort = "invalid password";
-      isValid = false;
-    }
-
-    if (!email) {
-      errorEmail.emailEmpty = "The email is empty";
-      isValid = false;
-    }
-    if (email && !email.includes("@")) {
-      errorEmail.emailValidation = "invalid email";
-      isValid = false;
-    }
-    setErrorName(errorName);
-    setErrorEmail(errorEmail);
-    setErrorPassword(errorPassword);
-
-    return isValid;
-  };
-
-  async function signup() {
-    let item = { username, email, password , country , phoneNumber , address };
-    console.warn(item);
-    let result = await fetch(registerApiUrl, {
-      method: "POST",
-      body: JSON.stringify(item),
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    });
-    const validate = formValidation();
-    if (validate) {
-      result = await result.json();
-      console.warn(result);
-    }
+    registerAction(itemJson , headers , route);
   }
   return (
     <div className="container">

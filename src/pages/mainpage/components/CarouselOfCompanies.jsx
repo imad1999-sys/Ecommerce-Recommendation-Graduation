@@ -24,23 +24,23 @@ const CarouselOfCompanies = () => {
               <div className="row gx-5">
                 <div className="col-sm">
                   <AvatarImage image={amazon} alt="Amazon" />
-                  <p className="name baloo-20">Amazon</p>
+                  <p className="name baloo-20 tajawal-15">Amazon</p>
                 </div>
                 <div className="col-sm">
                   <AvatarImage image={ebay} alt="Ebay" />
-                  <p className="name baloo-20">Ebay</p>
+                  <p className="name baloo-20 tajawal-15">Ebay</p>
                 </div>
                 <div className="col-sm">
                   <AvatarImage image={virgin} alt="Virgin Megastore" />
-                  <p className="name baloo-20">Virgin Megastore</p>
+                  <p className="name baloo-20 tajawal-15">Virgin Megastore</p>
                 </div>
                 <div className="col-sm">
                   <AvatarImage image={virgin} alt="Virgin Megastore" />
-                  <p className="name baloo-20">Virgin Megastore</p>
+                  <p className="name baloo-20 tajawal-15">Virgin Megastore</p>
                 </div>
                 <div className="col-sm">
                   <AvatarImage image={virgin} alt="Virgin Megastore" />
-                  <p className="name baloo-20">Virgin Megastore</p>
+                  <p className="name baloo-20 tajawal-15">Virgin Megastore</p>
                 </div>
               </div>
             </div>
@@ -50,23 +50,23 @@ const CarouselOfCompanies = () => {
               <div className="row gx-5">
                 <div className="col-sm">
                   <AvatarImage image={ikea} alt="ikea" />
-                  <p className="name baloo-20">IKEA</p>
+                  <p className="name baloo-20 tajawal-15">IKEA</p>
                 </div>
                 <div className="col-sm">
                   <AvatarImage image={xcite} alt="Xcite" />
-                  <p className="name baloo-20">Xcite</p>
+                  <p className="name baloo-20 tajawal-15">Xcite</p>
                 </div>
                 <div className="col-sm">
                   <AvatarImage image={ebay} alt="Ebay" />
-                  <p className="name baloo-20">Ebay</p>
+                  <p className="name baloo-20 tajawal-15">Ebay</p>
                 </div>
                 <div className="col-sm">
                   <AvatarImage image={ebay} alt="Ebay" />
-                  <p className="name baloo-20">Ebay</p>
+                  <p className="name baloo-20 tajawal-15">Ebay</p>
                 </div>
                 <div className="col-sm">
                   <AvatarImage image={ebay} alt="Ebay" />
-                  <p className="name baloo-20">Ebay</p>
+                  <p className="name baloo-20 tajawal-15">Ebay</p>
                 </div>
               </div>
             </div>
@@ -76,23 +76,23 @@ const CarouselOfCompanies = () => {
               <div className="row gx-5">
                 <div className="col-sm">
                   <AvatarImage image={ikea} alt="ikea" />
-                  <p className="name baloo-20">IKEA</p>
+                  <p className="name baloo-20 tajawal-15">IKEA</p>
                 </div>
                 <div className="col-sm">
                   <AvatarImage image={xcite} alt="Xcite" />
-                  <p className="name baloo-20">Xcite</p>
+                  <p className="name baloo-20 tajawal-15">Xcite</p>
                 </div>
                 <div className="col-sm">
                   <AvatarImage image={ebay} alt="Ebay" />
-                  <p className="name baloo-20">Ebay</p>
+                  <p className="name baloo-20 tajawal-15">Ebay</p>
                 </div>
                 <div className="col-sm">
                   <AvatarImage image={ebay} alt="Ebay" />
-                  <p className="name baloo-20">Ebay</p>
+                  <p className="name baloo-20 tajawal-15">Ebay</p>
                 </div>
                 <div className="col-sm">
                   <AvatarImage image={ebay} alt="Ebay" />
-                  <p className="name baloo-20">Ebay</p>
+                  <p className="name baloo-20 tajawal-15">Ebay</p>
                 </div>
               </div>
             </div>

@@ -8,11 +8,11 @@ const BaseInput = (props) => {
         type={props.type}
         id="search"
         autoComplete="off"
-        className="auto-input baloo-15"
+        className="auto-input tajawal-15"
         onChange={props.onChange}
         value={props.value}
       />
-      <label className="auto-label baloo-15">{props.label}</label>
+      <label className="auto-label tajawal-15">{props.label}</label>
     </div>
   );
 };

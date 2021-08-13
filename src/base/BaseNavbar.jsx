@@ -1,5 +1,6 @@
 import React from "react";
 import "../assets/css/styles.css";
+import "../assets/css/fonts.css";
 import logo from "../assets/images/logo.png";
 import { Link } from "react-router-dom";
 import HomeIcon from "../icons/HomeIcon.jsx";
@@ -8,7 +9,7 @@ import BaseAutocompleteForm from "../base/BaseAutoCompleteForm.jsx";
 import BaseSidebar from "./BaseSidebar.jsx";
 const BaseNavbar = () => {
   return (
-    <nav class="navbar navbar-expand-lg navbar-light baloo-15">
+    <nav className="navbar navbar-expand-lg navbar-light tajawal-15">
       <div class="container-fluid">
         <Link to="/home" class="navbar-brand" href="#">
           <img src={logo} alt="Electronic Home" />
@@ -25,7 +26,7 @@ const BaseNavbar = () => {
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarScroll">
-          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll .tajawal-20">
             <li class="nav-item">
               <Link
                 to="/home"
@@ -48,9 +49,9 @@ const BaseNavbar = () => {
                 <AccountIcon />
               </Link>
             </li>
-            <li class="nav-item">
+            {/* <li class="nav-item">
               <BaseSidebar mobiles="جوالات" accessoire="إكسسوارات"/>
-            </li>
+            </li> */}
           </ul>
           <BaseAutocompleteForm type="text" label="ابحث ..." />
         </div>

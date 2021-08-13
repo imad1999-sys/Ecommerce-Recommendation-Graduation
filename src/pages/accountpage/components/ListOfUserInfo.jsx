@@ -5,25 +5,25 @@ const ListOfUserInfo = (props) => {
   return (
     <div className="list-section">
       <ul class="list-group">
-        <li class="list-group-item d-flex justify-content-between align-items-center">
+        <li class="list-group-item d-flex justify-content-between align-items-center tajawal-15">
           الاسم
-          <span class="badge bg-primary rounded-pill">{props.username}</span>
+          <span class="badge bg-light list-span rounded-pill">{props.username}</span>
         </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
+        <li class="list-group-item d-flex justify-content-between align-items-center tajawal-15">
           البريد الالكتروني
-          <span class="badge bg-primary rounded-pill">{props.email}</span>
+          <span class="badge bg-light list-span rounded-pill">{props.email}</span>
         </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
+        <li class="list-group-item d-flex justify-content-between align-items-center tajawal-15">
           رقم الهاتف
-          <span class="badge bg-primary rounded-pill">{props.phoneNumber}</span>
+          <span class="badge bg-light list-span rounded-pill">{props.phoneNumber}</span>
         </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
+        <li class="list-group-item d-flex justify-content-between align-items-center tajawal-15">
           البلد
-          <span class="badge bg-primary rounded-pill">{props.country}</span>
+          <span class="badge bg-light list-span rounded-pill">{props.country}</span>
         </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
+        <li class="list-group-item d-flex justify-content-between align-items-center tajawal-15">
           العنوان
-          <span class="badge bg-primary rounded-pill">{props.address}</span>
+          <span class="badge bg-light list-span rounded-pill">{props.address}</span>
         </li>
       </ul>
     </div>

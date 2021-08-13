@@ -1,85 +1,66 @@
 import React, { useEffect, useState } from "react";
 import "../../../assets/css/styles.css";
 import BaseCard from "../../../base/BaseCard";
-import Amazon from "../../../assets/images/amazon.png";
 import {
-  deleteFavoriteByIdApiUrl,
-  getFavoritesForUserApiUrl,
-  logApiUrl,
-} from "../../../API/urls/ApiUrls";
-import { useHistory } from "react-router-dom";
+  deleteUserFavoriteById,
+  fetchUserFavoritesAction,
+} from "../../../API/actions/favoritesactions/FavoritesAction";
+import { headers } from "../../../API/tokens/tokens.jsx";
+import PriceTagIcon from "../../../icons/PriceTagIcon";
+import EyeIcon from "../../../icons/EyeIcon";
+import InfoIcon from "../../../icons/InfoIcon";
+import DeleteIcon from "../../../icons/DeleteIcon";
 const FavoritesNav = () => {
-  let result = localStorage.getItem("user-info");
-  let resultJson = JSON.parse(result);
-  console.log(resultJson.response.token);
-  const [data, setData] = useState([]);
-  const { history } = useHistory();
-  async function getData() {
-    let token = "Bearer " + resultJson.response.token;
-    let result = await fetch(getFavoritesForUserApiUrl, {
-      headers: {
-        Authorization: token,
-      },
+  const [favorites, setFavorites] = useState([]);
+  const goToDetailsPage = (id) => {
+    window.location.href = "/details/" + id;
+  };
+  const getFavorites = () => {
+    fetchUserFavoritesAction("", headers).then((response) => {
+      if (response.status < 300) {
+        if (response.data.response.favorites != null) {
+          alert("تم جلب مفضلات المستخدم بنجاح");
+        }
+        setFavorites(response.data.response.favorites);
+      } else {
+        alert("حدث خطأ أثناء عملية الجلب");
+      }
     });
-    result = await result.json();
-    setData(result.response.favorites);
-    console.log(result.response.favorites);
-  }
-  useEffect(async () => {
-    getData();
+  };
+  const deleteFavoriteById = (id) => {
+    deleteUserFavoriteById(id, headers).then((response) => {
+      if (response.status < 300) {
+        alert("تم حذف المفضلة بنجاح");
+        getFavorites();
+      } else {
+        alert("حدث خطأ أثناء عملية الحذف");
+      }
+    });
+  };
+  useEffect(() => {
+    getFavorites();
   }, []);
-  async function deleteFavorite(id) {
-    setLogForDeleteFavorite(id);
-    let token = localStorage.getItem("user-info");
-    let tokenJson = JSON.parse(token);
-    let t = "Bearer " + tokenJson.response.token;
-    console.log(tokenJson.response.token);
-    let result = await fetch(deleteFavoriteByIdApiUrl + id, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: t,
-      },
-    });
-    getData();
-  }
-  async function setLogForDeleteFavorite(id) {
-    let token = localStorage.getItem("user-info");
-    let tokenJson = JSON.parse(token);
-    let t = "Bearer " + tokenJson.response.token;
-    console.log(tokenJson.response.token);
-    const query = "";
-    const action = "delete_from_favorite";
-    const productId = id;
-    let item = { query, action, productId };
-    console.log(item);
-    let result = await fetch(logApiUrl, {
-      method: "POST",
-      body: JSON.stringify(item),
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: t,
-      },
-    });
-    result = await result.json();
-    console.log(result);
-  }
   return (
     <div className="favorites-container">
-      <div className="row">
-        {data.map((item) => (
-          <div className="col p-4">
+      <div className="row row-cols-1 row-cols-md-2 g-4 gx-5">
+        {favorites.map((favorite) => (
+          <div className="col-sm">
             <BaseCard
-              image={item.product.image}
-              title={item.product.title}
-              price={item.product.price}
-              salePrice={item.product.salePrice}
-              views={item.product.views}
+              image={favorite.product.image}
+              title={favorite.product.title}
+              price={favorite.product.price}
+              priceTag={<PriceTagIcon />}
+              salePrice={favorite.product.salePrice}
+              views={favorite.product.views}
+              viewTag={<EyeIcon />}
+              onClick={() => goToDetailsPage(favorite.product.id)}
+              btnText="عرض التفاصيل"
               isFav={true}
-              linkText="حذف"
-              onClick={() => deleteFavorite(item.favoriteId)}
+              isAlert={false}
+              icon={<InfoIcon />}
+              favIcon={<DeleteIcon />}
+              favBtnText="حذف من المفضلة"
+              onClickFav={() => deleteFavoriteById(favorite.favoriteId)}
             />
           </div>
         ))}

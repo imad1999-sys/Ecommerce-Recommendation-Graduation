@@ -1,87 +1,73 @@
 import React from "react";
-import img from "../assets/images/amazon.png";
-import DeleteIcon from "../icons/DeleteIcon.jsx";
-import ButtonGroup from "@material-ui/core/ButtonGroup";
-import { makeStyles } from "@material-ui/core/styles";
-
-import Checkbox from "@material-ui/core/Checkbox";
-import Favorite from "@material-ui/icons/Favorite";
-import FavoriteBoder from "@material-ui/icons/FavoriteBorder";
-import { Link } from "react-router-dom";
 import "../assets/css/styles.css";
-import ComparingPricingLink from "../pages/mainpage/components/ComparingPricingLink";
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    "& > *": {
-      margin: theme.spacing(1),
-    },
-  },
-  button: {
-    padding: 0,
-    cursor: "pointer",
-    width: "100%",
-    textAlign: "left",
-    whiteSpace: "nowrap",
-    overflow: "hidden",
-    textOverflow: "ellipsis",
-    outline: 0,
-    color: "#888",
-    fontSize: 10,
-  },
-  img: {
-    opacity: 1,
-    display: "inline",
-    maxHeight: "33px",
-    cursor: "pointer",
-    width: "80px",
-    marginTop: "5px",
-    marginBottom: "5px",
-    marginRight: "35px",
-  },
-  Favorite: {
-    width: 20,
-    height: 30,
-    marginLeft: 180,
-  },
-}));
+import "../assets/css/fonts.css";
+import BaseButton from "./BaseButton.jsx";
 const Card = (props) => {
-  const classes = useStyles();
   return (
     <div>
-      <div className="base-card">
-        <Checkbox
-          className={classes.Favorite}
-          icon={<FavoriteBoder />}
-          checkedIcon={<Favorite />}
-        />
+      <div class="card base-card h-100">
         <img src={props.image} class="card-img-top" alt="..." />
         <div class="card-body">
-          <p class="first-card-text">
-            <small className="small-text baloo-20">{props.title}</small>
-          </p>
-          <h5 class="card-title sale-price">SAR {props.salePrice}</h5>
-          <h5 class="card-title">SAR {props.price}</h5>
-          <p>{props.views}</p>
+          <h5 class="card-title c-title tajawal-25">{props.title}</h5>
+        </div>{" "}
+        <ul class="list group list-group-flush">
+          <li class="list-group-item d-flex justify-content-between align-items-center tajawal-15">
+            <span class="badge bg-light rounded-pill list-span tajawal-15">
+              {props.price}
+            </span>
+            السعر
+            {props.priceTag}
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center tajawal-15">
+            <span class="badge bg-light rounded-pill list-span tajawal-15">
+              {props.salePrice}
+            </span>
+            سعر المبيع
+            {props.priceTag}
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center tajawal-15">
+            <span class="badge bg-light rounded-pill list-span tajawal-15">
+              {props.views}
+            </span>
+            عدد المشاهدات
+            {props.viewTag}
+          </li>
+          {props.isFav ? (
+            <div className="row">
+              <div className="btn-card tajawal-15">
+                <BaseButton
+                  icon={props.favIcon}
+                  text={props.favBtnText}
+                  onClick={props.onClickFav}
+                />
+              </div>
+            </div>
+          ) : (
+            ""
+          )}
+          {props.isAlert ? (
+            <div className="row">
+              <div className="btn-card tajawal-15">
+                <BaseButton
+                  icon={props.alertIcon}
+                  text={props.alertBtnText}
+                  onClick={props.onClickAlert}
+                />
+              </div>
+            </div>
+          ) : (
+            ""
+          )}
+        </ul>
+        <div className="row">
+          <div class="btn-card tajawal-15">
+            <BaseButton
+              icon={props.icon}
+              text={props.btnText}
+              onClick={props.onClick}
+            />
+          </div>
         </div>
-        {props.isFav ? (
-          <Link
-            className="btn btn-danger carousel-link baloo-15"
-            onClick={props.onClick}
-          >
-            {props.linkText}
-            <DeleteIcon />
-          </Link>
-        ) : (
-          <ButtonGroup
-            orientation="vertical"
-            color="#444"
-            aria-label="vertical contained primary button group"
-            variant="text"
-          >
-            <ComparingPricingLink link={props.link} linkText={props.linkText} />
-          </ButtonGroup>
-        )}
       </div>
     </div>
   );

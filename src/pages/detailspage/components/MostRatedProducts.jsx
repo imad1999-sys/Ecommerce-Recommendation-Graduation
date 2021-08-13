@@ -8,7 +8,7 @@ const MostRatedProducts = () => {
     return (
       <div className="rated-container">
           <div className="row">
-              <p className="baloo-chettan-25">العناصر المشابهة : </p>
+              <p className="tajawal-25">العناصر المشابهة : </p>
           </div>
         <div className="row">
           <div className="col-sm">

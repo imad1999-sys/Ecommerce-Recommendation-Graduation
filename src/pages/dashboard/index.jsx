@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import BaseSpinner from "../../base/BaseSpinner.jsx";
-import AddDash from "./components/AddDash.jsx";
-const AddStoresPageDashboardCompleted = () => {
+import MainPageDashboard from "./pages/mainpagedashboard/MainPageDashboard.jsx";
+const DashboardPageCompleted = () => {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
@@ -18,9 +18,9 @@ const AddStoresPageDashboardCompleted = () => {
           size={100}
         />
       ) : (
-        <AddDash />
+        <MainPageDashboard />
       )}
     </div>
   );
 };
-export default AddStoresPageDashboardCompleted;
+export default DashboardPageCompleted;
