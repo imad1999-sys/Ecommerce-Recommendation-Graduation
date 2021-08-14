@@ -11,6 +11,7 @@ import ProductDescription from "./ProductDescription.jsx";
 import ProductOffers from "./ProductOffers.jsx";
 import { headers } from "../../../API/tokens/tokens.jsx";
 import { fetchProductAction } from "../../../API/actions/productactions/ProductActions.jsx";
+import { useParams } from "react-router-dom";
 const ProductDetails = (props) => {
   const [title, setTitle] = useState("");
   const [views, setViews] = useState("");
