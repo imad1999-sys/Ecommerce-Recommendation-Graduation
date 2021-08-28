@@ -1,53 +1,81 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import BaseCard from "../../../base/BaseCard.jsx";
+import grandStores from "../../../assets/images/grand stores.png";
 import "../../../assets/css/styles.css";
 import "../../../assets/css/fonts.css";
-import { fetchAllProductsAction } from "../../../API/actions/productactions/ProductActions.jsx";
-import InfoIcon from "../../../icons/InfoIcon.jsx";
-import PriceTagIcon from "../../../icons/PriceTagIcon.jsx";
-import EyeIcon from "../../../icons/EyeIcon.jsx";
-import { headers } from "../../../API/tokens/tokens.jsx";
-const CarouselOfCompanies = () => {
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    fetchAllProductsAction("", headers).then((response) => {
-      console.log(response.data.response.products.content);
-      if (response.status < 300) {
-        alert("تم جلب كافة المنتجات بنجاح");
-        setProducts(response.data.response.products.content);
-      } else {
-        alert("حدث خطأ أثناء عملية الجلب");
-      }
-    });
-  }, []);
+import {
+  EyeIcon,
+  PriceTagIcon,
+  InfoIcon,
+  ArrowCircleRight,
+  ArrowCircleLeft,
+} from "../../../icons/icons.jsx";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { Container } from "reactstrap";
+const CarouselOfCards = ({ products, currentPage }) => {
   const goToDetailsPage = (id) => {
     window.location.href = "/details/" + id;
   };
+  console.log(currentPage);
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+  };
+  const PreviousBtn = (props) => {
+    console.log(props);
+    const { className, onClick } = props;
+    return (
+      <div className={className} onClick={onClick}>
+        <ArrowCircleLeft />
+      </div>
+    );
+  };
+  const NextBtn = (props) => {
+    const { className, onClick } = props;
+    return (
+      <div className={className} onClick={onClick}>
+        <ArrowCircleRight />
+      </div>
+    );
+  };
   return (
-    <div>
-      <div className="container-for-cards">
-        <div className="row row-cols-1 row-cols-md-2 g-4 gx-5">
-          {products.map((product) => (
-            <div className="col-sm">
+    <Container>
+      <div
+        className="BootstrapMulti"
+        style={{ display: "flex", justifyContent: "center", marginTop: 1500 }}
+      >
+        <div style={{ width: "300%"}}>
+          <Slider
+            prevArrow={<PreviousBtn />}
+            nextArrow={<NextBtn />}
+            slidesToShow={5}
+            slidesToScroll={1}
+            dots={false}
+          >
+            {products.map((product) => (
               <BaseCard
                 image={product.image}
                 title={product.title}
-                price={product.price}
-                priceTag={<PriceTagIcon />}
+                currency={product.currency}
                 salePrice={product.salePrice}
                 views={product.views}
                 viewTag={<EyeIcon />}
                 onClick={() => goToDetailsPage(product.id)}
                 btnText="عرض التفاصيل"
-                isFav = {false}
-                isAlert = {false}
+                isFav={false}
+                isAlert={false}
                 icon={<InfoIcon />}
               />
-            </div>
-          ))}
+            ))}
+          </Slider>
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
-export default CarouselOfCompanies;
+export default CarouselOfCards;

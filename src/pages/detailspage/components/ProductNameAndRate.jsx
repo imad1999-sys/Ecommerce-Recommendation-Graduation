@@ -1,12 +1,6 @@
 import React from "react";
-import Rating from "@material-ui/lab/Rating";
-import { makeStyles } from "@material-ui/core/styles";
 import "../../../assets/css/styles.css";
-const useStyles = makeStyles((theme) => ({
-  rating: {},
-}));
 const ProductNameAndRate = (props) => {
-  const classes = useStyles();
   return (
     <div className="name-and-rating">
       <div className="row">

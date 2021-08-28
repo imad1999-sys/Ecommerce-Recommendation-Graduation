@@ -1,24 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../../../assets/css/styles.css";
 import "../../../../assets/css/fonts.css";
 import BaseDashboardNavbar from "../../components/BaseDashboardNavbar";
-import BaseCardDashboard from "../../components/BaseCardDashboard";
 import BaseTableDashboard from "./components/BaseTableDashboard";
 import BaseFooter from "../../../../base/BaseFooter";
-const PriceAlertDashboard = () => {
+import { getUsersAction } from "../../../../API/actions/dashboardactions/DashboardActions";
+import { headers } from "../../../../API/tokens/tokens";
+import BaseCardDashboard from "../../components/BaseCardDashboard";
+const FavoritesPageDashboard = () => {
+  const[users , setUsers] = useState([]);
+  const[count , setCount] = useState("");
+  useEffect(() => {
+    getUsersAction("", headers).then((response) => {
+      console.log(response);
+      setUsers(response.data.response);
+      setCount(response.data.response.length);
+    });
+  }, []);
   return (
     <div>
       <div className="row">
         <BaseDashboardNavbar />
       </div>
       <div className="row">
-        <div className="grid-of-cards-dashboard">
-          <BaseCardDashboard title="المفضلة" subTitle="20" />
-        </div>
+        <BaseCardDashboard countTitle="عدد المستخدمين" count={count} />
       </div>
       <div className="row">
         <div className="table-section">
-          <BaseTableDashboard />
+          <BaseTableDashboard users={users}/>
         </div>
       </div>
       <div className="row">
@@ -27,4 +36,4 @@ const PriceAlertDashboard = () => {
     </div>
   );
 };
-export default PriceAlertDashboard;
+export default FavoritesPageDashboard;

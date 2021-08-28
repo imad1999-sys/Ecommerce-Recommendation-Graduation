@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import AvatarImage from "./components/AvatarImage";
-import SigninIcon from "../../icons/SigninIcon.jsx";
 import Paper from "@material-ui/core/Paper";
 import BaseInput from "../../base/BaseInput.jsx";
 import BaseButton from "../../base/BaseButton.jsx";
@@ -8,7 +7,9 @@ import PageTitle from "./components/PageTitle.jsx";
 import RegisterLink from "./components/RegisterLink";
 import { useHistory } from "react-router-dom";
 import "../../assets/css/styles.css";
-import { loginAction } from "../../API/actions/authenticationactions/AuthActions";
+import { SigninIcon } from "../../icons/icons";
+import { loginService } from "../../API/services/other/AuthenticationServices";
+import { headersForLogin } from "../../API/tokens/tokens";
 const LoginPage = () => {
   const [username, setusername] = useState("");
   const [password, setPassword] = useState("");
@@ -21,16 +22,20 @@ const LoginPage = () => {
   const login = () => {
     let dataJson = { username, password };
     let itemJson = JSON.stringify(dataJson);
-    let route = "/home";
-    let headers = {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    };
-    loginAction(itemJson , headers , route);
+    loginService(itemJson, headersForLogin).then((response) => {
+      console.log(response);
+      localStorage.setItem("token", response.data.response.token);
+      if (response.status < 300) {
+        alert("تم تسجيل الدخول بنجاح");
+        window.location.href = "/home";
+      } else {
+        alert("حدث خطأ أثناء تسجيل الدخول");
+      }
+    });
   };
   const goToSignupPage = () => {
     window.location.href = "/signup";
-  }
+  };
   return (
     <div className="container">
       <Paper elevation={8}>
@@ -57,12 +62,14 @@ const LoginPage = () => {
           />
         </div>
         <div className="row">
-          <BaseButton
-            icon={<SigninIcon />}
-            text="تسجيل الدخول"
-            link="/home"
-            onClick={login}
-          />
+          <div className="login-button">
+            <BaseButton
+              icon={<SigninIcon />}
+              text="تسجيل الدخول"
+              link="/home"
+              onClick={login}
+            />
+          </div>
         </div>
         <div className="row">
           <RegisterLink onClick={goToSignupPage} />

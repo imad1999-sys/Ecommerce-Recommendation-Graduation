@@ -1,25 +1,11 @@
 import React, { useState, useEffect } from "react";
+import BasePreloader from "../../base/BasePreloader.jsx";
 import BaseSpinner from "../../base/BaseSpinner.jsx";
 import AccountPage from "./components/AccountPage.jsx";
 const AccountPageCompleted = () => {
-  const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 5000);
-  }, []);
   return (
     <div>
-      {loading ? (
-        <BaseSpinner
-          color={"#2980b9"}
-          loading={loading}
-          size={100}
-        />
-      ) : (
-        <AccountPage />
-      )}
+      <BasePreloader page={<AccountPage />} />
     </div>
   );
 };

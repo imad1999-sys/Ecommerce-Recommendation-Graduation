@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../../../assets/css/styles.css";
-import BaseButton from "../../../base/BaseButton";
 import BaseDetailCard from "../../../base/BaseDetailCard";
-import CommentIcon from "../../../icons/CommentIcon";
 import Amazon from "../../../assets/images/amazon.png";
 import {
   deleteUserReviewAction,
@@ -14,12 +12,7 @@ const ReviewsNav = () => {
   const getReviews = () => {
     getUserReviewsAction("", headers).then((response) => {
       if (response.status < 300) {
-        if (response.data.response.reviews != null) {
-          alert("تم جلب تقييمات المستخدم بنجاح");
-        }
         setReviews(response.data.response.reviews);
-      } else {
-        alert("حدث خطأ أثناء عملية الجلب");
       }
       console.log(response);
     });
@@ -40,14 +33,12 @@ const ReviewsNav = () => {
   }, []);
   return (
     <div className="reviews-container">
-      <div className="row">
-        <BaseButton icon={<CommentIcon />} text="إضافة تقييم" link="/home" />
-      </div>
       <div className="row row-cols-1 row-cols-md-2 g-4 gx-5">
         {reviews.map((review) => (
           <div className="col-sm">
             <BaseDetailCard
-              image={Amazon}
+              title={review.title}
+              image={review.image}
               siteName={review.siteName}
               description={review.description}
               deleteText="حذف التفييم"

@@ -1,6 +1,6 @@
 import { baseUrl } from "../base/BaseUrl";
 
-/* user apis */ 
+/* user apis */
 export const loginApiUrl = baseUrl + "/api/login";
 export const registerApiUrl = baseUrl + "/api/register";
 export const getUserInfoUrl = baseUrl + "/api/profile";
@@ -22,7 +22,15 @@ export const fetchProduct = baseUrl + "/api/products/";
 export const fetchAllProducts = baseUrl + "/api/products";
 export const deleteAllProducts = baseUrl + "/api/products/all";
 export const addProduct = baseUrl + "/api/products";
-export const deleteProductById = baseUrl + "/api/products/"
+export const deleteProductById = baseUrl + "/api/products/";
+export const matchProductUrl = baseUrl + "/api/match?q=";
+export const storeProductUrl = baseUrl + "/api/products/stores/";
+export const mostViewedUrl = baseUrl + "/api/products/most-viewed";
+export const recentlyAddedUrl = baseUrl + "/api/products/recently-added";
+export const mostPopularCategoryUrl =
+  baseUrl + "/api/products/most-popular-category";
+export const topItemsForCategoryUrl =
+  baseUrl + "/api/products/top-items-for-category";
 
 /* price alert */
 export const addPriceAlert = baseUrl + "/api/price-alert";
@@ -32,13 +40,24 @@ export const sendPriceAlert = baseUrl + "/api/price-alert/send";
 export const deletePriceAlertById = baseUrl + "/api/price-alert/";
 
 /* smart search */
-export const searchFirst = baseUrl + "/api/search/?q=";
-export const searchSecond = "?q=&filter=category_sa:";
-export const searchByCategory = baseUrl + "/api/search/?q=*&filter=category_sa:"
+export const searchFirst = baseUrl + "/api/search/?limit=200&q=";
+export const searchSecond = "&sort=";
+export const searchThird = "&languages_s=";
+export const searchByCategory =
+  baseUrl + "/api/search/?limit=200&q=*&filter=category_sa:";
 export const searchAutoComplete = baseUrl + "/api/autocomplete?q=";
+export const recommendUrl = baseUrl + "/api/recommend/";
 
 /* logging */
 export const logApiUrl = baseUrl + "/api/logs";
 export const deleteLogApiUrl = baseUrl + "/api/logs/";
 export const getAllLogsApiUrl = baseUrl + "/api/logs/all";
 
+/* dashboard */
+export const getStoresUrl = baseUrl + "/api/stores";
+export const freezeStoreUrl = baseUrl + "/api/stores/";
+export const freezeStoreUrl2 = "?freeze=true";
+export const deleteStoreUrl = baseUrl + "/api/stores/";
+export const getUsersUrl = baseUrl + "/api/users";
+export const deleteUserByIdUrl = baseUrl + "/api/users/";
+export const statisticsUrl = baseUrl + "/api/stores/statistics";

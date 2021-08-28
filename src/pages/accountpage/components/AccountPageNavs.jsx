@@ -1,16 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { getUserInfo } from "../../../API/urls/ApiUrls";
-import AccountIcon from "../../../icons/AccountIcon";
-import BellIcon from "../../../icons/BellIcon";
-import HistoryIcon from "../../../icons/HistoryIcon";
-import PenIcon from "../../../icons/PenIcon";
-import StarIcon from "../../../icons/StarIcon";
+import React from "react";
 import AlertNav from "./AlertNav";
 import FavoritesNav from "./FavoritesNav";
-import PrevProductsNav from "./PrevProductsNav";
 import ProfileNav from "./ProfileNav";
 import ReviewsNav from "./ReviewsNav";
+import { BellIcon, StarIcon, AccountIcon, PenIcon } from "../../../icons/icons";
 import "../../../assets/css/fonts.css";
+import "../../../assets/css/styles.css";
 const AccountPageNavs = () => {
   return (
     <div>
@@ -25,7 +20,6 @@ const AccountPageNavs = () => {
             role="tab"
             aria-controls="home"
             aria-selected="true"
-            // onClick={getUserData}
           >
             <AccountIcon />
             الملف الشخصي

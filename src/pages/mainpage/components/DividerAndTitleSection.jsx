@@ -6,7 +6,7 @@ const DividerAndTitleSection = (props) => {
     return(
         <div className="divider-and-title-section">
             <div className="lines">
-                <div className="text tajawal-15">
+                <div className="text tajawal-20">
                     {props.section}
                 </div>
             </div>

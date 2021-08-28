@@ -1,104 +1,26 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "../../../assets/css/styles.css";
 import "../../../assets/css/fonts.css";
-import HeartIcon from "../../../icons/HeartIcon.jsx";
-import {
-  addFavoriteApiUrl,
-  addPriceAlert,
-  logApiUrl,
-} from "../../../API/urls/ApiUrls";
-import BellIcon from "../../../icons/BellIcon";
+import PricingAlertModal from "./PricingAlertModal.jsx";
+import { addProductToFavorites } from "../../../API/actions/favoritesactions/FavoritesAction.jsx";
+import { headers } from "../../../API/tokens/tokens";
+import { StarIcon, BellIcon, AddIcon, CloseIcon , PenIcon } from "../../../icons/icons";
+import { addLogAction } from "../../../API/actions/loggsactions/LoggsActions";
+import ReviewModal from "./ReviewModal.jsx";
 const ProductPrice = (props) => {
-  async function SetPriceAlert() {
-    setLogForPricingAlert();
-    let token = localStorage.getItem("user-info");
-    let tokenJson = JSON.parse(token);
-    let t = "Bearer " + tokenJson.response.token;
-    console.log(tokenJson.response.token);
-    const email = props.email;
-    const price = props.salePrice;
+  const addToFavorites = () => {
     const productId = props.id;
-    let item = { email, price, productId };
-    console.log(item);
-    let result = await fetch(addPriceAlert, {
-      method: "POST",
-      body: JSON.stringify(item),
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: t,
-      },
+    let jsonItem = { productId };
+    addProductToFavorites(jsonItem, headers).then((response) => {
+      if (response.status < 300) {
+        alert(response.data.response);
+        addLogAction(productId , "add_to_favorite" , headers);
+        console.log(response);
+      } else {
+        alert("حدث خطأ أتناء عملية الإضافة");
+      }
     });
-    result = await result.json();
-    console.log(item);
-    alert("تم إضافة التنبيه بنجاح");
-  }
-  async function setFavorites() {
-    setLogForAddToFavorite();
-    let token = localStorage.getItem("user-info");
-    let tokenJson = JSON.parse(token);
-    let t = "Bearer " + tokenJson.response.token;
-    console.log(tokenJson.response.token);
-    const productId = props.id;
-    let item = { productId };
-    console.log(item);
-    let result = await fetch(addFavoriteApiUrl, {
-      method: "POST",
-      body: JSON.stringify(item),
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: t,
-      },
-    });
-    result = await result.json();
-    console.log(item);
-    alert("تم الاضافى الى المفضلة بنجاح");
-  }
-  async function setLogForAddToFavorite() {
-    let token = localStorage.getItem("user-info");
-    let tokenJson = JSON.parse(token);
-    let t = "Bearer " + tokenJson.response.token;
-    console.log(tokenJson.response.token);
-    const query = "";
-    const action = "add_to_favorite";
-    const productId = props.id;
-    let item = { query, action, productId };
-    console.log(item);
-    let result = await fetch(logApiUrl, {
-      method: "POST",
-      body: JSON.stringify(item),
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: t,
-      },
-    });
-    result = await result.json();
-    console.log(result);
-  }
-  async function setLogForPricingAlert() {
-    let token = localStorage.getItem("user-info");
-    let tokenJson = JSON.parse(token);
-    let t = "Bearer " + tokenJson.response.token;
-    console.log(tokenJson.response.token);
-    const query = "";
-    const action = "price_alert";
-    const productId = props.id;
-    let item = { query, action, productId };
-    console.log(item);
-    let result = await fetch(logApiUrl, {
-      method: "POST",
-      body: JSON.stringify(item),
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: t,
-      },
-    });
-    result = await result.json();
-    console.log(result);
-  }
+  };
   return (
     <div className="price-container">
       <p className="tajawal-25">السعر & تنبيهات الاسعار & المفضلة</p>
@@ -113,24 +35,36 @@ const ProductPrice = (props) => {
         </p>
       </div>
       <div className="row">
-        {/* <div className="col-6">
-          <ButtonModal email={props.email} id={props.id}/>
-        </div> */}
-        <div className="col-6">
-          <button
-            class="btn btn-outline-danger tajawal-25"
-            onClick={SetPriceAlert}
-          >
-            <BellIcon />
-            تنبيه الاسعار
-          </button>
+        <div className="col-4">
+          <PricingAlertModal
+            modalIcon={<BellIcon />}
+            btnModalText="تنبيه الأسعار"
+            btnModalClickText="أضف التنبيه"
+            modalTitle="تنبيهات الأسعار"
+            email={props.email}
+            productId={props.id}
+            closeIcon={<CloseIcon />}
+            addIcon={<AddIcon />}
+          />
         </div>
-        <div className="col-6">
+        <div className="col-4">
+          <ReviewModal
+            modalIcon={<PenIcon />}
+            btnModalText="التقييم"
+            btnModalClickText="أضف التقييم"
+            modalTitle="تقييم المنتج"
+            siteName={props.siteName}
+            productId={props.id}
+            closeIcon={<CloseIcon />}
+            addIcon={<AddIcon />}
+          />
+        </div>
+        <div className="col-4">
           <button
-            class="btn btn-outline-primary tajawal-25"
-            onClick={setFavorites}
+            class="btn btn-outline-primary tajawal-15"
+            onClick={addToFavorites}
           >
-            <HeartIcon />
+            <StarIcon />
             إضافة الى المفضلة
           </button>
         </div>

@@ -5,13 +5,15 @@ import amazon from "../../../assets/images/amazon.png";
 const ProductOffers = (props) => {
   return (
     <div className="product-type-section">
-        <p className="tajawal-25">روابط المتجر و المنتج : </p>
+      <p className="tajawal-25">المنتج من متاجر أخرى : </p>
       <div className="row">
         <CardOffer
+          matchedProducts={props.matchedProducts}
           image={amazon}
           siteName={props.siteName}
-          title={props.title}
+          salePrice={props.salePrice}
           productUrl={props.productUrl}
+          id={props.id}
         />
       </div>
     </div>

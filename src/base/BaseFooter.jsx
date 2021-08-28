@@ -1,9 +1,8 @@
 import React from "react";
-import EmailIcon from "../icons/EmailIcon.jsx";
-import LocationIcon from "../icons/LocationIcon.jsx";
 import { Link } from "react-router-dom";
 import "../assets/css/styles.css";
 import "../assets/css/fonts.css";
+import { LocationIcon, EmailIcon } from "../icons/icons.jsx";
 const BaseFooter = () => {
   return (
     <div className="bg-light text-dark pt-5 pb-4 ">
@@ -75,12 +74,12 @@ const BaseFooter = () => {
             <hr className="mb-4" />
             <p>
               <a href="#" className="text-dark link tajawal-15">
-                دمشق - سوريا <LocationIcon />
+                <LocationIcon /> دمشق - سوريا
               </a>
             </p>
             <p>
               <a href="#" className="text-dark link tajawal-15">
-                electronic.home.2021@gmail.com <EmailIcon />
+                <EmailIcon /> electronic.home.2021@gmail.com
               </a>
             </p>
           </div>

@@ -2,7 +2,7 @@ import React from "react";
 import "../../../assets/css/styles.css";
 import "../../../assets/css/fonts.css";
 import BaseButton from "../../../base/BaseButton.jsx";
-import SignupIcon from "../../../icons/SignupIcon.jsx";
+import { SignupIcon } from "../../../icons/icons";
 const RegisterLink = (props) => {
   return (
     <div className="link-section">

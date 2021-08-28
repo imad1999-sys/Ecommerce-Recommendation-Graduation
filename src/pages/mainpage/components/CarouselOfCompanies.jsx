@@ -1,16 +1,21 @@
 import React from "react";
 import AvatarImage from "./AvatarImage.jsx";
-import amazon from "../../../assets/images/amazon.png";
-import ebay from "../../../assets/images/ebay.png";
-import ikea from "../../../assets/images/ikea.png";
-import virgin from "../../../assets/images/virgin.png";
-import xcite from "../../../assets/images/xcite.png";
+import axiomTelecom from "../../../assets/images/axiom-telecom.png";
+import gadgetBy from "../../../assets/images/gadgetby.jfif";
+import godukkan from "../../../assets/images/godukkan.jfif";
+import grandStores from "../../../assets/images/grand stores.png";
+import noon from "../../../assets/images/noon.png";
 import FloatingActionButton from "../../../base/BaseFloatingActionButton.jsx";
-import ArrowCircleLeft from "../../../icons/ArrowCircleLeft.jsx";
-import ArrowCircleRight from "../../../icons/ArrowCircleRight.jsx";
 import "../../../assets/css/styles.css";
 import "../../../assets/css/fonts.css";
+import { ArrowCircleLeft, ArrowCircleRight } from "../../../icons/icons.jsx";
+import { Link } from "react-router-dom";
 const CarouselOfCompanies = () => {
+  const firstStore = "noon";
+  const secondStore = "اكسيوم تيليكوم";
+  const thirdStore = "جادجت باي";
+  const fourthStore = "godukkan";
+  const fifthStore = "المحلات الكبرى";
   return (
     <div>
       <div
@@ -23,76 +28,64 @@ const CarouselOfCompanies = () => {
             <div className="container-for-companies">
               <div className="row gx-5">
                 <div className="col-sm">
-                  <AvatarImage image={amazon} alt="Amazon" />
-                  <p className="name baloo-20 tajawal-15">Amazon</p>
+                  <AvatarImage image={noon} alt="noon" />
+                  <p className="name baloo-20 tajawal-15">
+                    {" "}
+                    <Link
+                      to={"/store/" + firstStore}
+                      className="link-name tajawal-15"
+                    >
+                      {firstStore}
+                    </Link>
+                  </p>
                 </div>
                 <div className="col-sm">
-                  <AvatarImage image={ebay} alt="Ebay" />
-                  <p className="name baloo-20 tajawal-15">Ebay</p>
+                  <AvatarImage image={axiomTelecom} alt="axiomTelecom" />
+                  <p className="name baloo-20 tajawal-15">
+                    {" "}
+                    <Link
+                      to={"/store/" + secondStore}
+                      className="link-name tajawal-15"
+                    >
+                      {secondStore}
+                    </Link>
+                  </p>
                 </div>
                 <div className="col-sm">
-                  <AvatarImage image={virgin} alt="Virgin Megastore" />
-                  <p className="name baloo-20 tajawal-15">Virgin Megastore</p>
+                  <AvatarImage image={gadgetBy} alt="gadgetBy" />
+                  <p className="name baloo-20 tajawal-15">
+                    {" "}
+                    <Link
+                      to={"/store/" + thirdStore}
+                      className="link-name tajawal-15"
+                    >
+                      {thirdStore}
+                    </Link>
+                  </p>
                 </div>
                 <div className="col-sm">
-                  <AvatarImage image={virgin} alt="Virgin Megastore" />
-                  <p className="name baloo-20 tajawal-15">Virgin Megastore</p>
+                  <AvatarImage image={godukkan} alt="godukkan" />
+                  <p className="name baloo-20 tajawal-15">
+                    {" "}
+                    <Link
+                      to={"/store/" + fourthStore}
+                      className="link-name tajawal-15"
+                    >
+                      {fourthStore}
+                    </Link>
+                  </p>
                 </div>
                 <div className="col-sm">
-                  <AvatarImage image={virgin} alt="Virgin Megastore" />
-                  <p className="name baloo-20 tajawal-15">Virgin Megastore</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div className="container-for-companies">
-              <div className="row gx-5">
-                <div className="col-sm">
-                  <AvatarImage image={ikea} alt="ikea" />
-                  <p className="name baloo-20 tajawal-15">IKEA</p>
-                </div>
-                <div className="col-sm">
-                  <AvatarImage image={xcite} alt="Xcite" />
-                  <p className="name baloo-20 tajawal-15">Xcite</p>
-                </div>
-                <div className="col-sm">
-                  <AvatarImage image={ebay} alt="Ebay" />
-                  <p className="name baloo-20 tajawal-15">Ebay</p>
-                </div>
-                <div className="col-sm">
-                  <AvatarImage image={ebay} alt="Ebay" />
-                  <p className="name baloo-20 tajawal-15">Ebay</p>
-                </div>
-                <div className="col-sm">
-                  <AvatarImage image={ebay} alt="Ebay" />
-                  <p className="name baloo-20 tajawal-15">Ebay</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div className="container-for-companies">
-              <div className="row gx-5">
-                <div className="col-sm">
-                  <AvatarImage image={ikea} alt="ikea" />
-                  <p className="name baloo-20 tajawal-15">IKEA</p>
-                </div>
-                <div className="col-sm">
-                  <AvatarImage image={xcite} alt="Xcite" />
-                  <p className="name baloo-20 tajawal-15">Xcite</p>
-                </div>
-                <div className="col-sm">
-                  <AvatarImage image={ebay} alt="Ebay" />
-                  <p className="name baloo-20 tajawal-15">Ebay</p>
-                </div>
-                <div className="col-sm">
-                  <AvatarImage image={ebay} alt="Ebay" />
-                  <p className="name baloo-20 tajawal-15">Ebay</p>
-                </div>
-                <div className="col-sm">
-                  <AvatarImage image={ebay} alt="Ebay" />
-                  <p className="name baloo-20 tajawal-15">Ebay</p>
+                  <AvatarImage image={grandStores} alt="Grand Stores" />
+                  <p className="name baloo-20 tajawal-15">
+                    {" "}
+                    <Link
+                      to={"/store/" + fifthStore}
+                      className="link-name tajawal-15"
+                    >
+                      {fifthStore}
+                    </Link>
+                  </p>
                 </div>
               </div>
             </div>

@@ -1,29 +1,32 @@
 import React, { useState } from "react";
 import AvatarImage from "./components/AvatarImage.jsx";
-import SignupIcon from "../../icons/SignupIcon.jsx";
 import Paper from "@material-ui/core/Paper";
 import PageTitle from "./components/PageTitle.jsx";
 import SubTitle from "./components/Subtitle.jsx";
 import BaseInput from "../../base/BaseInput.jsx";
 import BaseButton from "../../base/BaseButton.jsx";
-import { registerAction } from "../../API/actions/authenticationactions/AuthActions.jsx";
+import { SignupIcon } from "../../icons/icons.jsx";
+import { headers } from "../../API/tokens/tokens.jsx";
+import { registerService } from "../../API/services/other/AuthenticationServices.jsx";
 const SignupPage = () => {
   const [username, setName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [phoneNumber , setPhoneNumber] = useState("");
-  const [address , setAddress] = useState("");
-  const [country , setCountry] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [address, setAddress] = useState("");
+  const [country, setCountry] = useState("");
   const signup = () => {
-    let dataJson = { username, email, password , country , phoneNumber , address };
+    let dataJson = { username, email, password, country, phoneNumber, address };
     let itemJson = JSON.stringify(dataJson);
-    let route = "/home";
-    let headers = {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    }
-    registerAction(itemJson , headers , route);
-  }
+    registerService(itemJson, headers).then((response) => {
+      console.log(response);
+      if (response.status < 300) {
+        alert("تم إنشاء الحساب بنجاح");
+      } else {
+        alert("حدث خطأ أثناء عملية إنشاء الحساب");
+      }
+    });
+  };
   return (
     <div className="container">
       <Paper elevation={8}>
@@ -85,7 +88,9 @@ const SignupPage = () => {
           />
         </div>
         <div className="row">
-          <BaseButton icon={<SignupIcon />} text="تسجيل" onClick={signup} />
+          <div className="signup-button">
+            <BaseButton icon={<SignupIcon />} text="تسجيل" onClick={signup} />
+          </div>
         </div>
       </Paper>
     </div>

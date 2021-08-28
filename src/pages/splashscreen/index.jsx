@@ -1,8 +1,8 @@
 import React from "react";
 import "../../assets/css/styles.css";
 import "../../assets/css/fonts.css";
-import SigninIcon from "../../icons/SigninIcon.jsx";
 import {Link} from "react-router-dom";
+import { SigninIcon } from "../../icons/icons";
 const splashScreen = () => {
   return (
     <div className="landing-page">

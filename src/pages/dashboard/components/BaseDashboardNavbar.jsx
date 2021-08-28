@@ -3,17 +3,16 @@ import "../../../assets/css/styles.css";
 import "../../../assets/css/fonts.css";
 import logo from "../../../assets/images/logo.png";
 import { Link } from "react-router-dom";
-import SigninIcon from "../../../icons/SigninIcon.jsx";
 import BaseDashboardSidebar from "./BaseDashbaordSidebar";
+import { SigninIcon } from "../../../icons/icons";
 
 const BaseDashboardNavbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light tajawal-15">
       <BaseDashboardSidebar
-        reviewsDashboard="المراجعات"
-        alertsDashboard="التنبيهات"
-        favoritesDashboard="المفضلات"
-        productsDashboard="المنتجات"
+        storesDashboard="المتاجر"
+        statisticsDashboard="الإحصائيات"
+        usersDashboard="المستخدمين"
       />
       <Link to="/home" class="navbar-brand" href="#">
         <img src={logo} alt="Electronic Home" />

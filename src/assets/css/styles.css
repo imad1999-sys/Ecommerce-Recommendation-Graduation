@@ -156,7 +156,7 @@
 .button-section .btn-link {
   text-decoration: none;
   margin-bottom: 25px;
-  margin-top: 10px;
+  margin-top: auto;
 }
 .button-section .btn-link:hover {
   color: #f1f2f6;
@@ -332,6 +332,9 @@ v .form-control .list-auto {
   transform: translate(-50%, -50%);
   text-align: center;
 }
+.modal-body {
+  height: 300px;
+}
 .container .carousel-title {
   color: #ffffff;
   margin: 0 0 5px;
@@ -368,14 +371,13 @@ v .form-control .list-auto {
   display: flex;
   justify-content: center;
 }
-.base-card .c-title{
+.base-card .c-title {
   text-align: center;
   align-items: center;
   justify-content: center;
   display: flex;
 }
-.container-for-companies,
-.container-for-cards {
+.container-for-companies {
   padding: 120px;
 }
 .carousel-control-prev {
@@ -483,12 +485,12 @@ v .form-control .list-auto {
   .alarm-container,
   .list-section,
   .table-section,
-  .grid-of-card-dashboard{
+  .grid-of-card-dashboard {
     padding: 10px;
   }
 }
 @media (min-width: 576px) {
-  .grid-of-stores-container{
+  .grid-of-stores-container {
     padding-left: 10px;
     padding-right: 70px;
     padding-top: 10px;
@@ -507,7 +509,7 @@ v .form-control .list-auto {
   .alarm-container,
   .list-section,
   .table-section,
-  .grid-of-card-dashboard{
+  .grid-of-card-dashboard {
     padding: 15px;
   }
 }
@@ -531,12 +533,12 @@ v .form-control .list-auto {
   .alarm-container,
   .list-section,
   .table-section,
-  .grid-of-card-dashboard{
+  .grid-of-card-dashboard {
     padding: 18px;
   }
 }
 @media (min-width: 992px) {
-  .grid-of-stores-container{
+  .grid-of-stores-container {
     padding-left: 10px;
     padding-right: 110px;
     padding-top: 10px;
@@ -555,12 +557,12 @@ v .form-control .list-auto {
   .alarm-container,
   .list-section,
   .table-section,
-  .grid-of-card-dashboard{
+  .grid-of-card-dashboard {
     padding: 22px;
   }
 }
 @media (min-width: 1200px) {
-  .grid-of-stores-container{
+  .grid-of-stores-container {
     padding-left: 10px;
     padding-right: 140px;
     padding-top: 10px;
@@ -568,22 +570,31 @@ v .form-control .list-auto {
     justify-content: center;
   }
   .container-for-cards {
-    padding-left: 260px;
+    display: flex;
+    align-items: center;
+    padding-left: 90px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .alarm-container , .favorites-container {
+    display: flex;
+    align-items: center;
+    padding-right: 150px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
   .stores-container,
   .account-page-container,
   .profile-container,
   .reviews-container,
-  .favorites-container,
   .prev-products-container,
-  .alarm-container,
   .list-section,
   .table-section,
-  .grid-of-card-dashboard{
+  .grid-of-card-dashboard {
     padding: 25px;
   }
 }
-.carousel-of-companies-section{
+.carousel-of-companies-section {
   padding: 20px;
 }
 .carousel-of-main-page-section,
@@ -599,12 +610,14 @@ v .form-control .list-auto {
 
 /* start base card styles */
 .base-card {
-  width: 18rem;
+  width: 20rem;
+  height: 30rem;
   display: "flex";
   text-align: "center";
-  padding: 15;
+  padding: 500;
   border: 1px solid #ccc;
   border-radius: 5px;
+  margin: 50px;
 }
 .card-img-top {
   opacity: 1;
@@ -653,7 +666,7 @@ v .form-control .list-auto {
   margin: auto;
   height: 2px;
   background: #ffffff;
-  width: 45%;
+  width: 40%;
   top: 45%;
 }
 .divider-and-title-section .lines::after {
@@ -664,7 +677,7 @@ v .form-control .list-auto {
 }
 .divider-and-title-section .lines .text {
   height: 40px;
-  width: 40px;
+  width: 50px;
   top: 0;
   right: 0;
   bottom: 0;
@@ -1007,22 +1020,125 @@ h3:nth-child(2) {
 /*start card dashboard style */
 .card-dashboard {
   max-width: 18rem;
-  display: flex;
-  justify-content: center;
 }
-.btn-delete-dashboard{
+.btn-delete-dashboard {
   margin-left: 10px;
   margin-right: 10px;
+}
+.card-dashboard-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
 }
 /*end card dashboard style */
 
 /*start list style*/
-.list-group-item .list-span{
+.list-group-item .list-span {
   color: #000000;
 }
-.btn-card{
+.btn-card {
   display: flex;
   justify-content: center;
 }
 
 /*end list style*/
+
+/* start pagination style */
+.pagination-section {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+.rated-container .most-recommended-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.name .link-name {
+  text-decoration: none;
+  color: #000000;
+}
+.carousel-of-cards {
+  padding: 50px;
+}
+.carousel-of-card {
+  margin-top: 500px;
+}
+.carousel-of-recently-added {
+  margin-top: 500px;
+}
+.BootstrapMulti .slick-arrow.slick-prev,
+.BootstrapMulti .slick-arrow.slick-next {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  border-radius: 5px;
+}
+.slick-prev::before,
+.slick-next::before {
+  display: none;
+}
+.BootstrapMulti .slick-arrow.slick-prev {
+  left: -50px;
+}
+.BootstrapMulti .slick-arrow.slick-next {
+  right: -50px;
+}
+button {
+  outline: none;
+  border: none;
+  color: #7ac400;
+  background: white;
+  border-radius: 20px;
+  border: 1px solid #7ac400;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 7px 14px;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+.BootstrapMulti .slick-dots li button:before {
+  font-size: 15px;
+}
+.new-card {
+  text-align: center;
+  margin: 20;
+  padding: 0 10px;
+  width: 230px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
+  border-radius: 5;
+  align-self: auto;
+  height: calc(130vh / 1.6);
+}
+.new-card .card-image {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+.new-card .card-text {
+  padding: 5px 0;
+  color: gray;
+}
+.new-card .btn-card {
+  margin-top: auto;
+}
+.dropdown-section {
+  display: flex;
+  justify-content: center;
+}
+.go-section {
+  padding-top: 25px;
+  padding-right: 50px;
+}
+.login-button  , .signup-button{
+  padding-top: 20px;
+}
+/* end pagiation style */

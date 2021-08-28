@@ -2,79 +2,29 @@ import React from "react";
 import "../../../../../assets/css/styles.css";
 import "../../../../../assets/css/fonts.css";
 
-const BaseTableDashboard = () => {
+const BaseTableDashboard = (props) => {
   return (
     <div>
       <table class="table">
         <thead className="tajawal-25">
           <tr>
-            <th scope="col">Action</th>
-            <th scope="col">عدد المنتجات التي قام بإضافتها الى التنبيهات</th>
-            <th scope="col">اسم المستخدم</th>
-            <th scope="col">الرقم</th>
+            <th scope="col">CTR</th>
+            <th scope="col">عدد المراجعات</th>
+            <th scope="col">عدد التحويلات</th>
+            <th scope="col">عدد المشاهدات</th>
+            <th scope="col">اسم المتجر</th>
           </tr>
         </thead>
         <tbody className="tajawal-15">
-          <tr>
-            <th scope="row">
-              {" "}
-              <button
-                type="button"
-                class="btn btn-outline-primary btn-sm btn-update-dashboard"
-              >
-                تعديل
-              </button>
-              <button
-                type="button"
-                class="btn btn-outline-danger btn-sm btn-delete-dashboard"
-              >
-                حذف
-              </button>
-            </th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">
-              {" "}
-              <button
-                type="button"
-                class="btn btn-outline-primary btn-sm btn-update-dashboard"
-              >
-                تعديل
-              </button>
-              <button
-                type="button"
-                class="btn btn-outline-danger btn-sm btn-delete-dashboard"
-              >
-                حذف
-              </button>
-            </th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">
-              {" "}
-              <button
-                type="button"
-                class="btn btn-outline-primary btn-sm btn-update-dashboard"
-              >
-                تعديل
-              </button>
-              <button
-                type="button"
-                class="btn btn-outline-danger btn-sm btn-delete-dashboard"
-              >
-                حذف
-              </button>
-            </th>
-            <td>Larry the Bird</td>
-            <td>Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
+            {props.statistics.map((user) => (
+              <tr>
+                <th scope="row">{user.ctr}</th>
+                <th scope="row">{user.reviews}</th>
+                <th scope="row">{user.visits}</th>
+                <th scope="row">{user.views}</th>
+                <th scope="row">{user.storeName}</th>
+              </tr>
+            ))}
         </tbody>
       </table>
     </div>

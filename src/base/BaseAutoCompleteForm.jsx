@@ -1,53 +1,40 @@
 import React, { useState } from "react";
 import "../assets/css/styles.css";
 import "../assets/css/fonts.css";
-import { logApiUrl, searchAutoComplete } from "../API/urls/ApiUrls";
 import BaseButton from "./BaseButton";
+import {
+  autoCompleteAction,
+  searchAction,
+} from "../API/actions/searchactions/SearchActions";
+import { headers } from "../API/tokens/tokens";
+import { addLogAction } from "../API/actions/loggsactions/LoggsActions";
 const BaseAutocompleteForm = (props) => {
   const [data, setData] = useState([]);
-  const [valueOfSearch, setValueOfSearch] = useState("");
-  async function autoComplete(key) {
-    let result = localStorage.getItem("user-info");
-    let resultJson = JSON.parse(result);
-    let token = "Bearer " + resultJson.response.token;
-    let data = await fetch(searchAutoComplete + key, {
-      headers: {
-        Authorization: token,
-      },
+  const [searchKey, setSearchKey] = useState([]);
+  const [catValue, setCatValue] = useState([]);
+  const autoCompleteSearch = (key) => {
+    autoCompleteAction(key, "", headers).then((response) => {
+      console.log(response);
+      setData(response.data.response.results);
+      setSearchKey(key);
     });
-    data = await data.json();
-    setData(data.response.results);
-    setValueOfSearch(key);
-    console.log(data.response.results);
-    logForAutoComplete(key);
-  }
-  async function search() {
-    console.log(valueOfSearch);
-  }
-  async function logForAutoComplete(key) {
-    let token = localStorage.getItem("user-info");
-    let tokenJson = JSON.parse(token);
-    let t = "Bearer " + tokenJson.response.token;
-    console.log(tokenJson.response.token);
-    const query = key;
-    const action = "autocomplete";
-    const productId = "";
-    let item = { query, action, productId };
-    console.log(item);
-    let result = await fetch(logApiUrl, {
-      method: "POST",
-      body: JSON.stringify(item),
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: t,
-      },
+    addLogAction(key, "", "autocomplete", headers);
+  };
+  const getValue = (name) => {
+    console.log(name);
+    setCatValue(name);
+    console.log("CatValue " + catValue);
+  };
+  const search = () => {
+    console.log(catValue + "     " + searchKey);
+    searchAction(catValue, searchKey, headers).then((response) => {
+      console.log(response);
+      addLogAction(searchKey, "", "search", headers);
+      window.location.href = "/category/" + catValue;
     });
-    result = await result.json();
-    console.log(result);
-  }
+  };
   return (
-    <>
+    <React.Fragment>
       <div className="auto-complete-form">
         <input
           type={props.type}
@@ -56,8 +43,8 @@ const BaseAutocompleteForm = (props) => {
           autoComplete="off"
           className="auto-form-input tajawal-15"
           placeholder=" "
-          value={valueOfSearch}
-          onChange={(e) => autoComplete(e.target.value)}
+          value={searchKey}
+          onChange={(e) => autoCompleteSearch(e.target.value)}
         />
         <datalist id="datalistOptions">
           {data.map((item) => (
@@ -69,10 +56,132 @@ const BaseAutocompleteForm = (props) => {
           {props.label}
         </label>
       </div>
-      <div className="row mt-2">
-        <BaseButton text="بحث" onClick={search} />
+      <div className="choices-section">
+        <div class="dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            اختر الصنف
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li value={props.mobiles}>
+              <a class="dropdown-item" onClick={() => getValue(props.mobiles)}>
+                {" "}
+                {props.mobiles}
+              </a>
+            </li>
+            <li value={props.accessoire}>
+              <a
+                class="dropdown-item"
+                onClick={() => getValue(props.accessoire)}
+              >
+                {" "}
+                {props.accessoire}
+              </a>
+            </li>
+            <li value={props.apple}>
+              <a class="dropdown-item" onClick={() => getValue(props.apple)}>
+                {" "}
+                {props.apple}
+              </a>
+            </li>
+            <li value={props.computersAndLaptops}>
+              <a
+                class="dropdown-item"
+                onClick={() => getValue(props.computersAndLaptops)}
+              >
+                {" "}
+                {props.computersAndLaptops}
+              </a>
+            </li>
+            <li value={props.coversAndCases}>
+              <a
+                class="dropdown-item"
+                onClick={() => getValue(props.coversAndCases)}
+              >
+                {" "}
+                {props.coversAndCases}
+              </a>
+            </li>
+            <li value={props.blueToothAndHeadphones}>
+              <a
+                class="dropdown-item"
+                onClick={() => getValue(props.blueToothAndHeadphones)}
+              >
+                {" "}
+                {props.blueToothAndHeadphones}
+              </a>
+            </li>
+            <li value={props.samsung}>
+              <a class="dropdown-item" onClick={() => getValue(props.samsung)}>
+                {" "}
+                {props.samsung}
+              </a>
+            </li>
+            <li value={props.xiaomi}>
+              <a class="dropdown-item" onClick={() => getValue(props.xiaomi)}>
+                {" "}
+                {props.xiaomi}
+              </a>
+            </li>
+            <li value={props.backCovers}>
+              <a
+                class="dropdown-item"
+                onClick={() => getValue(props.backCovers)}
+              >
+                {" "}
+                {props.backCovers}
+              </a>
+            </li>
+            <li value={props.wirelessHeadsets}>
+              <a
+                class="dropdown-item"
+                onClick={() => getValue(props.wirelessHeadsets)}
+              >
+                {" "}
+                {props.wirelessHeadsets}
+              </a>
+            </li>
+            <li value={props.chargersAndPowerBanks}>
+              <a
+                class="dropdown-item"
+                onClick={() => getValue(props.chargersAndPowerBanks)}
+              >
+                {" "}
+                {props.chargersAndPowerBanks}
+              </a>
+            </li>
+            <li value={props.cables}>
+              <a class="dropdown-item" onClick={() => getValue(props.cables)}>
+                {" "}
+                {props.cables}
+              </a>
+            </li>
+            <li value={props.huawei}>
+              <a class="dropdown-item" onClick={() => getValue(props.huawei)}>
+                {" "}
+                {props.huawei}
+              </a>
+            </li>
+            <li value={props.all}>
+              <a class="dropdown-item" onClick={() => getValue(props.all)}>
+                {" "}
+                كل الأصناف
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </>
+      <div className="row">
+        <div className="go-section">
+          <BaseButton text="بحث" onClick={search} />
+        </div>
+      </div>
+    </React.Fragment>
   );
 };
 export default BaseAutocompleteForm;

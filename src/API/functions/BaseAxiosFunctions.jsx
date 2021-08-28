@@ -9,8 +9,8 @@ export const get = async(url, queryParams , headers) => {
   });
 }
 
-export const patch  = async (url, data , headers) =>{
-  return await axios.patch(url,data,{headers: headers}).then(res => {
+export const put  = async (url, data , headers) =>{
+  return await axios.put(url,data,{headers: headers}).then(res => {
       return res;
   }).catch(function (error) {
       return error;
