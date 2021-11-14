@@ -4,37 +4,17 @@ import "../../../assets/css/fonts.css";
 import BaseInput from "../../../base/BaseInput";
 import { addPricingAlertAction } from "../../../API/actions/alertactions/AlertActions";
 import { headers } from "../../../API/tokens/tokens";
-import { addLogAction } from "../../../API/actions/loggsactions/LoggsActions";
 import { addUserReviewAction } from "../../../API/actions/reviewsactions/ReviewActions";
 
 const ReviewModal = (props) => {
   const [siteName, setSiteName] = useState("");
   const [description, setDescription] = useState("");
   console.log(props.siteName);
-  const addPricingAlert = () => {
-    const productId = props.productId;
-    let pricingJsonItem = { siteName, description, productId };
-    addPricingAlertAction(pricingJsonItem, headers).then((response) => {
-      console.log(response);
-      if (response.status < 300) {
-        alert(response.data.response);
-        addLogAction(productId, "price_alert", headers);
-      } else {
-        alert("حدث خطأ أثناء عملية الإضافة");
-      }
-    });
-  };
   const addReview = () => {
     const productId = props.productId;
     let reviewJsonItem = { siteName, description, productId };
     addUserReviewAction(reviewJsonItem, headers).then((response) => {
       console.log(response);
-      if (response.status < 300) {
-        alert(response.data.response);
-        addLogAction(productId, "review", headers);
-      } else {
-        alert("حدث خطأ أثناء عملية الإضافة");
-      }
     });
   };
   return (
@@ -71,7 +51,7 @@ const ReviewModal = (props) => {
             </div>
             <div class="modal-body">
               {" "}
-              <div className="container">
+              <div className="auth-container">
                 <div className="row">
                   <BaseInput
                     label="البريد الالكتروني"

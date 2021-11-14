@@ -12,7 +12,6 @@ import {
   PriceTagIcon,
   DeleteIcon,
 } from "../../../icons/icons";
-import { addLogAction } from "../../../API/actions/loggsactions/LoggsActions";
 
 const FavoritesNav = () => {
   const [favorites, setFavorites] = useState([]);
@@ -27,11 +26,7 @@ const FavoritesNav = () => {
   const deleteFavoriteById = (id, id2) => {
     deleteUserFavoriteById(id, headers).then((response) => {
       if (response.status < 300) {
-        alert("تم حذف المفضلة بنجاح");
-        addLogAction(id2, "delete_from_favorite", headers);
         getFavorites();
-      } else {
-        alert("حدث خطأ أثناء عملية الحذف");
       }
     });
   };

@@ -1,21 +1,19 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import "../../assets/css/styles.css";
+import "../../assets/css/fonts.css";
+import { searchAction } from "../../API/actions/searchactions/SearchActions";
+import { headers } from "../../API/tokens/tokens";
+import BaseFooter from "../../base/BaseFooter";
+import BaseDropDown from "../../base/BaseDropdown";
 import BaseNavbar from "../../base/BaseNavbar";
 import BaseCard from "../../base/BaseCard";
-import BaseFooter from "../../base/BaseFooter";
-import { useParams } from "react-router-dom";
-import { headers } from "../../API/tokens/tokens";
+import BasePagination from "../../base/BasePagination";
 import { EyeIcon, InfoIcon } from "../../icons/icons";
-import BasePagination from "../../base/BasePagination.jsx";
-import BaseDropDown from "../../base/BaseDropdown";
-import {
-  searchByFilter,
-  searchByLanguage,
-  searchBySort,
-} from "../../API/services/other/SearchService";
-const SortPage = () => {
-  const { name, filter } = useParams();
-  console.log(name + filter);
+import { useParams } from "react-router";
+
+const SearchPage = () => {
+  const { query, category } = useParams();
+  console.log(query + category);
   const [productsCategory, setProductCategory] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage, setProductsPage] = useState(12);
@@ -26,49 +24,29 @@ const SortPage = () => {
     indexOfFirstProduct,
     indexOfLastProduct
   );
-
-  const getProductsByCategory = () => {
-    if (filter === "ar" || filter === "en") {
-      searchByLanguage(name, filter, "", headers).then((resposne) => {
-        console.log(resposne);
-        setProductCategory(resposne.data.response.results);
-      });
-    }
-    if (
-      filter === "date_dt" ||
-      filter === "sale_price_d" ||
-      filter === "views_i"
-    ) {
-      searchByFilter(name, filter, "", headers).then((resposne) => {
-        console.log(resposne);
-        setProductCategory(resposne.data.response.results);
-      });
-    }
-    if (filter === "asc" || filter === "desc") {
-      searchBySort(name, filter, "", headers).then((resposne) => {
-        console.log(resposne);
-        setProductCategory(resposne.data.response.results);
-      });
-    }
-  };
-  useEffect(() => {
-    getProductsByCategory();
-  }, []);
-
   const goToDetailsPage = (id) => {
     window.location.href = "/details/" + id;
   };
+  const search = () => {
+    searchAction(category, query, headers).then((res) => {
+      console.log(res);
+      setProductCategory(res.data.response.results);
+    });
+  };
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  useEffect(() => {
+    search();
+  }, []);
   return (
     <div>
       <div className="row">
         <BaseNavbar />
       </div>
-      <div className="row">
+      {/* <div className="row">
         <div className="filters-section">
           <div className="col">
             <BaseDropDown
-              name={name}
+              name={query}
               isLang={false}
               isSort={false}
               isFilter={true}
@@ -91,7 +69,7 @@ const SortPage = () => {
             />
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="row">
         <div className="container-for-cards">
           <div className="row row-cols-1 row-cols-md-4 g-4 gx-5">
@@ -128,4 +106,4 @@ const SortPage = () => {
     </div>
   );
 };
-export default SortPage;
+export default SearchPage;

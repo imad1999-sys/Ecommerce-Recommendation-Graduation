@@ -7,14 +7,16 @@ const ProductOffers = (props) => {
     <div className="product-type-section">
       <p className="tajawal-25">المنتج من متاجر أخرى : </p>
       <div className="row">
-        <CardOffer
-          matchedProducts={props.matchedProducts}
-          image={amazon}
-          siteName={props.siteName}
-          salePrice={props.salePrice}
-          productUrl={props.productUrl}
-          id={props.id}
-        />
+        {props.matchedProducts.map((prod) => (
+          <div className="col-6">
+            <CardOffer
+              storeName={prod.storeName}
+              sale_price={prod.sale_price}
+              product_url={prod.product_url}
+              id={props.id}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );

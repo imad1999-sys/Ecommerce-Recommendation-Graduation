@@ -12,6 +12,7 @@ import DashboardPageCompleted from "../pages/dashboard/index.jsx";
 import CategoryPage from "../pages/categorypage/CategoryPage.jsx";
 import AccountPageCompleted from "../pages/accountpage/index.jsx";
 import PricingAlertDashboard from "../pages/dashboard/pages/pricingalertpagedashboard/PriceAlertDashboardPage.jsx";
+import SearchPageCompleted from "../pages/searchpage/SearchPage.jsx";
 const Routes = () => {
   return (
     <div>
@@ -32,6 +33,7 @@ const Routes = () => {
         <Route exact path="/users-dashboard" component={FavoritesPageDashboard} />
         <Route exact path="/store/:name" component={StoresProductPage} />
         <Route exact path="/category/:name/:filter" component={SortPageCompleted} />
+        <Route exact path="/search/:query/:category" component={SearchPageCompleted} />
       </Router>
     </div>
   );

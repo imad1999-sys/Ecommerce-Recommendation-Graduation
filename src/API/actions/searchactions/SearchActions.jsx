@@ -10,10 +10,10 @@ import {
 export const autoCompleteAction = (data , queryParams, headers) => {
   return searchAutoCompleteService(data , queryParams, headers);
 };
-export const searchByCategoryAction = (data , query , queryParams, headers) => {
-  return searchByCategoryService(data , query , queryParams, headers);
+export const searchByCategoryAction = (data , queryParams, headers) => {
+  return searchByCategoryService(data , queryParams, headers);
 };
-export const searchAction = (queryParams , data , headers) => {
+export const searchAction = (data , queryParams , headers) => {
   return searchService(data , queryParams , headers);
 }
 export const recommendAction = (id , data , headers) => {

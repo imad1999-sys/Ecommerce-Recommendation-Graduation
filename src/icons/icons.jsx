@@ -28,7 +28,7 @@ export const CableIcon = () => {
   return <i class="fas fa-ethernet icon"></i>;
 };
 export const ListIcon = () => {
-  return <i class="fas fa-bars icon"></i>;
+  return <i class="fas fa-bars list-icon"></i>;
 };
 export const SignupIcon = () => {
   return <i class="fas fa-user-plus"></i>;

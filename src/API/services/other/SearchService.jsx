@@ -8,7 +8,7 @@ import {
   recommendUrl,
   searchThird,
 } from "../../urls/ApiUrls.jsx";
-export const searchService = (queryParams, data, headers) => {
+export const searchService = (data, queryParams, headers) => {
   let searchUrl = searchFirst + queryParams + searchSecond + data;
   return get(searchUrl, queryParams, headers);
 };
@@ -16,7 +16,7 @@ export const searchAutoCompleteService = (data, queryParams, headers) => {
   let autocomplete = searchAutoComplete + data;
   return get(autocomplete, queryParams, headers);
 };
-export const searchByCategoryService = (data, sort, queryParams, headers) => {
+export const searchByCategoryService = (data, queryParams, headers) => {
   let searchByCategoryUrl = searchByCategory + data;
   return get(searchByCategoryUrl, queryParams, headers);
 };
@@ -31,7 +31,7 @@ export const searchByLanguage = (
     sortAndLangUrl =
       searchByCategory + data + " AND language_s:ar AND site_name_s:noon";
   } else {
-    sortAndLangUrl = searchByCategory + data;
+    sortAndLangUrl = searchByCategory + data + " AND language_s:en";
   }
   return get(sortAndLangUrl, queryParams, headers);
 };

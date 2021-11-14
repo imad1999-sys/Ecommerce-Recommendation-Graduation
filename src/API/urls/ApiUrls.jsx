@@ -41,8 +41,7 @@ export const deletePriceAlertById = baseUrl + "/api/price-alert/";
 
 /* smart search */
 export const searchFirst = baseUrl + "/api/search/?limit=200&q=";
-export const searchSecond = "&sort=";
-export const searchThird = "&languages_s=";
+export const searchSecond = "filter=category_sa:";
 export const searchByCategory =
   baseUrl + "/api/search/?limit=200&q=*&filter=category_sa:";
 export const searchAutoComplete = baseUrl + "/api/autocomplete?q=";

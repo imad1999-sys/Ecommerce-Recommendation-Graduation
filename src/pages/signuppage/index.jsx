@@ -20,15 +20,10 @@ const SignupPage = () => {
     let itemJson = JSON.stringify(dataJson);
     registerService(itemJson, headers).then((response) => {
       console.log(response);
-      if (response.status < 300) {
-        alert("تم إنشاء الحساب بنجاح");
-      } else {
-        alert("حدث خطأ أثناء عملية إنشاء الحساب");
-      }
     });
   };
   return (
-    <div className="container">
+    <div className="auth-container">
       <Paper elevation={8}>
         <div className="row">
           <AvatarImage icon={<SignupIcon />} />

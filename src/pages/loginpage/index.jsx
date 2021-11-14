@@ -25,19 +25,14 @@ const LoginPage = () => {
     loginService(itemJson, headersForLogin).then((response) => {
       console.log(response);
       localStorage.setItem("token", response.data.response.token);
-      if (response.status < 300) {
-        alert("تم تسجيل الدخول بنجاح");
-        window.location.href = "/home";
-      } else {
-        alert("حدث خطأ أثناء تسجيل الدخول");
-      }
+      window.location.href="/home"
     });
   };
   const goToSignupPage = () => {
     window.location.href = "/signup";
   };
   return (
-    <div className="container">
+    <div className="auth-container">
       <Paper elevation={8}>
         <div className="row">
           <AvatarImage icon={<SigninIcon />} />

@@ -14,11 +14,12 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Container } from "reactstrap";
-const CarouselOfCards = ({ products, currentPage }) => {
+import BaseSlider from "../../../base/BaseSlider.jsx";
+const CarouselOfCards = (props) => {
   const goToDetailsPage = (id) => {
     window.location.href = "/details/" + id;
   };
-  console.log(currentPage);
+  console.log(props.currentPage);
   var settings = {
     dots: true,
     infinite: true,
@@ -46,19 +47,13 @@ const CarouselOfCards = ({ products, currentPage }) => {
   return (
     <Container>
       <div
-        className="BootstrapMulti"
-        style={{ display: "flex", justifyContent: "center", marginTop: 1500 }}
+        className="bootstrap-multi"
+        style={{ display: "flex", justifyContent: "center", marginTop: 50 }}
       >
-        <div style={{ width: "300%"}}>
-          <Slider
-            prevArrow={<PreviousBtn />}
-            nextArrow={<NextBtn />}
-            slidesToShow={5}
-            slidesToScroll={1}
-            dots={false}
-          >
-            {products.map((product) => (
+        <div style={{ width: "115%"}}>
+          <BaseSlider content = {props.products.map((product , index) => (
               <BaseCard
+                key={index}
                 image={product.image}
                 title={product.title}
                 currency={product.currency}
@@ -71,8 +66,7 @@ const CarouselOfCards = ({ products, currentPage }) => {
                 isAlert={false}
                 icon={<InfoIcon />}
               />
-            ))}
-          </Slider>
+            ))} />
         </div>
       </div>
     </Container>

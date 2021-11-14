@@ -4,21 +4,20 @@ import "../../../assets/css/fonts.css";
 import PricingAlertModal from "./PricingAlertModal.jsx";
 import { addProductToFavorites } from "../../../API/actions/favoritesactions/FavoritesAction.jsx";
 import { headers } from "../../../API/tokens/tokens";
-import { StarIcon, BellIcon, AddIcon, CloseIcon , PenIcon } from "../../../icons/icons";
-import { addLogAction } from "../../../API/actions/loggsactions/LoggsActions";
+import {
+  StarIcon,
+  BellIcon,
+  AddIcon,
+  CloseIcon,
+  PenIcon,
+} from "../../../icons/icons";
 import ReviewModal from "./ReviewModal.jsx";
 const ProductPrice = (props) => {
   const addToFavorites = () => {
     const productId = props.id;
     let jsonItem = { productId };
     addProductToFavorites(jsonItem, headers).then((response) => {
-      if (response.status < 300) {
-        alert(response.data.response);
-        addLogAction(productId , "add_to_favorite" , headers);
-        console.log(response);
-      } else {
-        alert("حدث خطأ أتناء عملية الإضافة");
-      }
+      console.log(response);
     });
   };
   return (

@@ -6,10 +6,10 @@ import {DeleteIcon} from "../icons/icons.jsx";
 const BaseDetailCard = (props) => {
   return (
     <div className="base-detail-card">
-      <div class="d-flex position-relative">
-        <img src={props.image} class="flex-shrink-0 me-3" alt="..." />
+      <div className="d-flex position-relative">
+        <img src={props.image} className="flex-shrink-0 me-3" alt="..." />
         <div>
-          <h5 class="mt-0 tajawal-25">{props.title}</h5>
+          <h5 className="mt-0 tajawal-25">{props.title}</h5>
           <p className="tajawal-15">{props.description}</p>
           {props.isAlarm ? (
             <div>

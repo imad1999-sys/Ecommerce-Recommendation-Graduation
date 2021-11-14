@@ -14,7 +14,6 @@ import {
   matchProductAction,
 } from "../../../API/actions/productactions/ProductActions.jsx";
 import { useParams } from "react-router-dom";
-import { addLogAction } from "../../../API/actions/loggsactions/LoggsActions.jsx";
 import { recommendAction } from "../../../API/actions/searchactions/SearchActions.jsx";
 import MostRecommendedProducts from "./MostRecommendedProducts.jsx";
 const ProductDetails = (props) => {
@@ -52,28 +51,28 @@ const ProductDetails = (props) => {
       setSiteUrl(product.siteUrl);
       setDescription(product.description);
       setEmail(product.email);
+      matchProduct(product.title);
     });
   };
-  const matchProduct = () => {
-    matchProductAction(title, "", headers).then((response) => {
+  const matchProduct = (value) => {
+    matchProductAction(value, "", headers).then((response) => {
       console.log(response);
       setMatchedProducts(response.data.response.results);
-      addLogAction("", id, "view", headers);
     });
   };
   const recommendProduct = () => {
     recommendAction(id, "", headers).then((response) => {
       console.log(response.data.response.results);
-        setRecommendProducts(response.data.response.results.slice(0,4));
-        addLogAction("", id, "recommend", headers);
+      setRecommendProducts(response.data.response.results.slice(0, 4));
     });
   };
+
   useEffect(() => {
-    console.log(id);
     getProduct();
-    matchProduct();
+
     recommendProduct();
-  });
+  }, []);
+
   return (
     <div>
       <div className="row">
@@ -101,10 +100,6 @@ const ProductDetails = (props) => {
               />
             </div>
             <hr className="me-4" />
-            <div className="row">
-              <ProductDescription description={description} />
-            </div>
-            <hr className="me-4" />
           </div>
           <div class="col-md-6 mb-md-0 p-md-4 first-details-section">
             <div className="row">
@@ -120,6 +115,9 @@ const ProductDetails = (props) => {
                 matchedProducts={matchedProducts}
               />
             </div>
+          </div>
+          <div className="row">
+            <ProductDescription description={description} />
           </div>
           <div className="row">
             <MostRecommendedProducts recommendProducts={recommendProducts} />

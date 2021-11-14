@@ -22,10 +22,7 @@ const AlertNav = () => {
     deletePricingAlertForUserById(id, headers).then((response) => {
       console.log(response);
       if (response.status < 300) {
-        alert("تم عملية حذف التنبيه بنجاح");
         getPricingAlerts();
-      } else {
-        alert("حدث خطأ أثناء عملية الحذق");
       }
     });
   };

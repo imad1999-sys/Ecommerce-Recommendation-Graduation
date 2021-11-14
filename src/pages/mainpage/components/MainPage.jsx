@@ -15,15 +15,10 @@ import {
 import { headers } from "../../../API/tokens/tokens.jsx";
 import CarouselOfRecentlyAdded from "./CarouselOfRecentlyAdded.jsx";
 import CarouselOfMostPopulared from "./CarouselOfMostPopular.jsx";
-import { makeStyles } from "@material-ui/core/styles";
-const useStyles = makeStyles((theme) => ({
-  paper : {
-    backgroundColor : "#000000"
-  }
-}));
+import { recentlyAddedService } from "../../../API/services/other/ProductService.jsx";
 const MainPage = () => {
   const [products, setProducts] = useState([]);
-  const [recentlyAddedProducts, setRecentlyAddedProducts] = useState([]);
+  const [recentlyProducts, setRecentlyProducts] = useState([]);
   useEffect(() => {
     getMostViewed();
     getRecentlyAdded();
@@ -37,17 +32,16 @@ const MainPage = () => {
   const getRecentlyAdded = () => {
     fetchAllProductsAction("", headers).then((response) => {
       console.log(response);
-      setRecentlyAddedProducts(response.data.response.products.content);
+      setProducts(response.data.response.products.content);
     });
   };
-  const classes = useStyles();
   return (
     <div>
       <div className="row">
         <BaseNavbar />
       </div>
       <div className="carousels-section">
-        <DividerAndTitleSection section="قسم المتاجر" />
+        <DividerAndTitleSection section="المتاجر" />
         <div className="row">
           <div className="carousel-of-companies-section">
             <Paper elevation={10}>
@@ -58,17 +52,13 @@ const MainPage = () => {
         <DividerAndTitleSection section="الأكثر مشاهدة" />
         <div className="row">
           <div className="carousel-of-card">
-              <CarouselOfCards
-                products={products}
-              />
+            <CarouselOfCards products={products} />
           </div>
         </div>
         <DividerAndTitleSection section="المضافة حديثاً" />
         <div className="row">
           <div className="carousel-of-recently-added">
-              <CarouselOfRecentlyAdded
-                products={recentlyAddedProducts}
-              />
+            <CarouselOfCards products={products} />
           </div>
         </div>
         <DividerAndTitleSection section="الأصناف الأكثر مشاهدة" />

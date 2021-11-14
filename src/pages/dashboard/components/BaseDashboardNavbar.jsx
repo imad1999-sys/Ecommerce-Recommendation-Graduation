@@ -29,22 +29,6 @@ const BaseDashboardNavbar = () => {
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarScroll">
-          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll tajawal-20">
-            <li class="nav-item">
-              <Link
-                type="button"
-                class="nav-link"
-                tabIndex="-1"
-                aria-disabled="true"
-                to="/account"
-              >
-                تسجيل الخروج
-                <SigninIcon />
-              </Link>
-            </li>
-          </ul>
-        </div>
       </div>
     </nav>
   );

@@ -38,7 +38,7 @@ const BaseSidebar = (props) => {
   return (
     <div>
       <button
-        class="btn btn-primary tajawal-25"
+        className="btn btn-light btn-sidebar tajawal-25"
         type="button"
         data-bs-toggle="offcanvas"
         data-bs-target="#offcanvasRight"
@@ -48,37 +48,37 @@ const BaseSidebar = (props) => {
       </button>
 
       <div
-        class="offcanvas offcanvas-end"
-        tabindex="-1"
+        className="offcanvas offcanvas-end"
+        tabIndex="-1"
         id="offcanvasRight"
         aria-labelledby="offcanvasRightLabel"
       >
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title tajawal-25" id="offcanvasExampleLabel">
+        <div className="offcanvas-header">
+          <h5 className="offcanvas-title tajawal-25" id="offcanvasExampleLabel">
             الصفحات
           </h5>
         </div>
-        <div class="offcanvas-body">
-          <ul class="list-group category-group tajawal-15">
-            <li class="list-group-item options-section" >
+        <div className="offcanvas-body">
+          <ul className="list-group category-group tajawal-15">
+            <li className="list-group-item options-section" >
               <a className="title" onClick={() => goToCategoriesPage(props.mobiles)}>
                 {props.mobileIcon}
                 {props.mobiles}
               </a>
             </li>
-            <li class="list-group-item options-section">
+            <li className="list-group-item options-section">
               <a className="title" onClick={() => goToCategoriesPage(props.accessoire)}>
                 {props.accessoireIcon}
                 {props.accessoire}
               </a>
             </li>
-            <li class="list-group-item options-section">
+            <li className="list-group-item options-section">
               <a className="title" onClick={() => goToCategoriesPage(props.apple)}>
                 {props.appleIcon}
                 {props.apple}
               </a>
             </li>
-            <li class="list-group-item options-section">
+            <li className="list-group-item options-section">
               <a
                 onClick={() => goToCategoriesPage(props.computersAndLaptops)}
                 className="title"
@@ -87,13 +87,13 @@ const BaseSidebar = (props) => {
                 {props.computersAndLaptops}
               </a>
             </li>
-            <li class="list-group-item options-section">
+            <li className="list-group-item options-section">
               <a onClick={() => goToCategoriesPage(props.coversAndCases)} className="title">
                 {props.coversAndCasesIcon}
                 {props.coversAndCases}
               </a>
             </li>
-            <li class="list-group-item options-section">
+            <li className="list-group-item options-section">
               <a
                 onClick={() => goToCategoriesPage(props.blueToothAndHeadphones)}
                 className="title"
@@ -102,25 +102,25 @@ const BaseSidebar = (props) => {
                 {props.blueToothAndHeadphones}
               </a>
             </li>
-            <li class="list-group-item options-section">
+            <li className="list-group-item options-section">
               <a onClick={() => goToCategoriesPage(props.samsung)} className="title">
                 {props.samsungIcon}
                 {props.samsung}
               </a>
             </li>
-            <li class="list-group-item options-section">
+            <li className="list-group-item options-section">
               <a onClick={() => goToCategoriesPage(props.xiaomi)} className="title">
                 {props.xiaomiIcon}
                 {props.xiaomi}
               </a>
             </li>
-            <li class="list-group-item options-section">
+            <li className="list-group-item options-section">
               <a onClick={() => goToCategoriesPage(props.backCovers)} className="title">
                 {props.backCoversIcon}
                 {props.backCovers}
               </a>
             </li>
-            <li class="list-group-item options-section">
+            <li className="list-group-item options-section">
               <a
                 onClick={() => goToCategoriesPage(props.wirelessHeadsets)}
                 className="title"
@@ -129,7 +129,7 @@ const BaseSidebar = (props) => {
                 {props.wirelessHeadsets}
               </a>
             </li>
-            <li class="list-group-item options-section">
+            <li className="list-group-item options-section">
               <a
                 onClick={() => goToCategoriesPage(props.chargersAndPowerBanks)}
                 className="title"
@@ -138,7 +138,7 @@ const BaseSidebar = (props) => {
                 {props.chargersAndPowerBanks}
               </a>
             </li>
-            <li class="list-group-item options-section">
+            <li className="list-group-item options-section">
               <a
                 onClick={() => goToCategoriesPage(props.cables)}
                 className="title"
@@ -147,7 +147,7 @@ const BaseSidebar = (props) => {
                 {props.cables}
               </a>
             </li>
-            <li class="list-group-item options-section">
+            <li className="list-group-item options-section">
               <a
                 onClick={() => goToCategoriesPage(props.huawei)}
                 className="title"

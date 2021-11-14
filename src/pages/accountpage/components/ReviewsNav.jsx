@@ -20,12 +20,8 @@ const ReviewsNav = () => {
   const deleteReviewById = (id) => {
     deleteUserReviewAction(id, headers).then((response) => {
       if (response.status < 300) {
-        alert("تمت عملية حذف التقييم بنجاح");
         getReviews();
-      } else {
-        alert("حدث خطأ أثناء عملية الحذف");
-      }
-      console.log(response);
+      } 
     });
   };
   useEffect(() => {

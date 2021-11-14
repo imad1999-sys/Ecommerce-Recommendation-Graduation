@@ -9,10 +9,10 @@ import "../../../assets/css/styles.css";
 const AccountPageNavs = () => {
   return (
     <div>
-      <ul class="nav nav-tabs tajawal-25" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
+      <ul className="nav nav-tabs tajawal-25" id="myTab" role="tablist">
+        <li className="nav-item" role="presentation">
           <button
-            class="nav-link active"
+            className="nav-link active"
             id="home-tab"
             data-bs-toggle="tab"
             data-bs-target="#home"
@@ -25,9 +25,9 @@ const AccountPageNavs = () => {
             الملف الشخصي
           </button>
         </li>
-        <li class="nav-item" role="presentation">
+        <li className="nav-item" role="presentation">
           <button
-            class="nav-link"
+            className="nav-link"
             id="profile-tab"
             data-bs-toggle="tab"
             data-bs-target="#profile"
@@ -40,9 +40,9 @@ const AccountPageNavs = () => {
             تقييماتي
           </button>
         </li>
-        <li class="nav-item" role="presentation">
+        <li className="nav-item" role="presentation">
           <button
-            class="nav-link"
+            className="nav-link"
             id="contact-tab"
             data-bs-toggle="tab"
             data-bs-target="#contact"
@@ -55,9 +55,9 @@ const AccountPageNavs = () => {
             قائمتي المفضلة
           </button>
         </li>
-        <li class="nav-item" role="presentation">
+        <li className="nav-item" role="presentation">
           <button
-            class="nav-link"
+            className="nav-link"
             id="alert-tab"
             data-bs-toggle="tab"
             data-bs-target="#alert"
@@ -71,9 +71,9 @@ const AccountPageNavs = () => {
           </button>
         </li>
       </ul>
-      <div class="tab-content" id="myTabContent">
+      <div className="tab-content" id="myTabContent">
         <div
-          class="tab-pane fade show active"
+          className="tab-pane fade show active"
           id="home"
           role="tabpanel"
           aria-labelledby="home-tab"
@@ -81,7 +81,7 @@ const AccountPageNavs = () => {
           <ProfileNav />
         </div>
         <div
-          class="tab-pane fade"
+          className="tab-pane fade"
           id="profile"
           role="tabpanel"
           aria-labelledby="profile-tab"
@@ -89,7 +89,7 @@ const AccountPageNavs = () => {
           <ReviewsNav />
         </div>
         <div
-          class="tab-pane fade"
+          className="tab-pane fade"
           id="contact"
           role="tabpanel"
           aria-labelledby="contact-tab"
@@ -97,7 +97,7 @@ const AccountPageNavs = () => {
           <FavoritesNav />
         </div>
         <div
-          class="tab-pane fade"
+          className="tab-pane fade"
           id="alert"
           role="tabpanel"
           aria-labelledby="alert-tab"

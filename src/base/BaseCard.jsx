@@ -18,7 +18,7 @@ const BaseCard = (props) => {
       <p className="card-text tajawal-15">
         {props.views} {props.viewTag}
       </p>
-      <div class="btn-card tajawal-15">
+      <div className="btn-card tajawal-15">
         <BaseButton
           icon={props.icon}
           text={props.btnText}

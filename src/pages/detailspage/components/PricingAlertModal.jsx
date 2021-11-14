@@ -4,7 +4,6 @@ import "../../../assets/css/fonts.css";
 import BaseInput from "../../../base/BaseInput";
 import { addPricingAlertAction } from "../../../API/actions/alertactions/AlertActions";
 import { headers } from "../../../API/tokens/tokens";
-import { addLogAction } from "../../../API/actions/loggsactions/LoggsActions";
 
 const PricingAlertModal = (props) => {
   const [email, setEmail] = useState("");
@@ -14,12 +13,6 @@ const PricingAlertModal = (props) => {
     let pricingJsonItem = { price, email, productId };
     addPricingAlertAction(pricingJsonItem, headers).then((response) => {
       console.log(response);
-      if (response.status < 300) {
-        alert(response.data.response);
-        addLogAction(productId , "price_alert" , headers);
-      } else {
-        alert("حدث خطأ أثناء عملية الإضافة");
-      }
     });
   };
   return (
@@ -57,7 +50,7 @@ const PricingAlertModal = (props) => {
               ></button>
             </div>
             <div class="modal-body">
-              <div className="container">
+              <div className="auth-container">
                 <div className="row">
                   <BaseInput
                     label="البريد الالكتروني"

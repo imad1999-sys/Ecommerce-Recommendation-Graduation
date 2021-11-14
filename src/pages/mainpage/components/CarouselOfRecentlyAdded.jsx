@@ -1,11 +1,9 @@
 import React from "react";
 import BaseCard from "../../../base/BaseCard.jsx";
-import grandStores from "../../../assets/images/grand stores.png";
 import "../../../assets/css/styles.css";
 import "../../../assets/css/fonts.css";
 import {
   EyeIcon,
-  PriceTagIcon,
   InfoIcon,
   ArrowCircleRight,
   ArrowCircleLeft,
@@ -14,19 +12,12 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Container } from "reactstrap";
-const CarouselOfRecentlyAdded = ({ products }) => {
+import BaseSlider from "../../../base/BaseSlider.jsx";
+const CarouselOfRecentlyAdded = (props) => {
   const goToDetailsPage = (id) => {
     window.location.href = "/details/" + id;
   };
-  var settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-  };
   const PreviousBtn = (props) => {
-    console.log(props);
     const { className, onClick } = props;
     return (
       <div className={className} onClick={onClick}>
@@ -45,19 +36,14 @@ const CarouselOfRecentlyAdded = ({ products }) => {
   return (
     <Container>
       <div
-        className="BootstrapMulti"
-        style={{ display: "flex", justifyContent: "center", marginTop: 2800 }}
+        className="bootstrap-multi"
+        style={{ display: "flex", justifyContent: "center", marginTop: 50 }}
       >
-        <div style={{ width: "300%" }}>
-          <Slider
-            prevArrow={<PreviousBtn />}
-            nextArrow={<NextBtn />}
-            slidesToShow={5}
-            slidesToScroll={1}
-            dots={false}
-          >
-            {products.map((product) => (
+        <div style={{ width: "115%" }}>
+          <BaseSlider
+            content={props.products.map((product, index) => (
               <BaseCard
+                key={index}
                 image={product.image}
                 title={product.title}
                 currency={product.currency}
@@ -71,7 +57,7 @@ const CarouselOfRecentlyAdded = ({ products }) => {
                 icon={<InfoIcon />}
               />
             ))}
-          </Slider>
+          />
         </div>
       </div>
     </Container>

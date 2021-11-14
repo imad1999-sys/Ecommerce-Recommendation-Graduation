@@ -8,8 +8,8 @@ const productDescription = (props) => {
       <p class="lh-lg">
         <dl className="row">
           <div className="des-title tajawal-25">توصيف المنتج</div>
-          <dt class="col-sm-3 tajawal-15">التوصيف: </dt>
-          <dd class="col-sm-9 tajawal-15">{props.description}</dd>
+          <dt class="col-2 tajawal-15">التوصيف: </dt>
+          <dd class="col-10 tajawal-15">{props.description}</dd>
         </dl>
       </p>
     </div>

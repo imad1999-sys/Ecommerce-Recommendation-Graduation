@@ -16,9 +16,10 @@ const MostRecommendedProducts = (props) => {
       </div>
       <div className="most-recommended-container">
         <div className="row">
-          {props.recommendProducts.map((product) => (
+          {props.recommendProducts.map((product, index) => (
             <div className="col-sm-3">
               <BaseCard
+                key={index}
                 image={product.image}
                 title={product.title}
                 price={product.price}

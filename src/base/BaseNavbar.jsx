@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../assets/css/styles.css";
 import "../assets/css/fonts.css";
 import logo from "../assets/images/logo.png";
@@ -21,7 +21,7 @@ import BaseSidebar from "./BaseSidebar.jsx";
 const BaseNavbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light tajawal-15">
-      <div class="container-fluid">
+      <div className="container-fluid">
         <BaseSidebar
           mobiles="جوالات"
           mobileIcon={<PhoneIcon />}
@@ -50,11 +50,11 @@ const BaseNavbar = () => {
           huawei="هواوي"
           huaweiIcon={<PhoneIcon />}
         />
-        <Link to="/home" class="navbar-brand" href="#">
+        <Link to="/home" className="navbar-brand" href="#">
           <img src={logo} alt="Electronic Home" />
         </Link>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarScroll"
@@ -62,24 +62,24 @@ const BaseNavbar = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarScroll">
-          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll .tajawal-20">
-            <li class="nav-item">
+        <div className="collapse navbar-collapse" id="navbarScroll">
+          <ul className="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll tajawal-15">
+            <li className="nav-item">
               <Link
                 to="/home"
                 type="button"
-                class="nav-link"
+                className="nav-link"
                 aria-current="page"
               >
                 الصفحة الرئيسية <HomeIcon />
               </Link>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <Link
                 type="button"
-                class="nav-link"
+                className="nav-link"
                 to="/account"
               >
                 اعدادات الحساب
@@ -90,20 +90,6 @@ const BaseNavbar = () => {
           <BaseAutocompleteForm
             type="text"
             label="ابحث ..."
-            mobiles="جوالات"
-            accessoire="إكسسوارات"
-            apple="أبل"
-            computersAndLaptops="Computers & Laptops"
-            coversAndCases="Covers & Cases"
-            blueToothAndHeadphones="بلوتوث وسماعات"
-            samsung="سامسونج"
-            xiaomi="Xiaomi"
-            backCovers="Back Covers"
-            wirelessHeadsets="Wireless Headsets"
-            chargersAndPowerBanks="Chargers & PowerBanks"
-            cables="Cables"
-            huawei="هواوي"
-            all="*"
           />
         </div>
       </div>
